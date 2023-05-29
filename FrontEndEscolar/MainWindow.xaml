@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="303,96,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="303,186,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name ="txtUsuario" HorizontalAlignment="Center" Margin="0,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+        <TextBox x:Name="txtContrasena" HorizontalAlignment="Center" Margin="0,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesión" HorizontalAlignment="Center" Margin="0,322,0,0" VerticalAlignment="Top" Click="btnIniciarSesion_Click" Height="31" Width="114" FontSize="15"/>
 
     </Grid>
 </Window>
