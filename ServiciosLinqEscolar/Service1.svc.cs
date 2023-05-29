@@ -37,7 +37,7 @@ namespace ServiciosLinqEscolar
             return UsuarioDAO.guardarUsuario(usuarioRegistro);
         }
 
-        public usuario IniciarSesion(string username, string password)
+        public Mensaje IniciarSesion(string username, string password)
         {
             return UsuarioDAO.iniciarSesion(username, password);
         }
