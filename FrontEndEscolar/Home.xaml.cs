@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrontEndEscolar.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,14 @@ namespace FrontEndEscolar
     /// <summary>
     /// Lógica de interacción para Principal.xaml
     /// </summary>
-    public partial class Principal : Window
+    public partial class Home : Window
     {
-        public Principal()
+        public Home()
         {
             InitializeComponent();
+
+            UsuarioViewModel modelo = new UsuarioViewModel();
+            dgUsuarios.ItemsSource = modelo.usuariosBD;
         }
     }
 }

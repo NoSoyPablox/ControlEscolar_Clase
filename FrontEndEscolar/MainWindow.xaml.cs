@@ -50,8 +50,8 @@ namespace FrontEndEscolar
                 else
                 {
                     MessageBox.Show("Bienvenido " + resultado.usuario.nombre +" al sistema", "Usuario Verificado" );
-                    Principal ventanaPrincipal = new Principal();
-                    ventanaPrincipal.Show();
+                    Home ventanaHome = new Home();
+                    ventanaHome.Show();
                     this.Close();
                 }
             }
