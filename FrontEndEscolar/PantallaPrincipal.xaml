@@ -1,0 +1,23 @@
+﻿<Window x:Class="FrontEndEscolar.PantallaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        Title="PantallaPrincipal" Height="450" Width="800">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="64" VerticalAlignment="Top" Width="800" Fill="#FFE0DFDF"/>
+        <Label x:Name="lbBienvenido" Content="Bienvenido" HorizontalAlignment="Left" Margin="52,19,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Button Content="LLenar reporte de tutorias" HorizontalAlignment="Left" Margin="538,227,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
+        <Button Content="Consultar reporte por tutor" HorizontalAlignment="Left" Margin="52,161,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
+        <Button Content="Registrar fechas de sesion de tutorias" HorizontalAlignment="Left" Margin="52,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
+        <Button Content="Registrar fechas de cierre de reporte" HorizontalAlignment="Left" Margin="538,161,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
+        <Button Content="Registrar solucion a problematica" HorizontalAlignment="Left" Margin="376,161,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
+        <Button Content="Modificar solucion a problematica academica" HorizontalAlignment="Left" Margin="211,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
+        <Button Content="Registrar tutor academico" HorizontalAlignment="Left" Margin="211,161,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
+        <Button Content="Asignar tutor academico a estudiante" HorizontalAlignment="Left" Margin="376,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="650,352,0,0" VerticalAlignment="Top" Height="27" Width="79" Click="btnCerrarSesion_Click"/>
+
+    </Grid>
+</Window>
