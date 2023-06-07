@@ -18,9 +18,9 @@ namespace FrontEndEscolar
     /// <summary>
     /// Lógica de interacción para Principal.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class GestionUsuarios : Window
     {
-        public Home()
+        public GestionUsuarios()
         {
             InitializeComponent();
 

@@ -19,9 +19,9 @@ namespace FrontEndEscolar
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class InicioSesion : Window
     {
-        public MainWindow()
+        public InicioSesion()
         {
             InitializeComponent();
         }
@@ -50,8 +50,8 @@ namespace FrontEndEscolar
                 else
                 {
                     MessageBox.Show("Bienvenido " + resultado.usuario.nombre +" al sistema", "Usuario Verificado" );
-                    Home ventanaHome = new Home();
-                    ventanaHome.Show();
+                    GestionUsuarios gestionUsuarios = new GestionUsuarios();
+                    gestionUsuarios.Show();
                     this.Close();
                 }
             }
