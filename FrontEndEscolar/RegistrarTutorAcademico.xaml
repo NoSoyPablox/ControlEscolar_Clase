@@ -1,0 +1,29 @@
+﻿<Window x:Class="FrontEndEscolar.RegistrarTutorAcademico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        Title="RegistrarTutorAcademico" Height="450" Width="800">
+    <Grid>
+        <Label Content="Registrar tutor academico" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Matricula" HorizontalAlignment="Left" Margin="73,108,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="73,163,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="73,217,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Margin="463,108,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="463,163,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="463,217,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="73,266,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbMatricula" HorizontalAlignment="Left" Margin="168,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="Nombre" HorizontalAlignment="Left" Margin="168,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Margin="202,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Margin="202,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbCorreo" HorizontalAlignment="Left" Margin="520,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbUsuario" HorizontalAlignment="Left" Margin="525,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbContrasena" HorizontalAlignment="Left" Margin="548,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" Height="26" Width="76" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="0,391,0,0" VerticalAlignment="Top" Height="22" Width="56" Click="btnVolver_Click"/>
+
+    </Grid>
+</Window>

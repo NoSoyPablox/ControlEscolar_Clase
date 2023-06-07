@@ -33,11 +33,25 @@ namespace FrontEndEscolar
             lbBienvenido.Content = "Bienvenido "+usuarioSesion.nombre;
         }
 
+        public void mostrarOperaciones()
+        {
+            //hacer un switch
+        }
+
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
         {
             InicioSesion inicioSesion = new InicioSesion();
             inicioSesion.Show();
             this.Close();
+        }
+
+        private void btnRegistrarTutor_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarTutorAcademico registrarTutorAcademico = new RegistrarTutorAcademico();
+            registrarTutorAcademico.recibirVentanaAnterior(this);
+            this.IsEnabled = false;
+            registrarTutorAcademico.Show();
+
         }
     }
 }
