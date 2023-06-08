@@ -49,7 +49,7 @@ namespace FrontEndEscolar
                 }
                 else
                 {
-                    MessageBox.Show("Bienvenido" + resultado.usuario.nombre + " al sistema", "Usuario Verificado");
+                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " al sistema", "Usuario Verificado");
                     PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
                     pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
                     pantallaPrincipal.Show();

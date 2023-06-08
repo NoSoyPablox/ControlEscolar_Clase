@@ -37,7 +37,23 @@ namespace FrontEndEscolar
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            //Quiero hacer un if donde pregunte por cada textbox si no tiene texto
+            if (string.IsNullOrEmpty(tbMatricula.Text) == true || string.IsNullOrEmpty(tbNombre.Text) || string.IsNullOrEmpty(tbApellidoPaterno.Text) == true || string.IsNullOrEmpty(tbApellidoMaterno.Text) == true || string.IsNullOrEmpty(tbCorreo.Text) == true || string.IsNullOrEmpty(tbUsuario.Text) == true || string.IsNullOrEmpty(tbContrasena.Text) == true)
+            {
+                MessageBox.Show("Llene los campos solicitados");
+            }
+            else
+            {
+                //Vaciar el texto de los campos de texto
+                tbMatricula.Text = "";
+                tbNombre.Text = "";
+                tbApellidoPaterno.Text = "";
+                tbApellidoMaterno.Text = "";
+                tbCorreo.Text = "";
+                tbUsuario.Text = "";
+                tbContrasena.Text = "";
+                MessageBox.Show("Tutor académico registrado");
+
+            }
 
         }
     }

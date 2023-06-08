@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="RegistrarTutorAcademico" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="RegistrarTutorAcademico" Height="450" Width="800"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        >
     <Grid>
         <Label Content="Registrar tutor academico" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Matricula" HorizontalAlignment="Left" Margin="73,108,0,0" VerticalAlignment="Top" FontSize="14"/>
@@ -16,7 +20,7 @@
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="463,217,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="73,266,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbMatricula" HorizontalAlignment="Left" Margin="168,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <TextBox x:Name="Nombre" HorizontalAlignment="Left" Margin="168,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="168,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
         <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Margin="202,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
         <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Margin="202,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
         <TextBox x:Name="tbCorreo" HorizontalAlignment="Left" Margin="520,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
