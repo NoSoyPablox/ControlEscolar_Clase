@@ -47,7 +47,7 @@ namespace FrontEndEscolar
         {
             switch (usuarioSesion.rol)
             {
-                case "Tutor":
+                case "Tutor académico":
                     btnLlenarReporte.Visibility = Visibility.Visible;
                     break;
                 case "Coordinador de tutorias":
