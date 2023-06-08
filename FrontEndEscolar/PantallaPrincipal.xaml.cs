@@ -1,5 +1,6 @@
 ﻿using ServiceReferenceControlEscolar;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace FrontEndEscolar
         public PantallaPrincipal()
         {
             InitializeComponent();
+            //aqui desactivar todos los botones de la vista xaml
+            btnLlenarReporte.Visibility = Visibility.Collapsed;
+            btnConsultarReportePorTutor.Visibility = Visibility.Collapsed;
+            btnRegistrarFechaSesion.Visibility = Visibility.Collapsed;
+            btnAsignarTutorEstudiante.Visibility = Visibility.Collapsed;
+            btnRegistrarSolucion.Visibility = Visibility.Collapsed;
+            btnModificarSolucion.Visibility = Visibility.Collapsed;
+            btnRegistrarTutor.Visibility = Visibility.Collapsed;
+            btnRegistrarFechasCierre.Visibility = Visibility.Collapsed;
         }
 
         usuario usuarioSesion = null;
@@ -35,7 +45,26 @@ namespace FrontEndEscolar
 
         public void mostrarOperaciones()
         {
-            //hacer un switch
+            switch (usuarioSesion.rol)
+            {
+                case "Tutor":
+                    btnLlenarReporte.Visibility = Visibility.Visible;
+                    break;
+                case "Coordinador de tutorias":
+                    btnConsultarReportePorTutor.Visibility = Visibility.Visible;
+                    btnRegistrarFechaSesion.Visibility = Visibility.Visible;
+                    btnAsignarTutorEstudiante.Visibility = Visibility.Visible;
+                    break;
+                case "Jefe de carrera":
+                    btnRegistrarSolucion.Visibility = Visibility.Visible;
+                    btnModificarSolucion.Visibility = Visibility.Visible;
+                    break;
+                case "Administrador":
+                    btnRegistrarTutor.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    break;
+            }   
         }
 
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)

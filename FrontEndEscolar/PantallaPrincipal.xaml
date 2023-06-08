@@ -15,12 +15,12 @@
         <Label x:Name="lbBienvenido" Content="Bienvenido" HorizontalAlignment="Left" Margin="52,19,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
         <Button x:Name="btnLlenarReporte" Content="LLenar reporte de tutorias" HorizontalAlignment="Left" Margin="538,227,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
         <Button x:Name="btnConsultarReportePorTutor" Content="Consultar reporte por tutor" HorizontalAlignment="Left" Margin="52,161,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
-        <Button x:Name="btnRegistrarFechaSesion" Content="Registrar fechas de sesion de tutorias" HorizontalAlignment="Left" Margin="52,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
-        <Button x:Name="btnRegistrarFechasCierre" Content="Registrar fechas de cierre de reporte" HorizontalAlignment="Left" Margin="538,161,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
-        <Button x:Name="btnRegistrarSolucion" Content="Registrar solucion a problematica" HorizontalAlignment="Left" Margin="376,161,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
-        <Button x:Name="btnModificarSolucion" Content="Modificar solucion a problematica academica" HorizontalAlignment="Left" Margin="211,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
+        <Button x:Name="btnRegistrarFechaSesion" Content="Registrar fechas de sesión&#xD;&#xA; de tutorías" HorizontalAlignment="Left" Margin="52,227,0,0" VerticalAlignment="Top" Height="40" Width="148" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btnRegistrarFechasCierre" Content="Registrar fechas de cierre&#xD;&#xA;de reporte" HorizontalAlignment="Left" Margin="538,161,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
+        <Button x:Name="btnRegistrarSolucion" Content="Registrar solución&#xD;&#xA; a problemática" HorizontalAlignment="Left" Margin="376,161,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
+        <Button x:Name="btnModificarSolucion" Content="Modificar solución a &#xD;&#xA;problemática académica" HorizontalAlignment="Left" Margin="211,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
         <Button x:Name="btnRegistrarTutor" Content="Registrar tutor academico" HorizontalAlignment="Left" Margin="211,161,0,0" VerticalAlignment="Top" Height="41" Width="148" Click="btnRegistrarTutor_Click"/>
-        <Button x:Name="btnAsignarTutorEstudiante" Content="Asignar tutor academico a estudiante" HorizontalAlignment="Left" Margin="376,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
+        <Button x:Name="btnAsignarTutorEstudiante" Content="Asignar tutor académico&#xD;&#xA; a estudiante" HorizontalAlignment="Left" Margin="376,227,0,0" VerticalAlignment="Top" Height="40" Width="148"/>
         <Button x:Name="btnCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="650,352,0,0" VerticalAlignment="Top" Height="27" Width="79" Click="btnCerrarSesion_Click"/>
 
     </Grid>
