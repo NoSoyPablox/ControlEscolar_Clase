@@ -8,7 +8,11 @@
         Title="LlenarReporteTutoria" Height="450" Width="800">
     <Grid>
         <Label Content="Estudiantes" HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dgEstudiantes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="45,82,222,131"/>
+        <DataGrid x:Name="dgEstudiantes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="45,82,222,131">
+            <DataGrid.Columns>
+
+            </DataGrid.Columns>
+        </DataGrid>
         <TextBlock x:Name="tbkComentariosGenerales" HorizontalAlignment="Left" Margin="45,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="501"><Run Language="es-mx" Text="Aqui van los comentarios generales asdasd"/></TextBlock>
         <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="45,308,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="653,109,0,0" VerticalAlignment="Top" Height="30" Width="77"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceReferenceControlEscolar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,18 @@ namespace FrontEndEscolar
         public LlenarReporteTutoria()
         {
             InitializeComponent();
+        }
+        usuario usuarioSesion = new usuario();
+        public void recibirUsuarioSesion(usuario usuarioRecibido)
+        {
+            usuarioSesion = usuarioRecibido;
+        }
+
+        public void obtenerAlumnos(int idUsuario)
+        {
+            //aqui se llama al metodo del servicio para obtener los alumnos del tutor haciendo uso de su idTutor
+            Service1Client servicio = new Service1Client();
+            //List<estudiante> listaEstudiantes = servicio.ObtenerEstudiantesPorTutor(idUsuario).ToList();
         }
     }
 }

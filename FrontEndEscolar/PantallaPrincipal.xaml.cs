@@ -35,7 +35,7 @@ namespace FrontEndEscolar
             btnRegistrarFechasCierre.Visibility = Visibility.Collapsed;
         }
 
-        usuario usuarioSesion = null;
+        usuario usuarioSesion = new usuario();
 
         public void recibirUsuarioSesion(usuario usuarioRecibido)
         {

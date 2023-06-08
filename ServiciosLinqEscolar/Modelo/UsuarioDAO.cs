@@ -152,5 +152,15 @@ namespace ServiciosLinqEscolar.Modelo
             }
         }
 
+        public static List<alumno> obtenerAlumnosPorTutor(int idUsuario)
+        {
+            DataClassesEscolarUVDataContext conexionBD = getConnection();
+            IQueryable<alumno> alumnosBD = from alumnoQuery in conexionBD.alumno
+                                           where alumnoQuery.idTutor == idUsuario
+                                           select alumnoQuery;
+
+            return alumnosBD.ToList();
+        }
+
     }
 }
