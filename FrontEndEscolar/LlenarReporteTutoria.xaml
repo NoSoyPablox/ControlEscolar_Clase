@@ -1,0 +1,19 @@
+﻿<Window x:Class="FrontEndEscolar.LlenarReporteTutoria"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        Title="LlenarReporteTutoria" Height="450" Width="800">
+    <Grid>
+        <Label Content="Estudiantes" HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dgEstudiantes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="45,82,222,131"/>
+        <TextBlock x:Name="tbkComentariosGenerales" HorizontalAlignment="Left" Margin="45,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="501"><Run Language="es-mx" Text="Aqui van los comentarios generales asdasd"/></TextBlock>
+        <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="45,308,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="653,109,0,0" VerticalAlignment="Top" Height="30" Width="77"/>
+        <Button x:Name="btnAgregarProblematica" Content="Agregar problematica" HorizontalAlignment="Left" Margin="628,151,0,0" VerticalAlignment="Top" Height="30" Width="126"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="653,197,0,0" VerticalAlignment="Top" Height="30" Width="77"/>
+
+    </Grid>
+</Window>
