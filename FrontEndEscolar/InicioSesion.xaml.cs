@@ -49,18 +49,11 @@ namespace FrontEndEscolar
                 }
                 else
                 {
-                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " al sistema", "Usuario Verificado");
+                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " " + resultado.usuario.rol + " al sistema", "Usuario Verificado");
                     PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
                     pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
                     pantallaPrincipal.Show();
                     this.Close();
-
-
-                    //Aqui se mostraba antes la pantalla de gestion de usuario
-                    /*MessageBox.Show("Bienvenido " + resultado.usuario.nombre +" al sistema", "Usuario Verificado" );
-                    GestionUsuarios gestionUsuarios = new GestionUsuarios();
-                    gestionUsuarios.Show();
-                    this.Close();*/
                 }
             }
         }
