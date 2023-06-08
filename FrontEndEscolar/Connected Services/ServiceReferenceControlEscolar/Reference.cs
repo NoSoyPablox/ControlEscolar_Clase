@@ -18,17 +18,44 @@ namespace ServiceReferenceControlEscolar
     public partial class usuario : object
     {
         
+        private ServiceReferenceControlEscolar.alumno[] alumnoField;
+        
         private string apellidoMaternoField;
         
         private string apellidoPaternoField;
         
+        private ServiceReferenceControlEscolar.carrera[] carreraField;
+        
+        private ServiceReferenceControlEscolar.carrera[] carrera1Field;
+        
+        private string correoInstitucionalField;
+        
         private int idUsuarioField;
+        
+        private string matriculaField;
         
         private string nombreField;
         
+        private string numeroTelefonicoField;
+        
         private string passwordField;
         
+        private string rolField;
+        
         private string usernameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.alumno[] alumno
+        {
+            get
+            {
+                return this.alumnoField;
+            }
+            set
+            {
+                this.alumnoField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string apellidoMaterno
@@ -57,6 +84,45 @@ namespace ServiceReferenceControlEscolar
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.carrera[] carrera
+        {
+            get
+            {
+                return this.carreraField;
+            }
+            set
+            {
+                this.carreraField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.carrera[] carrera1
+        {
+            get
+            {
+                return this.carrera1Field;
+            }
+            set
+            {
+                this.carrera1Field = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string correoInstitucional
+        {
+            get
+            {
+                return this.correoInstitucionalField;
+            }
+            set
+            {
+                this.correoInstitucionalField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int idUsuario
         {
             get
@@ -66,6 +132,19 @@ namespace ServiceReferenceControlEscolar
             set
             {
                 this.idUsuarioField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string matricula
+        {
+            get
+            {
+                return this.matriculaField;
+            }
+            set
+            {
+                this.matriculaField = value;
             }
         }
         
@@ -83,6 +162,19 @@ namespace ServiceReferenceControlEscolar
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string numeroTelefonico
+        {
+            get
+            {
+                return this.numeroTelefonicoField;
+            }
+            set
+            {
+                this.numeroTelefonicoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string password
         {
             get
@@ -96,6 +188,19 @@ namespace ServiceReferenceControlEscolar
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string rol
+        {
+            get
+            {
+                return this.rolField;
+            }
+            set
+            {
+                this.rolField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string username
         {
             get
@@ -105,6 +210,424 @@ namespace ServiceReferenceControlEscolar
             set
             {
                 this.usernameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="alumno", Namespace="http://schemas.datacontract.org/2004/07/ServiciosLinqEscolar.Modelo")]
+    public partial class alumno : object
+    {
+        
+        private string apellidoMaternoField;
+        
+        private string apellidoPaternoField;
+        
+        private ServiceReferenceControlEscolar.carrera carreraField;
+        
+        private string correoField;
+        
+        private System.Nullable<System.DateTime> fechaNacimientoField;
+        
+        private ServiceReferenceControlEscolar.Binary fotoField;
+        
+        private int idAlumnoField;
+        
+        private System.Nullable<int> idCarreraField;
+        
+        private System.Nullable<int> idTutorField;
+        
+        private string matriculaField;
+        
+        private string nombreField;
+        
+        private ServiceReferenceControlEscolar.usuario usuarioField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string apellidoMaterno
+        {
+            get
+            {
+                return this.apellidoMaternoField;
+            }
+            set
+            {
+                this.apellidoMaternoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string apellidoPaterno
+        {
+            get
+            {
+                return this.apellidoPaternoField;
+            }
+            set
+            {
+                this.apellidoPaternoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.carrera carrera
+        {
+            get
+            {
+                return this.carreraField;
+            }
+            set
+            {
+                this.carreraField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string correo
+        {
+            get
+            {
+                return this.correoField;
+            }
+            set
+            {
+                this.correoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> fechaNacimiento
+        {
+            get
+            {
+                return this.fechaNacimientoField;
+            }
+            set
+            {
+                this.fechaNacimientoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.Binary foto
+        {
+            get
+            {
+                return this.fotoField;
+            }
+            set
+            {
+                this.fotoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idAlumno
+        {
+            get
+            {
+                return this.idAlumnoField;
+            }
+            set
+            {
+                this.idAlumnoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> idCarrera
+        {
+            get
+            {
+                return this.idCarreraField;
+            }
+            set
+            {
+                this.idCarreraField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> idTutor
+        {
+            get
+            {
+                return this.idTutorField;
+            }
+            set
+            {
+                this.idTutorField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string matricula
+        {
+            get
+            {
+                return this.matriculaField;
+            }
+            set
+            {
+                this.matriculaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nombre
+        {
+            get
+            {
+                return this.nombreField;
+            }
+            set
+            {
+                this.nombreField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.usuario usuario
+        {
+            get
+            {
+                return this.usuarioField;
+            }
+            set
+            {
+                this.usuarioField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="carrera", Namespace="http://schemas.datacontract.org/2004/07/ServiciosLinqEscolar.Modelo")]
+    public partial class carrera : object
+    {
+        
+        private ServiceReferenceControlEscolar.alumno[] alumnoField;
+        
+        private string codigoField;
+        
+        private ServiceReferenceControlEscolar.facultad facultadField;
+        
+        private int idCarreraField;
+        
+        private System.Nullable<int> idCoordinadorTutoriasField;
+        
+        private System.Nullable<int> idFacultadField;
+        
+        private System.Nullable<int> idJefeCarreraField;
+        
+        private string nombreField;
+        
+        private ServiceReferenceControlEscolar.usuario usuarioField;
+        
+        private ServiceReferenceControlEscolar.usuario usuario1Field;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.alumno[] alumno
+        {
+            get
+            {
+                return this.alumnoField;
+            }
+            set
+            {
+                this.alumnoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string codigo
+        {
+            get
+            {
+                return this.codigoField;
+            }
+            set
+            {
+                this.codigoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.facultad facultad
+        {
+            get
+            {
+                return this.facultadField;
+            }
+            set
+            {
+                this.facultadField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idCarrera
+        {
+            get
+            {
+                return this.idCarreraField;
+            }
+            set
+            {
+                this.idCarreraField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> idCoordinadorTutorias
+        {
+            get
+            {
+                return this.idCoordinadorTutoriasField;
+            }
+            set
+            {
+                this.idCoordinadorTutoriasField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> idFacultad
+        {
+            get
+            {
+                return this.idFacultadField;
+            }
+            set
+            {
+                this.idFacultadField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> idJefeCarrera
+        {
+            get
+            {
+                return this.idJefeCarreraField;
+            }
+            set
+            {
+                this.idJefeCarreraField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nombre
+        {
+            get
+            {
+                return this.nombreField;
+            }
+            set
+            {
+                this.nombreField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.usuario usuario
+        {
+            get
+            {
+                return this.usuarioField;
+            }
+            set
+            {
+                this.usuarioField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.usuario usuario1
+        {
+            get
+            {
+                return this.usuario1Field;
+            }
+            set
+            {
+                this.usuario1Field = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Binary", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq")]
+    public partial class Binary : object
+    {
+        
+        private byte[] BytesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Bytes
+        {
+            get
+            {
+                return this.BytesField;
+            }
+            set
+            {
+                this.BytesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="facultad", Namespace="http://schemas.datacontract.org/2004/07/ServiciosLinqEscolar.Modelo")]
+    public partial class facultad : object
+    {
+        
+        private ServiceReferenceControlEscolar.carrera[] carreraField;
+        
+        private int idFacultadField;
+        
+        private string nombreField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.carrera[] carrera
+        {
+            get
+            {
+                return this.carreraField;
+            }
+            set
+            {
+                this.carreraField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idFacultad
+        {
+            get
+            {
+                return this.idFacultadField;
+            }
+            set
+            {
+                this.idFacultadField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nombre
+        {
+            get
+            {
+                return this.nombreField;
+            }
+            set
+            {
+                this.nombreField = value;
             }
         }
     }
@@ -220,6 +743,9 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.CompositeType> GetDataUsingDataContractAsync(ServiceReferenceControlEscolar.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GuardarTutorAcademico", ReplyAction="http://tempuri.org/IService1/GuardarTutorAcademicoResponse")]
+        System.Threading.Tasks.Task<bool> GuardarTutorAcademicoAsync(ServiceReferenceControlEscolar.usuario tutorRegistro);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -300,6 +826,11 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.CompositeType> GetDataUsingDataContractAsync(ServiceReferenceControlEscolar.CompositeType composite)
         {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public System.Threading.Tasks.Task<bool> GuardarTutorAcademicoAsync(ServiceReferenceControlEscolar.usuario tutorRegistro)
+        {
+            return base.Channel.GuardarTutorAcademicoAsync(tutorRegistro);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

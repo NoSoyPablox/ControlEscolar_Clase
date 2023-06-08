@@ -1,4 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="escolaruv" Class="DataClassesEscolarUVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.academico" Member="academico">
+    <Type Name="academico">
+      <Column Name="idAcademico" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidoPaterno" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidoMaterno" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="correoInstitucional" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="matricula" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="numeroTelefonico" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="rol" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.usuario" Member="usuario">
     <Type Name="usuario">
       <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -7,6 +19,13 @@
       <Column Name="apellidoMaterno" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="password" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="correoInstitucional" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="matricula" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="numeroTelefonico" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="rol" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="usuario_alumno" Member="alumno" ThisKey="idUsuario" OtherKey="idTutor" Type="alumno" />
+      <Association Name="usuario_carrera" Member="carrera" ThisKey="idUsuario" OtherKey="idCoordinadorTutorias" Type="carrera" />
+      <Association Name="usuario_carrera1" Member="carrera1" ThisKey="idUsuario" OtherKey="idJefeCarrera" Type="carrera" />
     </Type>
   </Table>
   <Table Name="dbo.alumno" Member="alumno">
@@ -20,6 +39,8 @@
       <Column Name="fechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="foto" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="idCarrera" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTutor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="usuario_alumno" Member="usuario" ThisKey="idTutor" OtherKey="idUsuario" Type="usuario" IsForeignKey="true" />
       <Association Name="carrera_alumno" Member="carrera" ThisKey="idCarrera" OtherKey="idCarrera" Type="carrera" IsForeignKey="true" />
     </Type>
   </Table>
@@ -29,7 +50,11 @@
       <Column Name="nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="idFacultad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCoordinadorTutorias" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idJefeCarrera" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="carrera_alumno" Member="alumno" ThisKey="idCarrera" OtherKey="idCarrera" Type="alumno" />
+      <Association Name="usuario_carrera" Member="usuario" ThisKey="idCoordinadorTutorias" OtherKey="idUsuario" Type="usuario" IsForeignKey="true" />
+      <Association Name="usuario_carrera1" Member="usuario1" ThisKey="idJefeCarrera" OtherKey="idUsuario" Type="usuario" IsForeignKey="true" />
       <Association Name="facultad_carrera" Member="facultad" ThisKey="idFacultad" OtherKey="idFacultad" Type="facultad" IsForeignKey="true" />
     </Type>
   </Table>

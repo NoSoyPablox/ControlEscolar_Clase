@@ -124,5 +124,33 @@ namespace ServiciosLinqEscolar.Modelo
                 ConfigurationManager.ConnectionStrings["escolaruvConnectionString"].ConnectionString);
 
         }
+
+        //Aqui son ya los del proyecto
+        public static Boolean guardarTutorAcademico(usuario usuarioNuevo)
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                var usuario = new usuario()
+                {
+                    nombre = usuarioNuevo.nombre,
+                    apellidoPaterno = usuarioNuevo.apellidoPaterno,
+                    apellidoMaterno = usuarioNuevo.apellidoMaterno,
+                    username = usuarioNuevo.username,
+                    password = usuarioNuevo.password,
+                    correoInstitucional = usuarioNuevo.correoInstitucional,
+                    matricula = usuarioNuevo.matricula,
+                    rol = usuarioNuevo.rol
+                };//Permite construir con las propiedades que mandes, independiente al numero de argumentos que tenga el constructor
+                conexionBD.usuario.InsertOnSubmit(usuario);
+                conexionBD.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }
