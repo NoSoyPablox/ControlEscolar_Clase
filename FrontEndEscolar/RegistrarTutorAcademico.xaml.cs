@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceReferenceControlEscolar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,17 @@ namespace FrontEndEscolar
             }
             else
             {
+                usuario tutorRegistro = new usuario();
+                tutorRegistro.matricula = tbMatricula.Text;
+                tutorRegistro.nombre = tbNombre.Text;
+                tutorRegistro.apellidoPaterno = tbApellidoPaterno.Text;
+                tutorRegistro.apellidoMaterno = tbApellidoMaterno.Text;
+                tutorRegistro.correoInstitucional = tbCorreo.Text;
+                tutorRegistro.username = tbUsuario.Text;
+                tutorRegistro.password = tbContrasena.Text;
+                tutorRegistro.rol = "Tutor académico";
+                registrarTutor(tutorRegistro);
+
                 //Vaciar el texto de los campos de texto
                 tbMatricula.Text = "";
                 tbNombre.Text = "";
@@ -51,10 +63,46 @@ namespace FrontEndEscolar
                 tbCorreo.Text = "";
                 tbUsuario.Text = "";
                 tbContrasena.Text = "";
-                MessageBox.Show("Tutor académico registrado");
-
             }
 
+        }
+
+
+        private async void registrarTutor(usuario tutorRegistro)
+        {
+            using (var conexionServicios = new Service1Client())
+            {
+                bool resultado = await conexionServicios.GuardarTutorAcademicoAsync(tutorRegistro);
+                if (resultado == true)
+                {
+                    MessageBox.Show("Se ha registrado el usuario");
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido registrar el usuario");
+                }
+            }
+        }
+
+        private async void verificarInicioSesion(string usuario, string password)
+        {
+            using (var conexionServicios = new Service1Client())
+            {
+                Mensaje resultado = await conexionServicios.IniciarSesionAsync(usuario, password);
+                if (resultado.error == true)
+                {
+                    MessageBox.Show(resultado.message, "Credenciales incorrectas");
+                }
+                else
+                {
+                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " " + resultado.usuario.rol + " al sistema", "Usuario Verificado");
+                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                    pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
+                    pantallaPrincipal.mostrarOperaciones();
+                    pantallaPrincipal.Show();
+                    this.Close();
+                }
+            }
         }
     }
 }

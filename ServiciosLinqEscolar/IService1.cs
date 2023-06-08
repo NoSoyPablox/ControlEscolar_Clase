@@ -31,6 +31,10 @@ namespace ServiciosLinqEscolar
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        //Aqui van los metodos del proyecto
+        [OperationContract]
+        bool GuardarTutorAcademico(usuario tutorRegistro);
+
         // TODO: agregue aquí sus operaciones de servicio
     }
 

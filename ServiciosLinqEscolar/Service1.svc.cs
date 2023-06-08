@@ -51,5 +51,11 @@ namespace ServiciosLinqEscolar
         {
             return UsuarioDAO.eliminarUsuario(idUsuario);
         }
+
+        //Aqui van los metodos del proyecto
+        public bool GuardarTutorAcademico(usuario tutorRegistro)
+        {
+            return UsuarioDAO.guardarTutorAcademico(tutorRegistro);
+        }
     }
 }

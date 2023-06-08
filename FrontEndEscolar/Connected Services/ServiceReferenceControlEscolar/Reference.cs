@@ -743,6 +743,9 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.CompositeType> GetDataUsingDataContractAsync(ServiceReferenceControlEscolar.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GuardarTutorAcademico", ReplyAction="http://tempuri.org/IService1/GuardarTutorAcademicoResponse")]
+        System.Threading.Tasks.Task<bool> GuardarTutorAcademicoAsync(ServiceReferenceControlEscolar.usuario tutorRegistro);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -823,6 +826,11 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.CompositeType> GetDataUsingDataContractAsync(ServiceReferenceControlEscolar.CompositeType composite)
         {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public System.Threading.Tasks.Task<bool> GuardarTutorAcademicoAsync(ServiceReferenceControlEscolar.usuario tutorRegistro)
+        {
+            return base.Channel.GuardarTutorAcademicoAsync(tutorRegistro);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
