@@ -35,6 +35,12 @@ namespace ServiciosLinqEscolar
         [OperationContract]
         bool GuardarTutorAcademico(usuario tutorRegistro);
 
+        [OperationContract]
+        List<alumno> ObtenerEstudiantesPorTutor(int idTutor);
+
+        [OperationContract]
+        bool RegistrarFechasSesionTutoria();
+
         // TODO: agregue aquí sus operaciones de servicio
     }
 
