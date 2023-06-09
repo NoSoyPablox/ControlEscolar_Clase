@@ -40,14 +40,15 @@ namespace FrontEndEscolar
         public void recibirUsuarioSesion(usuario usuarioRecibido)
         {
             usuarioSesion = usuarioRecibido;
-            lbBienvenido.Content = "Bienvenido "+usuarioSesion.nombre;
+            lbBienvenido.Content = "Bienvenido "+usuarioSesion.nombre + "idUsuario"+usuarioSesion.idUsuario;
+ 
         }
 
         public void mostrarOperaciones()
         {
             switch (usuarioSesion.rol)
             {
-                case "Tutor académico":
+                case "Tutor academico":
                     btnLlenarReporte.Visibility = Visibility.Visible;
                     break;
                 case "Coordinador de tutorias":
@@ -88,6 +89,15 @@ namespace FrontEndEscolar
             RegistrarFechasSesion registrarFechasSesion = new RegistrarFechasSesion();
             this.IsEnabled = false;
             registrarFechasSesion.Show();
+        }
+
+        private void btnLlenarReporte_Click(object sender, RoutedEventArgs e)
+        {
+            LlenarReporteTutoria llenarReporteTutoria = new LlenarReporteTutoria();
+            llenarReporteTutoria.recibirUsuarioSesion(usuarioSesion);
+            llenarReporteTutoria.obtenerAlumnos(usuarioSesion.idUsuario);
+            this.IsEnabled = false;
+            llenarReporteTutoria.Show();
         }
     }
 }

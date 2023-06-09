@@ -43,13 +43,23 @@ namespace ServiciosLinqEscolar.Modelo
             {
                 mensaje.error = false;
                 mensaje.message = "El usuario fue encontrado";
-                mensaje.usuario = usuario;
+                usuario user2 =new usuario()
+                {
+                    idUsuario = usuario.idUsuario,
+                    nombre = usuario.nombre,
+                    apellidoPaterno = usuario.apellidoPaterno,
+                    apellidoMaterno = usuario.apellidoMaterno,
+                    username = usuario.username,
+                    password = usuario.password,
+                    rol = usuario.rol
+                };
+                mensaje.usuario = user2;
             }
             else
             {
                 mensaje.error = true;
                 mensaje.message = "El usuario no fue encontrado";
-                mensaje.usuario = usuario;
+                //mensaje.usuario = usuario;
             }
             return mensaje;
         }
@@ -161,31 +171,6 @@ namespace ServiciosLinqEscolar.Modelo
             {
                 return false;
             }
-        }
-
-        public static List<alumno> obtenerAlumnosPorTutor(int idUsuario)
-        {
-            DataClassesEscolarUVDataContext conexionBD = getConnection();
-            IQueryable<alumno> alumnosBD = from alumnoQuery in conexionBD.alumno
-                                           where alumnoQuery.idTutor == idUsuario
-                                           select alumnoQuery;
-            List<alumno> alumnosRecuperados = new List<alumno>();
-            foreach (alumno alumno in alumnosBD)
-            {
-                var alumno2 = new alumno()
-                {
-                    idAlumno = alumno.idAlumno,
-                    nombre = alumno.nombre,
-                    apellidoPaterno = alumno.apellidoPaterno,
-                    apellidoMaterno = alumno.apellidoMaterno,
-                    matricula = alumno.matricula,
-                    idTutor = alumno.idTutor
-                };
-                alumnosRecuperados.Add(alumno2);
-            }
-
-
-            return alumnosRecuperados;
         }
 
         public static bool registrarFechasSesionTutoria()

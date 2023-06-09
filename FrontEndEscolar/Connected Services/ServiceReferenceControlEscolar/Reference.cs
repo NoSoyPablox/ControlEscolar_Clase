@@ -1702,6 +1702,12 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GuardarTutorAcademico", ReplyAction="http://tempuri.org/IService1/GuardarTutorAcademicoResponse")]
         System.Threading.Tasks.Task<bool> GuardarTutorAcademicoAsync(ServiceReferenceControlEscolar.usuario tutorRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantesPorTutor", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesPorTutorResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerEstudiantesPorTutorAsync(int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarFechasSesionTutoria", ReplyAction="http://tempuri.org/IService1/RegistrarFechasSesionTutoriaResponse")]
+        System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1787,6 +1793,16 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<bool> GuardarTutorAcademicoAsync(ServiceReferenceControlEscolar.usuario tutorRegistro)
         {
             return base.Channel.GuardarTutorAcademicoAsync(tutorRegistro);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerEstudiantesPorTutorAsync(int idTutor)
+        {
+            return base.Channel.ObtenerEstudiantesPorTutorAsync(idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync()
+        {
+            return base.Channel.RegistrarFechasSesionTutoriaAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

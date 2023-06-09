@@ -8,9 +8,12 @@
         Title="LlenarReporteTutoria" Height="450" Width="800">
     <Grid>
         <Label Content="Estudiantes" HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dgEstudiantes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="45,82,222,131">
+        <DataGrid x:Name="dgEstudiantes" AutoGenerateColumns="False" Margin="45,82,222,131">
             <DataGrid.Columns>
-
+                <DataGridCheckBoxColumn Header="Asistió"  Width="100"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido Paterno" Binding= "{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock x:Name="tbkComentariosGenerales" HorizontalAlignment="Left" Margin="45,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="501"><Run Language="es-mx" Text="Aqui van los comentarios generales asdasd"/></TextBlock>

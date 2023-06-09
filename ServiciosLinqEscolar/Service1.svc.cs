@@ -60,7 +60,7 @@ namespace ServiciosLinqEscolar
 
         public List<alumno> ObtenerEstudiantesPorTutor(int idTutor)
         {
-            return UsuarioDAO.obtenerAlumnosPorTutor(idTutor);
+            return AlumnoDAO.obtenerAlumnosPorTutor(idTutor);
         }
 
         public bool RegistrarFechasSesionTutoria()

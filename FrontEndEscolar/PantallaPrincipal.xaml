@@ -13,7 +13,7 @@
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="64" VerticalAlignment="Top" Width="800" Fill="#FFE0DFDF"/>
         <Label x:Name="lbBienvenido" Content="Bienvenido" HorizontalAlignment="Left" Margin="52,19,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="btnLlenarReporte" Content="LLenar reporte de tutorias" HorizontalAlignment="Left" Margin="538,227,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
+        <Button x:Name="btnLlenarReporte" Content="LLenar reporte de tutorias" HorizontalAlignment="Left" Margin="538,227,0,0" VerticalAlignment="Top" Height="41" Width="148" Click="btnLlenarReporte_Click"/>
         <Button x:Name="btnConsultarReportePorTutor" Content="Consultar reporte por tutor" HorizontalAlignment="Left" Margin="52,161,0,0" VerticalAlignment="Top" Height="41" Width="148"/>
         <Button x:Name="btnRegistrarFechaSesion" Content="Registrar fechas de sesión&#xD;&#xA; de tutorías" HorizontalAlignment="Left" Margin="52,227,0,0" VerticalAlignment="Top" Height="40" Width="148" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnRegistrarFechaSesion_Click"/>
         <Button x:Name="btnRegistrarFechasCierre" Content="Registrar fechas de cierre&#xD;&#xA;de reporte" HorizontalAlignment="Left" Margin="538,161,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
