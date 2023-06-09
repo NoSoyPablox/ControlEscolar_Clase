@@ -169,8 +169,23 @@ namespace ServiciosLinqEscolar.Modelo
             IQueryable<alumno> alumnosBD = from alumnoQuery in conexionBD.alumno
                                            where alumnoQuery.idTutor == idUsuario
                                            select alumnoQuery;
+            List<alumno> alumnosRecuperados = new List<alumno>();
+            foreach (alumno alumno in alumnosBD)
+            {
+                var alumno2 = new alumno()
+                {
+                    idAlumno = alumno.idAlumno,
+                    nombre = alumno.nombre,
+                    apellidoPaterno = alumno.apellidoPaterno,
+                    apellidoMaterno = alumno.apellidoMaterno,
+                    matricula = alumno.matricula,
+                    idTutor = alumno.idTutor
+                };
+                alumnosRecuperados.Add(alumno2);
+            }
 
-            return alumnosBD.ToList();
+
+            return alumnosRecuperados;
         }
 
         public static bool registrarFechasSesionTutoria()
