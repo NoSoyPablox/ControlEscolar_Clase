@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Mensaje.cs" />
     <Compile Include="Modelo\AlumnoDAO.cs" />
+    <Compile Include="Modelo\PeriodoEscolarDAO.cs" />
     <Compile Include="Modelo\UsuarioDAO.cs" />
     <Compile Include="Modelo\DataClassesEscolarUV.designer.cs">
       <AutoGen>True</AutoGen>

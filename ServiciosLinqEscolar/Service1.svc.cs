@@ -67,5 +67,15 @@ namespace ServiciosLinqEscolar
         {
             return UsuarioDAO.registrarFechasSesionTutoria();
         }
+
+        public List<periodoEscolar> ObtenerPeriodosEscolares()
+        {
+            return PeriodoEscolarDAO.obtenerPeriodosEscolares();
+        }
+
+        public List<alumno> obtenerAlumnos()
+        {
+            return AlumnoDAO.obtenerAlumnos();
+        }
     }
 }
