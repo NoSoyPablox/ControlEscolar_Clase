@@ -21,10 +21,16 @@ namespace FrontEndEscolar
     /// </summary>
     public partial class LlenarReporteTutoria : Window
     {
+        PantallaPrincipal pantallaAnterior = new PantallaPrincipal();
 
         public LlenarReporteTutoria()
         {
             InitializeComponent();
+        }
+
+        public void recibirVentanaAnterior(PantallaPrincipal pantallaRecibida)
+        {
+            pantallaAnterior = pantallaRecibida;
         }
 
         usuario usuarioSesion = new usuario();
@@ -37,6 +43,22 @@ namespace FrontEndEscolar
         {
             AlumnoViewModel modelo = new AlumnoViewModel(usuarioSesion.idUsuario);
             dgEstudiantes.ItemsSource = modelo.alumnosBD;
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAgregarProblematica_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            pantallaAnterior.IsEnabled = true;
+            this.Close();
         }
     }
 }

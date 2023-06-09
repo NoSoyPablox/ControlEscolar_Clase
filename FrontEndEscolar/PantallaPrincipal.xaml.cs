@@ -96,6 +96,7 @@ namespace FrontEndEscolar
             LlenarReporteTutoria llenarReporteTutoria = new LlenarReporteTutoria();
             llenarReporteTutoria.recibirUsuarioSesion(usuarioSesion);
             llenarReporteTutoria.obtenerAlumnos(usuarioSesion.idUsuario);
+            llenarReporteTutoria.recibirVentanaAnterior(this);
             this.IsEnabled = false;
             llenarReporteTutoria.Show();
         }

@@ -18,9 +18,9 @@
         </DataGrid>
         <TextBlock x:Name="tbkComentariosGenerales" HorizontalAlignment="Left" Margin="45,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="501"><Run Language="es-mx" Text="Aqui van los comentarios generales asdasd"/></TextBlock>
         <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="45,308,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="653,109,0,0" VerticalAlignment="Top" Height="30" Width="77"/>
-        <Button x:Name="btnAgregarProblematica" Content="Agregar problematica" HorizontalAlignment="Left" Margin="628,151,0,0" VerticalAlignment="Top" Height="30" Width="126"/>
-        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="653,197,0,0" VerticalAlignment="Top" Height="30" Width="77"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="653,109,0,0" VerticalAlignment="Top" Height="30" Width="77" Click="btnGuardar_Click"/>
+        <Button x:Name="btnAgregarProblematica" Content="Agregar problematica" HorizontalAlignment="Left" Margin="628,151,0,0" VerticalAlignment="Top" Height="30" Width="126" Click="btnAgregarProblematica_Click"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="653,197,0,0" VerticalAlignment="Top" Height="30" Width="77" Click="btnCancelar_Click"/>
 
     </Grid>
 </Window>
