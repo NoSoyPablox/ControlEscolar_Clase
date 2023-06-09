@@ -62,5 +62,10 @@ namespace ServiciosLinqEscolar
         {
             return UsuarioDAO.obtenerAlumnosPorTutor(idTutor);
         }
+
+        public bool RegistrarFechasSesionTutoria()
+        {
+            return UsuarioDAO.registrarFechasSesionTutoria();
+        }
     }
 }

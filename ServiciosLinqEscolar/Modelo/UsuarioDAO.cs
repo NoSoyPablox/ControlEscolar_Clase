@@ -12,13 +12,24 @@ namespace ServiciosLinqEscolar.Modelo
         public static List<usuario> obtenerUsuarios()
         {
             DataClassesEscolarUVDataContext conexionBD = getConnection();
-            //var usuarios = asdasdasd <--- no tiene tipo hasta que se le asigna algo asdasd
+            //var usuarios = asdasdasd <--- no tiene tipo hasta que se le asigna algo 
             IQueryable<usuario> usuariosBD = from usuarioQuery in conexionBD.usuario
                                             select usuarioQuery;
-
-            return usuariosBD.ToList();
+            List <usuario> usuariosObtenidos = new List<usuario>();
+            foreach (usuario usuario2 in usuariosBD)
+            {
+                var user3 = new usuario()
+                {
+                    idUsuario = usuario2.idUsuario,
+                    nombre = usuario2.nombre,
+                    apellidoPaterno = usuario2.apellidoPaterno
+                };
+                usuariosObtenidos.Add(user3);
+            }
+            return usuariosObtenidos;
 
         }
+
         public static Mensaje iniciarSesion(string username, string password)
         {
             Mensaje mensaje = new Mensaje();
@@ -162,5 +173,24 @@ namespace ServiciosLinqEscolar.Modelo
             return alumnosBD.ToList();
         }
 
+        public static bool registrarFechasSesionTutoria()
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                tutoria tutoria = new tutoria
+                {
+                    fechaTutoria = DateTime.Today,
+                    numeroSesion = 1
+                };           
+                conexionBD.tutoria.InsertOnSubmit(tutoria);
+                conexionBD.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

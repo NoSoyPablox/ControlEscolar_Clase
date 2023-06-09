@@ -82,5 +82,12 @@ namespace FrontEndEscolar
             registrarTutorAcademico.Show();
 
         }
+
+        private void btnRegistrarFechaSesion_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarFechasSesion registrarFechasSesion = new RegistrarFechasSesion();
+            this.IsEnabled = false;
+            registrarFechasSesion.Show();
+        }
     }
 }

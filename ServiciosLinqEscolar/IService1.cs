@@ -38,6 +38,8 @@ namespace ServiciosLinqEscolar
         [OperationContract]
         List<alumno> ObtenerEstudiantesPorTutor(int idTutor);
 
+        [OperationContract]
+        bool RegistrarFechasSesionTutoria();
 
         // TODO: agregue aquí sus operaciones de servicio
     }
