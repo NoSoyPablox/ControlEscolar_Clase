@@ -87,8 +87,10 @@ namespace FrontEndEscolar
         private void btnRegistrarFechaSesion_Click(object sender, RoutedEventArgs e)
         {
             RegistrarFechasSesion registrarFechasSesion = new RegistrarFechasSesion();
+            registrarFechasSesion.recibirVentanaAnterior(this);
             this.IsEnabled = false;
             registrarFechasSesion.Show();
+
         }
 
         private void btnLlenarReporte_Click(object sender, RoutedEventArgs e)

@@ -19,9 +19,31 @@ namespace FrontEndEscolar
     /// </summary>
     public partial class RegistrarFechasSesion : Window
     {
+        PantallaPrincipal pantallaAnterior = new PantallaPrincipal();
         public RegistrarFechasSesion()
         {
             InitializeComponent();
+        }
+
+        public void recibirVentanaAnterior(PantallaPrincipal pantallaRecibida)
+        {
+            pantallaAnterior = pantallaRecibida;
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            string fechaSesion1 = dpPrimeraSesion.Text;
+            string fechaSesion2 = dpSegundaSesion.Text;
+            string fechaSesion3 = dpTerceraSesion.Text;
+
+            MessageBox.Show("Se han guardado las fechas de sesión: fecha1: " + fechaSesion1 + " fecha2: " + fechaSesion2 + " fecha3" + fechaSesion3 );
+
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            pantallaAnterior.IsEnabled = true;
+            this.Close();
         }
     }
 }
