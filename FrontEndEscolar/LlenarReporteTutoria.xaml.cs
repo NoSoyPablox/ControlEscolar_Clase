@@ -60,12 +60,25 @@ namespace FrontEndEscolar
                 tutoria tutoriaSeleccionada = cbTutorias.SelectedItem as tutoria;
                 //Quiero obtener los objetos alumnoLocal de la tabla que tengan el checkbox asistio seleccionado
                 int contadorAsistentes = 0;
+                //Lista de enteros que guardara los id de los alumnos que asistieron
                 //contar cuantos alumnos tienen la casilla asistio seleccionada
                 foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
                 {
                     if (alumno.isSelected == true)
                     {
                         contadorAsistentes++;
+                    }
+                }
+                //Crear un arreglo de enteros que guarde los id de los alumnos que asistieron
+                int[] idAlumnosAsistentes = new int[contadorAsistentes];
+                //metodo que obtiene los id de los alumnos que asistieron y los mete en el arreglo
+                int contador = 0;
+                foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
+                {
+                    if (alumno.isSelected == true)
+                    {
+                        idAlumnosAsistentes[contador] = alumno.idAlumno;
+                        contador++;
                     }
                 }
                 //MessageBox que escriba en pantalla solo el nombre de los alumnos que asistieron
