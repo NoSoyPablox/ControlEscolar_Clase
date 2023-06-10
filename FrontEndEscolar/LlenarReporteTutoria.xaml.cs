@@ -49,7 +49,30 @@ namespace FrontEndEscolar
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            //comprobar que los combobox no esten sin seleccion
+            if (cbPeriodoEscolar.SelectedIndex == -1 || cbTutorias.SelectedIndex == -1)
+            {
+                MessageBox.Show("Favor de llenar todos los campos");
+            }
+            else
+            {
+                //obtener el id de la tutoria seleccionada
+                tutoria tutoriaSeleccionada = cbTutorias.SelectedItem as tutoria;
+                //Quiero obtener los objetos alumnoLocal de la tabla que tengan el checkbox asistio seleccionado
+                int contadorAsistentes = 0;
+                //contar cuantos alumnos tienen la casilla asistio seleccionada
+                foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
+                {
+                    if (alumno.isSelected == true)
+                    {
+                        contadorAsistentes++;
+                    }
+                }
+                //MessageBox que escriba en pantalla solo el nombre de los alumnos que asistieron
+                MessageBox.Show("El numero de alumnos que asistieron es: " + contadorAsistentes);
 
+                
+            }
         }
 
         private void btnAgregarProblematica_Click(object sender, RoutedEventArgs e)
