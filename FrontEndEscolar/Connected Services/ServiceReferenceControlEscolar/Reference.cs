@@ -1702,6 +1702,9 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerTutores", ReplyAction="http://tempuri.org/IService1/ObtenerTutoresResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.usuario[]> ObtenerTutoresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AsignarTutorAlumno", ReplyAction="http://tempuri.org/IService1/AsignarTutorAlumnoResponse")]
+        System.Threading.Tasks.Task<bool> AsignarTutorAlumnoAsync(int idAlumno, int idTutor);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1812,6 +1815,11 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.usuario[]> ObtenerTutoresAsync()
         {
             return base.Channel.ObtenerTutoresAsync();
+        }
+        
+        public System.Threading.Tasks.Task<bool> AsignarTutorAlumnoAsync(int idAlumno, int idTutor)
+        {
+            return base.Channel.AsignarTutorAlumnoAsync(idAlumno, idTutor);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

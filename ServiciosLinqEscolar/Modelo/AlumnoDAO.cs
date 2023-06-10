@@ -44,6 +44,7 @@ namespace ServiciosLinqEscolar.Modelo
         {
             DataClassesEscolarUVDataContext conexionBD = getConnection();
             IQueryable<alumno> alumnosBD = from alumnoQuery in conexionBD.alumno
+                                           where alumnoQuery.idTutor == null
                                            select alumnoQuery;
             List<alumno> alumnosRecuperados = new List<alumno>();
             foreach (alumno alumno in alumnosBD)
@@ -60,6 +61,33 @@ namespace ServiciosLinqEscolar.Modelo
                 alumnosRecuperados.Add(alumno2);
             }   
             return alumnosRecuperados;
+        }
+
+        public static bool asignarTutorAlumno(int idAlumno, int idTutor)
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                alumno alumnoAsignar = (from alumno in conexionBD.alumno
+                                        where alumno.idAlumno == idAlumno
+                                        select alumno).FirstOrDefault();
+
+                if (alumnoAsignar != null)
+                {
+                    alumnoAsignar.idTutor = idTutor;
+                    conexionBD.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

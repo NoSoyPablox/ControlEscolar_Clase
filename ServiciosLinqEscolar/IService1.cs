@@ -51,7 +51,8 @@ namespace ServiciosLinqEscolar
         [OperationContract]
         List<usuario> ObtenerTutores();
 
-
+        [OperationContract]
+        bool AsignarTutorAlumno(int idAlumno, int idTutor);
 
         // TODO: agregue aquí sus operaciones de servicio
     }

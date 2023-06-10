@@ -30,7 +30,7 @@
         <Label x:Name="lbApellidoMaterno" Content="Label" HorizontalAlignment="Left" Margin="450,158,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbMatricula" Content="Label" HorizontalAlignment="Left" Margin="617,158,0,0" VerticalAlignment="Top"/>
         <Label Content="Selecciona el tutor academico que deseas asignarle a aeste alumno" HorizontalAlignment="Center" Margin="0,232,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAsignar" Content="Asignar" HorizontalAlignment="Left" Margin="340,335,0,0" VerticalAlignment="Top" Height="30" Width="92"/>
+        <Button x:Name="btnAsignar" Content="Asignar" HorizontalAlignment="Left" Margin="340,335,0,0" VerticalAlignment="Top" Height="30" Width="92" Click="btnAsignar_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="354,380,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="btnVolver_Click"/>
 
     </Grid>

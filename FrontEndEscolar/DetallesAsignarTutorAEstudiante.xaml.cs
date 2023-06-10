@@ -54,5 +54,33 @@ namespace FrontEndEscolar
             pantallaAnterior.IsEnabled = true;
             this.Close();
         }
+
+        private async void btnAsignar_Click(object sender, RoutedEventArgs e)
+        {
+            //aqui hacer uso del servicio para asignar el tutor al alumno
+            usuario tutorSeleccionado = (usuario)cbTutores.SelectedItem;
+            if (tutorSeleccionado != null)
+            {
+                var conexionServicios = new Service1Client();
+                if (conexionServicios != null)
+                {
+                    bool resultado = await conexionServicios.AsignarTutorAlumnoAsync(alumnoAsignar.idAlumno, tutorSeleccionado.idUsuario);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Tutor asignado correctamente");
+                        pantallaAnterior.IsEnabled = true;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al asignar tutor");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un tutor");
+            }
+        }
     }
 }

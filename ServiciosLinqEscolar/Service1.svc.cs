@@ -81,5 +81,10 @@ namespace ServiciosLinqEscolar
         {
             return UsuarioDAO.obtenerTutores();
         }
+
+        public bool AsignarTutorAlumno(int idAlumno, int idTutor)
+        {
+            return AlumnoDAO.asignarTutorAlumno(idAlumno, idTutor);
+        }
     }
 }
