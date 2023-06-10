@@ -174,5 +174,26 @@ namespace ServiciosLinqEscolar.Modelo
             }
         }
 
+        public static List<usuario> obtenerTutores() 
+        {
+            DataClassesEscolarUVDataContext conexionBD = getConnection();
+            //var usuarios = asdasdasd <--- no tiene tipo hasta que se le asigna algo 
+            IQueryable<usuario> usuariosBD = from usuarioQuery in conexionBD.usuario
+                                             where usuarioQuery.rol == "Tutor academico" select usuarioQuery;
+
+            List<usuario> tutoresObtenidos = new List<usuario>();
+            foreach (usuario usuario2 in usuariosBD)
+            {
+                var user3 = new usuario()
+                {
+                    idUsuario = usuario2.idUsuario,
+                    nombre = usuario2.nombre,
+                    apellidoPaterno = usuario2.apellidoPaterno,
+                    apellidoMaterno = usuario2.apellidoMaterno
+                };
+                tutoresObtenidos.Add(user3);
+            }
+            return tutoresObtenidos;
+        }
     }
 }

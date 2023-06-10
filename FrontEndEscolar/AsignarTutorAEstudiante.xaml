@@ -7,14 +7,15 @@
         mc:Ignorable="d"
         Title="AsignarTutorAEstudiante" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnAsignarTutor" Content="Asignar tutor" HorizontalAlignment="Left" Margin="662,178,0,0" VerticalAlignment="Top" Height="39" Width="112"/>
+        <Button x:Name="btnAsignarTutor" Content="Asignar tutor" HorizontalAlignment="Left" Margin="662,178,0,0" VerticalAlignment="Top" Height="39" Width="112" Click="btnAsignarTutor_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="679,237,0,0" VerticalAlignment="Top" Height="29" Width="78" Click="btnVolver_Click"/>
-        <DataGrid x:Name="dgAlumnos" AutoGenerateColumns="False"  Margin="38,53,160,131">
+        <DataGrid x:Name="dgAlumnos" AutoGenerateColumns="False"  Margin="38,72,160,111">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="apellido" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="apellido" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido paterno" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Label Content="Alumnos sin tutor academico asignado" HorizontalAlignment="Left" Margin="38,22,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
     </Grid>
 </Window>

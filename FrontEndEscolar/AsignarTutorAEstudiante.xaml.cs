@@ -1,4 +1,5 @@
 ﻿using FrontEndEscolar.Modelo;
+using ServiceReferenceControlEscolar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,23 @@ namespace FrontEndEscolar
         {
             pantallaAnterior.IsEnabled = true;
             this.Close();
+        }
+
+        private void btnAsignarTutor_Click(object sender, RoutedEventArgs e)
+        {
+            alumno alumnoSeleccionado = (alumno)dgAlumnos.SelectedItem;
+            if (alumnoSeleccionado != null)
+            {
+                DetallesAsignarTutorAEstudiante detallesAsignarTutorAEstudiante = new DetallesAsignarTutorAEstudiante();
+                detallesAsignarTutorAEstudiante.recibirVentanaAnterior(this);
+                detallesAsignarTutorAEstudiante.recibirAlumno(alumnoSeleccionado);
+                detallesAsignarTutorAEstudiante.Show();
+                this.IsEnabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un alumno");
+            }
         }
     }
 }
