@@ -55,16 +55,16 @@ namespace FrontEndEscolar
             {
                 //obtener el id del periodo escolar seleccionado
                 periodoEscolar periodoSeleccionado = cbPeriodoEscolar.SelectedItem as periodoEscolar;
-                int idPeriodo = periodoSeleccionado.idPeriodo;
 
                 //registrar las fechas de sesion
-                registrarFechasSesion(fechaSesion1, fechaSesion2, fechaSesion3, idPeriodo);
+                registrarFechasSesion(fechaSesion1, fechaSesion2, fechaSesion3, periodoSeleccionado.idPeriodo);
             }   
         }
 
         private async void registrarFechasSesion(string fecha1, string fecha2, string fecha3, int idPeriodo)
         {
             //instanciar el servicio de control escolar
+            MessageBox.Show("El id del periodoSeleccionado es: "+idPeriodo);
             Service1Client servicio = new Service1Client();
             using (var conexionServicios = new Service1Client())
             {
@@ -75,12 +75,11 @@ namespace FrontEndEscolar
                     dpPrimeraSesion.Text = "";
                     dpSegundaSesion.Text = "";
                     dpTerceraSesion.Text = "";
-                    //Quitar la seleccion del combobox
                     cbPeriodoEscolar.SelectedIndex = -1;
                 }
                 else
                 {
-                    MessageBox.Show("No se han podido registrar las fechas");
+                    MessageBox.Show("Ya se han registrado fechas para este periodo, si desea modificarlas seleccione la opcion modificar fechas del menu inicial");
                 }
             }
         }

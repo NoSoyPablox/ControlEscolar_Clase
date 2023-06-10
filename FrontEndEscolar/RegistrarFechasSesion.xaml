@@ -15,7 +15,15 @@
         <DatePicker x:Name="dpSegundaSesion" HorizontalAlignment="Center" Margin="0,156,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dpTerceraSesion" HorizontalAlignment="Left" Margin="584,156,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Center" Margin="0,295,0,0" VerticalAlignment="Top" Height="40" Width="84" Click="btnGuardar_Click"/>
-        <Label Content="Periodo Escolar" HorizontalAlignment="Left" Margin="523,32,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbPeriodoEscolar" HorizontalAlignment="Left" Margin="636,34,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Periodo Escolar" HorizontalAlignment="Left" Margin="517,32,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbPeriodoEscolar" HorizontalAlignment="Left" Margin="614,34,0,0" VerticalAlignment="Top" Width="142">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding nombre}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </Window>
