@@ -1,0 +1,20 @@
+﻿<Window x:Class="FrontEndEscolar.AsignarTutorAEstudiante"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        Title="AsignarTutorAEstudiante" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnAsignarTutor" Content="Asignar tutor" HorizontalAlignment="Left" Margin="662,178,0,0" VerticalAlignment="Top" Height="39" Width="112"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="679,237,0,0" VerticalAlignment="Top" Height="29" Width="78" Click="btnVolver_Click"/>
+        <DataGrid x:Name="dgAlumnos" AutoGenerateColumns="False"  Margin="38,53,160,131">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="apellido" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="apellido" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

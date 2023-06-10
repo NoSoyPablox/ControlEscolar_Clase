@@ -103,5 +103,13 @@ namespace FrontEndEscolar
             this.IsEnabled = false;
             llenarReporteTutoria.Show();
         }
+
+        private void btnAsignarTutorEstudiante_Click(object sender, RoutedEventArgs e)
+        {
+            AsignarTutorAEstudiante asignarTutorAEstudiante = new AsignarTutorAEstudiante();
+            asignarTutorAEstudiante.recibirVentanaAnterior(this);
+            this.IsEnabled = false;
+            asignarTutorAEstudiante.Show();
+        }
     }
 }
