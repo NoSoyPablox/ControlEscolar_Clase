@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LlenarReporteTutoria" Height="450" Width="800">
     <Grid>
-        <Label Content="Estudiantes" HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tutorados" HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <DataGrid x:Name="dgEstudiantes" AutoGenerateColumns="False" Margin="45,82,222,131">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Asistió"  Width="100"/>
@@ -16,11 +16,31 @@
                 <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock x:Name="tbkComentariosGenerales" HorizontalAlignment="Left" Margin="45,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="501"><Run Language="es-mx" Text="Aqui van los comentarios generales asdasd"/></TextBlock>
         <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="45,308,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="653,109,0,0" VerticalAlignment="Top" Height="30" Width="77" Click="btnGuardar_Click"/>
         <Button x:Name="btnAgregarProblematica" Content="Agregar problematica" HorizontalAlignment="Left" Margin="628,151,0,0" VerticalAlignment="Top" Height="30" Width="126" Click="btnAgregarProblematica_Click"/>
         <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="653,197,0,0" VerticalAlignment="Top" Height="30" Width="77" Click="btnCancelar_Click"/>
+        <TextBox x:Name="tbComentariosGenerales" HorizontalAlignment="Left" Margin="45,339,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="729" Height="50"/>
+        <Label Content="Periodo escolar:" HorizontalAlignment="Left" Margin="316,18,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbPeriodoEscolar" HorizontalAlignment="Left" Margin="415,20,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbPeriodoEscolar_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding nombre}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="cbTutorias" HorizontalAlignment="Left" Margin="629,20,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding numeroSesion}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Tutorias:" HorizontalAlignment="Left" Margin="557,18,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

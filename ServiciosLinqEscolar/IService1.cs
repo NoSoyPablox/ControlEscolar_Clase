@@ -59,6 +59,12 @@ namespace ServiciosLinqEscolar
 
         [OperationContract]
         bool RegistrarFechaCierreATutoriasPeriodoEscolar(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3 ,string fechaCierre3);
+
+        [OperationContract]
+        bool VerificarFechaCierreVigente(int idTutoria);
+
+        [OperationContract]
+        bool VerificarRegistroReportePorTutoria(int idTutoria);
         // TODO: agregue aquí sus operaciones de servicio
     }
 

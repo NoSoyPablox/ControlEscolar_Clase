@@ -133,5 +133,36 @@ namespace ServiciosLinqEscolar.Modelo
             }
         }
 
+        public static bool verificarFechaCierreVigente(int idTutoria)
+        {
+              DataClassesEscolarUVDataContext conexionBD = getConnection();
+            try
+            {
+                var fechaCierreObtenida = (from tutoriaQuery in conexionBD.fechaCierreReporte
+                                           where tutoriaQuery.idTutoria == idTutoria
+                                           select tutoriaQuery).FirstOrDefault();
+                if (fechaCierreObtenida != null)
+                {
+                    DateTime fechaActual = DateTime.Now;
+                    if (fechaActual >= fechaCierreObtenida.fechaInicio && fechaActual <= fechaCierreObtenida.fechaLimite)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

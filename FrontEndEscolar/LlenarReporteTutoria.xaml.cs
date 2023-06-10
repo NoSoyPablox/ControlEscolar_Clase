@@ -26,6 +26,8 @@ namespace FrontEndEscolar
         public LlenarReporteTutoria()
         {
             InitializeComponent();
+            PeriodoEscolarViewModel modelo = new PeriodoEscolarViewModel();
+            cbPeriodoEscolar.ItemsSource = modelo.periodosEscolaresBD;
         }
 
         public void recibirVentanaAnterior(PantallaPrincipal pantallaRecibida)
@@ -59,6 +61,25 @@ namespace FrontEndEscolar
         {
             pantallaAnterior.IsEnabled = true;
             this.Close();
+        }
+
+        private void cbPeriodoEscolar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbPeriodoEscolar.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un periodo escolar");
+            }
+            else
+            {
+                periodoEscolar periodoSeleccionado = cbPeriodoEscolar.SelectedItem as periodoEscolar;
+                obtenerTutorias(periodoSeleccionado.idPeriodo);
+            }
+        }
+
+        private void obtenerTutorias(int idUsuario)
+        {
+            TutoriasViewModel modelo = new TutoriasViewModel(idUsuario);
+            cbTutorias.ItemsSource = modelo.tutoriasBD;
         }
     }
 }

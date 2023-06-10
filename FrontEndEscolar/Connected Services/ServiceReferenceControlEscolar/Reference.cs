@@ -1711,6 +1711,12 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarFechaCierreATutoriasPeriodoEscolar", ReplyAction="http://tempuri.org/IService1/RegistrarFechaCierreATutoriasPeriodoEscolarResponse")]
         System.Threading.Tasks.Task<bool> RegistrarFechaCierreATutoriasPeriodoEscolarAsync(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3, string fechaCierre3);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerificarFechaCierreVigente", ReplyAction="http://tempuri.org/IService1/VerificarFechaCierreVigenteResponse")]
+        System.Threading.Tasks.Task<bool> VerificarFechaCierreVigenteAsync(int idTutoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerificarRegistroReportePorTutoria", ReplyAction="http://tempuri.org/IService1/VerificarRegistroReportePorTutoriaResponse")]
+        System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1836,6 +1842,16 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<bool> RegistrarFechaCierreATutoriasPeriodoEscolarAsync(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3, string fechaCierre3)
         {
             return base.Channel.RegistrarFechaCierreATutoriasPeriodoEscolarAsync(idTutoria1, fechaInicio1, fechaCierre1, idTutoria2, fechaInicio2, fechaCierre2, idTutoria3, fechaInicio3, fechaCierre3);
+        }
+        
+        public System.Threading.Tasks.Task<bool> VerificarFechaCierreVigenteAsync(int idTutoria)
+        {
+            return base.Channel.VerificarFechaCierreVigenteAsync(idTutoria);
+        }
+        
+        public System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria)
+        {
+            return base.Channel.VerificarRegistroReportePorTutoriaAsync(idTutoria);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

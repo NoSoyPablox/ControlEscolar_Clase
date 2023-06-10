@@ -96,5 +96,15 @@ namespace ServiciosLinqEscolar
         {
             return TutoriaDAO.registrarFechaCierreATutoriasPeriodoEscolar(idTutoria1, fechaInicio1 ,fechaCierre1, idTutoria2, fechaInicio2 ,fechaCierre2, idTutoria3, fechaInicio3 ,fechaCierre3);
         }
+
+        public bool VerificarFechaCierreVigente(int idTutoria)
+        {
+            return TutoriaDAO.verificarFechaCierreVigente(idTutoria);
+        }
+
+        public bool VerificarRegistroReportePorTutoria(int idTutoria)
+        {
+            return ReporteDeTutoriaDAO.verificarRegistroPorReporteDeTutoria(idTutoria);
+        }
     }
 }
