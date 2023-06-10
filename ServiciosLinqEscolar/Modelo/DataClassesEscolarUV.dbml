@@ -104,7 +104,7 @@
       <Column Name="fechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="fechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="periodoEscolar_tutoria" Member="tutoria" ThisKey="idPeriodo" OtherKey="idPeriodo" Type="tutoria" />
+      <Association Name="periodoEscolar_tutoria" Member="tutoria" ThisKey="idPeriodo" OtherKey="idPeriodoEscolar" Type="tutoria" />
     </Type>
   </Table>
   <Table Name="dbo.problematicaAcademica" Member="problematicaAcademica">
@@ -135,14 +135,13 @@
   </Table>
   <Table Name="dbo.tutoria" Member="tutoria">
     <Type Name="tutoria">
-      <Column Name="idTutoria" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idTutoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fechaTutoria" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="horarioSesion" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
       <Column Name="numeroSesion" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idPeriodo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPeriodoEscolar" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="tutoria_fechaCierreReporte" Member="fechaCierreReporte" ThisKey="idTutoria" OtherKey="idTutoria" Type="fechaCierreReporte" />
       <Association Name="tutoria_reporteDeTutoria" Member="reporteDeTutoria" ThisKey="idTutoria" OtherKey="idTutoria" Type="reporteDeTutoria" />
-      <Association Name="periodoEscolar_tutoria" Member="periodoEscolar" ThisKey="idPeriodo" OtherKey="idPeriodo" Type="periodoEscolar" IsForeignKey="true" />
+      <Association Name="periodoEscolar_tutoria" Member="periodoEscolar" ThisKey="idPeriodoEscolar" OtherKey="idPeriodo" Type="periodoEscolar" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

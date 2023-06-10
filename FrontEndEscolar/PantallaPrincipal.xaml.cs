@@ -88,6 +88,7 @@ namespace FrontEndEscolar
         {
             RegistrarFechasSesion registrarFechasSesion = new RegistrarFechasSesion();
             registrarFechasSesion.recibirVentanaAnterior(this);
+            registrarFechasSesion.cargarPeriodosEscolares();
             this.IsEnabled = false;
             registrarFechasSesion.Show();
 

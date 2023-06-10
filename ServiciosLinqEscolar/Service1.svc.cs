@@ -63,11 +63,6 @@ namespace ServiciosLinqEscolar
             return AlumnoDAO.obtenerAlumnosPorTutor(idTutor);
         }
 
-        public bool RegistrarFechasSesionTutoria()
-        {
-            return UsuarioDAO.registrarFechasSesionTutoria();
-        }
-
         public List<periodoEscolar> ObtenerPeriodosEscolares()
         {
             return PeriodoEscolarDAO.obtenerPeriodosEscolares();
@@ -76,6 +71,11 @@ namespace ServiciosLinqEscolar
         public List<alumno> obtenerAlumnos()
         {
             return AlumnoDAO.obtenerAlumnos();
+        }
+
+        public bool RegistrarFechasSesionTutoria(string fechaSesion1, string fechaSesion2, string fechaSesion3, int idPeriodoEscolar)
+        {
+            return TutoriaDAO.registrarFechasSesionTutoria( fechaSesion1,  fechaSesion2, fechaSesion3,  idPeriodoEscolar);
         }
     }
 }

@@ -75,7 +75,8 @@ namespace ServiciosLinqEscolar.Modelo
                     apellidoPaterno = usuarioNuevo.apellidoPaterno,
                     apellidoMaterno = usuarioNuevo.apellidoMaterno,
                     username = usuarioNuevo.username,
-                    password = usuarioNuevo.password
+                    password = usuarioNuevo.password,
+                    rol = "Tutor academico" //agruegue esto, si explota se quita
                 };//Permite construir con las propiedades que mandes, independiente al numero de argumentos que tenga el constructor
                 conexionBD.usuario.InsertOnSubmit(usuario);
                 conexionBD.SubmitChanges();
@@ -173,24 +174,5 @@ namespace ServiciosLinqEscolar.Modelo
             }
         }
 
-        public static bool registrarFechasSesionTutoria()
-        {
-            try
-            {
-                DataClassesEscolarUVDataContext conexionBD = getConnection();
-                tutoria tutoria = new tutoria
-                {
-                    fechaTutoria = DateTime.Today,
-                    numeroSesion = 1
-                };           
-                conexionBD.tutoria.InsertOnSubmit(tutoria);
-                conexionBD.SubmitChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
     }
 }

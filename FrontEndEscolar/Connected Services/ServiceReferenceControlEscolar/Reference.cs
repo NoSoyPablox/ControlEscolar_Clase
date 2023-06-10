@@ -1180,9 +1180,7 @@ namespace ServiceReferenceControlEscolar
         
         private System.Nullable<System.DateTime> fechaTutoriaField;
         
-        private System.Nullable<System.TimeSpan> horarioSesionField;
-        
-        private System.Nullable<int> idPeriodoField;
+        private System.Nullable<int> idPeriodoEscolarField;
         
         private int idTutoriaField;
         
@@ -1219,28 +1217,15 @@ namespace ServiceReferenceControlEscolar
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.TimeSpan> horarioSesion
+        public System.Nullable<int> idPeriodoEscolar
         {
             get
             {
-                return this.horarioSesionField;
+                return this.idPeriodoEscolarField;
             }
             set
             {
-                this.horarioSesionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> idPeriodo
-        {
-            get
-            {
-                return this.idPeriodoField;
-            }
-            set
-            {
-                this.idPeriodoField = value;
+                this.idPeriodoEscolarField = value;
             }
         }
         
@@ -1706,8 +1691,14 @@ namespace ServiceReferenceControlEscolar
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantesPorTutor", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesPorTutorResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerEstudiantesPorTutorAsync(int idTutor);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerPeriodosEscolares", ReplyAction="http://tempuri.org/IService1/ObtenerPeriodosEscolaresResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.periodoEscolar[]> ObtenerPeriodosEscolaresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/obtenerAlumnos", ReplyAction="http://tempuri.org/IService1/obtenerAlumnosResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> obtenerAlumnosAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarFechasSesionTutoria", ReplyAction="http://tempuri.org/IService1/RegistrarFechasSesionTutoriaResponse")]
-        System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync();
+        System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync(string fechaSesion1, string fechaSesion2, string fechaSesion3, int idPeriodoEscolar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1800,9 +1791,19 @@ namespace ServiceReferenceControlEscolar
             return base.Channel.ObtenerEstudiantesPorTutorAsync(idTutor);
         }
         
-        public System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync()
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.periodoEscolar[]> ObtenerPeriodosEscolaresAsync()
         {
-            return base.Channel.RegistrarFechasSesionTutoriaAsync();
+            return base.Channel.ObtenerPeriodosEscolaresAsync();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> obtenerAlumnosAsync()
+        {
+            return base.Channel.obtenerAlumnosAsync();
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync(string fechaSesion1, string fechaSesion2, string fechaSesion3, int idPeriodoEscolar)
+        {
+            return base.Channel.RegistrarFechasSesionTutoriaAsync(fechaSesion1, fechaSesion2, fechaSesion3, idPeriodoEscolar);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

@@ -2423,7 +2423,7 @@ namespace ServiciosLinqEscolar.Modelo
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="periodoEscolar_tutoria", Storage="_tutoria", ThisKey="idPeriodo", OtherKey="idPeriodo")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="periodoEscolar_tutoria", Storage="_tutoria", ThisKey="idPeriodo", OtherKey="idPeriodoEscolar")]
 		public EntitySet<tutoria> tutoria
 		{
 			get
@@ -3046,11 +3046,9 @@ namespace ServiciosLinqEscolar.Modelo
 		
 		private System.Nullable<System.DateTime> _fechaTutoria;
 		
-		private System.Nullable<System.TimeSpan> _horarioSesion;
-		
 		private System.Nullable<int> _numeroSesion;
 		
-		private System.Nullable<int> _idPeriodo;
+		private System.Nullable<int> _idPeriodoEscolar;
 		
 		private EntitySet<fechaCierreReporte> _fechaCierreReporte;
 		
@@ -3066,12 +3064,10 @@ namespace ServiciosLinqEscolar.Modelo
     partial void OnidTutoriaChanged();
     partial void OnfechaTutoriaChanging(System.Nullable<System.DateTime> value);
     partial void OnfechaTutoriaChanged();
-    partial void OnhorarioSesionChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnhorarioSesionChanged();
     partial void OnnumeroSesionChanging(System.Nullable<int> value);
     partial void OnnumeroSesionChanged();
-    partial void OnidPeriodoChanging(System.Nullable<int> value);
-    partial void OnidPeriodoChanged();
+    partial void OnidPeriodoEscolarChanging(System.Nullable<int> value);
+    partial void OnidPeriodoEscolarChanged();
     #endregion
 		
 		public tutoria()
@@ -3082,7 +3078,7 @@ namespace ServiciosLinqEscolar.Modelo
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idTutoria", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idTutoria", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int idTutoria
 		{
 			get
@@ -3122,26 +3118,6 @@ namespace ServiciosLinqEscolar.Modelo
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_horarioSesion", DbType="Time")]
-		public System.Nullable<System.TimeSpan> horarioSesion
-		{
-			get
-			{
-				return this._horarioSesion;
-			}
-			set
-			{
-				if ((this._horarioSesion != value))
-				{
-					this.OnhorarioSesionChanging(value);
-					this.SendPropertyChanging();
-					this._horarioSesion = value;
-					this.SendPropertyChanged("horarioSesion");
-					this.OnhorarioSesionChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroSesion", DbType="Int")]
 		public System.Nullable<int> numeroSesion
 		{
@@ -3162,26 +3138,26 @@ namespace ServiciosLinqEscolar.Modelo
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPeriodo", DbType="Int")]
-		public System.Nullable<int> idPeriodo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPeriodoEscolar", DbType="Int")]
+		public System.Nullable<int> idPeriodoEscolar
 		{
 			get
 			{
-				return this._idPeriodo;
+				return this._idPeriodoEscolar;
 			}
 			set
 			{
-				if ((this._idPeriodo != value))
+				if ((this._idPeriodoEscolar != value))
 				{
 					if (this._periodoEscolar.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnidPeriodoChanging(value);
+					this.OnidPeriodoEscolarChanging(value);
 					this.SendPropertyChanging();
-					this._idPeriodo = value;
-					this.SendPropertyChanged("idPeriodo");
-					this.OnidPeriodoChanged();
+					this._idPeriodoEscolar = value;
+					this.SendPropertyChanged("idPeriodoEscolar");
+					this.OnidPeriodoEscolarChanged();
 				}
 			}
 		}
@@ -3212,7 +3188,7 @@ namespace ServiciosLinqEscolar.Modelo
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="periodoEscolar_tutoria", Storage="_periodoEscolar", ThisKey="idPeriodo", OtherKey="idPeriodo", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="periodoEscolar_tutoria", Storage="_periodoEscolar", ThisKey="idPeriodoEscolar", OtherKey="idPeriodo", IsForeignKey=true)]
 		public periodoEscolar periodoEscolar
 		{
 			get
@@ -3235,11 +3211,11 @@ namespace ServiciosLinqEscolar.Modelo
 					if ((value != null))
 					{
 						value.tutoria.Add(this);
-						this._idPeriodo = value.idPeriodo;
+						this._idPeriodoEscolar = value.idPeriodo;
 					}
 					else
 					{
-						this._idPeriodo = default(Nullable<int>);
+						this._idPeriodoEscolar = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("periodoEscolar");
 				}
