@@ -60,5 +60,78 @@ namespace ServiciosLinqEscolar.Modelo
                 return false;
             }
         }
+
+        public static List<tutoria> obtenerTutoriasPorPeriodoEscolar(int idPeriodo)
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                IQueryable<tutoria> tutorias = from tutoriaQuery in conexionBD.tutoria
+                                               where tutoriaQuery.idPeriodoEscolar == idPeriodo
+                                               select tutoriaQuery;
+                List<tutoria> tutoriasObtenidas = new List<tutoria>();
+                foreach (tutoria tutoriaObtenida in tutorias)
+                {
+                    var tutoria1= new tutoria()
+                    {
+                        idTutoria = tutoriaObtenida.idTutoria,
+                        fechaTutoria = tutoriaObtenida.fechaTutoria,
+                        idPeriodoEscolar = tutoriaObtenida.idPeriodoEscolar,
+                        numeroSesion = tutoriaObtenida.numeroSesion
+                    };
+                    tutoriasObtenidas.Add(tutoria1);
+                }
+                return tutoriasObtenidas;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public static bool registrarFechaCierreATutoriasPeriodoEscolar(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3, string fechaCierre3)
+        {
+            DataClassesEscolarUVDataContext conexionBD = getConnection();
+            try
+            {
+                var fechaCierreObtenida = (from tutoriaQuery in conexionBD.fechaCierreReporte
+                                    where tutoriaQuery.idTutoria == idTutoria1
+                                    select tutoriaQuery).FirstOrDefault();
+                if (fechaCierreObtenida != null)
+                {
+                    return false;
+                }
+                else
+                {
+                    var fechaCierre1BD = new fechaCierreReporte()
+                    {
+                        fechaInicio = DateTime.Parse(fechaInicio1),
+                        fechaLimite = DateTime.Parse(fechaCierre1),
+                        idTutoria = idTutoria1
+                    };
+                    var fechaCierre2BD = new fechaCierreReporte()
+                    {
+                        fechaInicio = DateTime.Parse(fechaInicio2),
+                        fechaLimite = DateTime.Parse(fechaCierre2),
+                        idTutoria = idTutoria2
+                    };
+                    var fechaCierre3BD = new fechaCierreReporte()
+                    {
+                        fechaInicio = DateTime.Parse(fechaInicio3),
+                        fechaLimite = DateTime.Parse(fechaCierre3),
+                        idTutoria = idTutoria3
+                    };
+                    conexionBD.fechaCierreReporte.InsertOnSubmit(fechaCierre1BD);
+                    conexionBD.fechaCierreReporte.InsertOnSubmit(fechaCierre2BD);
+                    conexionBD.fechaCierreReporte.InsertOnSubmit(fechaCierre3BD);
+                    conexionBD.SubmitChanges();
+                    return true;
+                }
+            }catch(Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

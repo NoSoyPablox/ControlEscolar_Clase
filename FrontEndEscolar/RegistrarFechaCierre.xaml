@@ -15,13 +15,21 @@
         <DatePicker x:Name="dpFechaLimite1" HorizontalAlignment="Left" Margin="109,181,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dpFechaLimite2" HorizontalAlignment="Center" Margin="0,181,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dpFechaLimite3" HorizontalAlignment="Left" Margin="530,181,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="348,286,0,0" VerticalAlignment="Top" Height="37" Width="88"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="348,286,0,0" VerticalAlignment="Top" Height="37" Width="88" Click="btnGuardar_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="360,355,0,0" VerticalAlignment="Top" Height="26" Width="64" Click="btnVolver_Click"/>
-        <ComboBox HorizontalAlignment="Left" Margin="653,88,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbPeriodoEscolar" HorizontalAlignment="Left" Margin="653,88,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbPeriodoEscolar_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding nombre}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Label Content="Periodo escolar" HorizontalAlignment="Left" Margin="540,86,0,0" VerticalAlignment="Top"/>
-        <Label Content="Aqui va la fecha1 recuperada" HorizontalAlignment="Left" Margin="100,157,0,0" VerticalAlignment="Top"/>
-        <Label Content="Aqui va la fecha2 recuperada" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top"/>
-        <Label Content="Aqui va la fecha3 recuperada" HorizontalAlignment="Left" Margin="521,155,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbTutoria1" Content="Aqui va la fecha1 recuperada" HorizontalAlignment="Left" Margin="100,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbTutoria2" Content="Aqui va la fecha2 recuperada" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbTutoria3" Content="Aqui va la fecha3 recuperada" HorizontalAlignment="Left" Margin="521,155,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

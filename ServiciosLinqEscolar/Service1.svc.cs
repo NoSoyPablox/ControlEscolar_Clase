@@ -86,5 +86,15 @@ namespace ServiciosLinqEscolar
         {
             return AlumnoDAO.asignarTutorAlumno(idAlumno, idTutor);
         }
+
+        public List<tutoria> ObtenerTutoriasPorPeriodoEscolar(int idPeriodoEscolar)
+        {
+            return TutoriaDAO.obtenerTutoriasPorPeriodoEscolar(idPeriodoEscolar);
+        }
+
+        public bool RegistrarFechaCierreATutoriasPeriodoEscolar(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3, string fechaCierre3)
+        {
+            return TutoriaDAO.registrarFechaCierreATutoriasPeriodoEscolar(idTutoria1, fechaInicio1 ,fechaCierre1, idTutoria2, fechaInicio2 ,fechaCierre2, idTutoria3, fechaInicio3 ,fechaCierre3);
+        }
     }
 }

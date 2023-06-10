@@ -55,6 +55,7 @@ namespace FrontEndEscolar
                     btnConsultarReportePorTutor.Visibility = Visibility.Visible;
                     btnRegistrarFechaSesion.Visibility = Visibility.Visible;
                     btnAsignarTutorEstudiante.Visibility = Visibility.Visible;
+                    btnRegistrarFechasCierre.Visibility = Visibility.Visible;
                     break;
                 case "Jefe de carrera":
                     btnRegistrarSolucion.Visibility = Visibility.Visible;
@@ -110,6 +111,15 @@ namespace FrontEndEscolar
             asignarTutorAEstudiante.recibirVentanaAnterior(this);
             this.IsEnabled = false;
             asignarTutorAEstudiante.Show();
+        }
+
+        private void btnRegistrarFechasCierre_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarFechaCierre registrarFechaCierre = new RegistrarFechaCierre();
+            registrarFechaCierre.recibirVentanaAnterior(this);
+            registrarFechaCierre.mostrarPeriodos();
+            this.IsEnabled = false;
+            registrarFechaCierre.Show();
         }
     }
 }

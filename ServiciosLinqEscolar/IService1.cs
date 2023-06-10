@@ -54,6 +54,11 @@ namespace ServiciosLinqEscolar
         [OperationContract]
         bool AsignarTutorAlumno(int idAlumno, int idTutor);
 
+        [OperationContract]
+        List<tutoria> ObtenerTutoriasPorPeriodoEscolar(int idPeriodoEscolar);
+
+        [OperationContract]
+        bool RegistrarFechaCierreATutoriasPeriodoEscolar(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3 ,string fechaCierre3);
         // TODO: agregue aquí sus operaciones de servicio
     }
 
