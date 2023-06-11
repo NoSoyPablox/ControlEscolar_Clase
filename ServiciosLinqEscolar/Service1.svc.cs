@@ -125,5 +125,10 @@ namespace ServiciosLinqEscolar
         {
             return ProblematicaAcademicaDAO.registrarProblematicasAcademicas(listaProblematicas, idReporte);
         }
+
+        public List<reporteDeTutoria> ObtenerReportesPorTutor(int idTutor)
+        {
+            return ReporteDeTutoriaDAO.obtenerReportesPorTutor(idTutor);
+        }
     }
 }

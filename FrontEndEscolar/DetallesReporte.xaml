@@ -1,0 +1,21 @@
+﻿<Window x:Class="FrontEndEscolar.DetallesReporte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        Title="DetallesReporte" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgAsistentes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="36,46,307,264"/>
+        <DataGrid x:Name="dgNoAsistentes" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="36,209,307,101"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="627,177,0,0" VerticalAlignment="Top" Height="35" Width="88" Click="btnVolver_Click"/>
+        <Label Content="Alumnos que asistieron" HorizontalAlignment="Left" Margin="36,19,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Alumnos que no asistieron" HorizontalAlignment="Left" Margin="36,182,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="tbComentariosGenerales" HorizontalAlignment="Left" Margin="36,359,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="522" Height="56"/>
+        <Label Content="Fecha: " HorizontalAlignment="Left" Margin="612,19,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbFecha" Content="ej: 27/05/2023" HorizontalAlignment="Left" Margin="672,19,0,0" VerticalAlignment="Top"/>
+        <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="36,333,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

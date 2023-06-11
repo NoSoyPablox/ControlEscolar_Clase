@@ -121,5 +121,13 @@ namespace FrontEndEscolar
             this.IsEnabled = false;
             registrarFechaCierre.Show();
         }
+
+        private void btnConsultarReportePorTutor_Click(object sender, RoutedEventArgs e)
+        {
+            ConsultarReportePorTutor consultarReportePorTutor = new ConsultarReportePorTutor();
+            consultarReportePorTutor.recibirVentanaAnterior(this);
+            this.IsEnabled = false;
+            consultarReportePorTutor.Show();
+        }
     }
 }

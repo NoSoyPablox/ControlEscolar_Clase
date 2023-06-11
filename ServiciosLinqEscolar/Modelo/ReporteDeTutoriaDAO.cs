@@ -78,5 +78,33 @@ namespace ServiciosLinqEscolar.Modelo
             }
         }
 
+        public static List<reporteDeTutoria> obtenerReportesPorTutor(int idTutor)
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                var reportesDeTutoria = (from reporteDeTutoriaQuery in conexionBD.reporteDeTutoria
+                                         where reporteDeTutoriaQuery.idTutor == idTutor
+                                         select reporteDeTutoriaQuery);
+                List<reporteDeTutoria> reportesDeTutoria2 = new List<reporteDeTutoria>();
+                foreach (reporteDeTutoria reporte in reportesDeTutoria)
+                {
+                    var reporteDeTutoria3 = new reporteDeTutoria()
+                    {
+                        idReporte = reporte.idReporte,
+                        fecha = reporte.fecha,
+                        comentariosGenerales = reporte.comentariosGenerales,
+                        numeroSesion = reporte.numeroSesion,
+                        idTutor = reporte.idTutor,
+                        idTutoria = reporte.idTutoria
+                    };
+                    reportesDeTutoria2.Add(reporteDeTutoria3);
+                }
+                return reportesDeTutoria2;
+            }catch(Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

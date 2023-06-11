@@ -78,6 +78,8 @@ namespace ServiciosLinqEscolar
         [OperationContract]
         bool RegistrarProblematicasAcademicas(List<problematicaAcademica> listaProblematicas, int idReporte);
 
+        [OperationContract]
+        List<reporteDeTutoria> ObtenerReportesPorTutor(int idTutor);
         // TODO: agregue aquí sus operaciones de servicio
     }
 
