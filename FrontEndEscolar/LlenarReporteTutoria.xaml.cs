@@ -136,6 +136,7 @@ namespace FrontEndEscolar
 
         private async void registrarProblematicas(int idReporte)
         {
+            MessageBox.Show("El id del reporte en el que se asignaran es " + idReporte);
             Service1Client servicio = new Service1Client();
             int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
             reporteDeTutoria reporteCreado = await servicio.ObtenerReporteCreadoAsync(idTutoria, usuarioSesion.idUsuario);

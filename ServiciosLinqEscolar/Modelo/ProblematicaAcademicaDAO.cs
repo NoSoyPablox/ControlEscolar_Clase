@@ -31,7 +31,7 @@ namespace ServiciosLinqEscolar.Modelo
                         categoria = problematica.categoria,
                         idReporteTutoria = idReporteRecibido
                     };
-                    conexionBD.problematicaAcademica.InsertOnSubmit(problematica);
+                    conexionBD.problematicaAcademica.InsertOnSubmit(problematica2);
                 }
                 conexionBD.SubmitChanges();
                 return true;
