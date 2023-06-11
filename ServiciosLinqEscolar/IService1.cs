@@ -67,13 +67,17 @@ namespace ServiciosLinqEscolar
         bool VerificarRegistroReportePorTutoria(int idTutoria, int idTutor);
 
         [OperationContract]
-        bool RegistarListaAsistenciaAReporte(int idReporte, alumno[] alumnosAsistencia);
+        bool RegistarListaAsistenciaAReporte(int idReporte, List<int> idAsistentes, List<int> idNoAsistentes);
 
         [OperationContract]
         bool RegistrarReporteTutoria(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria);
 
         [OperationContract]
         reporteDeTutoria ObtenerReporteCreado(int idTutoria, int idTutor);
+
+        [OperationContract]
+        bool RegistrarProblematicasAcademicas(List<problematicaAcademica> listaProblematicas, int idReporte);
+
         // TODO: agregue aquí sus operaciones de servicio
     }
 

@@ -1719,7 +1719,16 @@ namespace ServiceReferenceControlEscolar
         System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria, int idTutor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarListaAsistenciaAReporte", ReplyAction="http://tempuri.org/IService1/RegistarListaAsistenciaAReporteResponse")]
-        System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, ServiceReferenceControlEscolar.alumno[] alumnosAsistencia);
+        System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, int[] idAsistentes, int[] idNoAsistentes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarReporteTutoria", ReplyAction="http://tempuri.org/IService1/RegistrarReporteTutoriaResponse")]
+        System.Threading.Tasks.Task<bool> RegistrarReporteTutoriaAsync(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerReporteCreado", ReplyAction="http://tempuri.org/IService1/ObtenerReporteCreadoResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria> ObtenerReporteCreadoAsync(int idTutoria, int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarProblematicasAcademicas", ReplyAction="http://tempuri.org/IService1/RegistrarProblematicasAcademicasResponse")]
+        System.Threading.Tasks.Task<bool> RegistrarProblematicasAcademicasAsync(ServiceReferenceControlEscolar.problematicaAcademica[] listaProblematicas, int idReporte);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1857,9 +1866,24 @@ namespace ServiceReferenceControlEscolar
             return base.Channel.VerificarRegistroReportePorTutoriaAsync(idTutoria, idTutor);
         }
         
-        public System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, ServiceReferenceControlEscolar.alumno[] alumnosAsistencia)
+        public System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, int[] idAsistentes, int[] idNoAsistentes)
         {
-            return base.Channel.RegistarListaAsistenciaAReporteAsync(idReporte, alumnosAsistencia);
+            return base.Channel.RegistarListaAsistenciaAReporteAsync(idReporte, idAsistentes, idNoAsistentes);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarReporteTutoriaAsync(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria)
+        {
+            return base.Channel.RegistrarReporteTutoriaAsync(comentariosGenerales, numeroSesion, idTutor, idTutoria);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria> ObtenerReporteCreadoAsync(int idTutoria, int idTutor)
+        {
+            return base.Channel.ObtenerReporteCreadoAsync(idTutoria, idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarProblematicasAcademicasAsync(ServiceReferenceControlEscolar.problematicaAcademica[] listaProblematicas, int idReporte)
+        {
+            return base.Channel.RegistrarProblematicasAcademicasAsync(listaProblematicas, idReporte);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

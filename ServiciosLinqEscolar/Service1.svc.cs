@@ -107,9 +107,9 @@ namespace ServiciosLinqEscolar
             return ReporteDeTutoriaDAO.verificarRegistroPorReporteDeTutoria(idTutoria, idTutor);
         }
 
-        public bool RegistarListaAsistenciaAReporte(int idReporte, alumno[] alumnosAsistencia)
+        public bool RegistarListaAsistenciaAReporte(int idReporte, List<int> idAsistentes, List<int> idNoAsistentes)
         {
-            return ListaAsistenciaDAO.registrarListaAsistenciaAReporte(idReporte, alumnosAsistencia);
+            return ListaAsistenciaDAO.registrarListaAsistenciaAReporte(idReporte, idAsistentes, idNoAsistentes);
         }
 
         public bool RegistrarReporteTutoria(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria)
@@ -120,6 +120,10 @@ namespace ServiciosLinqEscolar
         public reporteDeTutoria ObtenerReporteCreado(int idTutoria, int idTutor)
         {
             return ReporteDeTutoriaDAO.obtenerReporteCreado(idTutoria, idTutor);
+        }
+        public bool RegistrarProblematicasAcademicas(List<problematicaAcademica> listaProblematicas, int idReporte)
+        {
+            return ProblematicaAcademicaDAO.registrarProblematicasAcademicas(listaProblematicas, idReporte);
         }
     }
 }

@@ -8,7 +8,7 @@
         Title="LlenarReporteTutoria" Height="450" Width="800">
     <Grid>
         <Label Content="Tutorados" HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <DataGrid x:Name="dgEstudiantes" AutoGenerateColumns="False" Margin="45,82,222,131">
+        <DataGrid x:Name="dgEstudiantes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="45,82,222,131">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn x:Name="asistio" Header="Asistió"  Binding="{Binding isSelected}" Width="100"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>

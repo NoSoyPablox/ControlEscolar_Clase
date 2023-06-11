@@ -14,18 +14,29 @@ namespace ServiciosLinqEscolar.Modelo
 
         }
 
-        public static bool registrarListaAsistenciaAReporte(int idReporteRecibido, alumno[] alumnosAsistenciaRecibidos)
+        public static bool registrarListaAsistenciaAReporte(int idReporteRecibido, List<int> idAsistentes, List<int> idNoAsistentes)
         {
             try
             {
-                for (int i = 0; i < alumnosAsistenciaRecibidos.Length; i++)
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                foreach (var alumno1 in idAsistentes)
                 {
-                    DataClassesEscolarUVDataContext conexionBD = getConnection();
                     var listaAsistencia = new listaAsistencia()
                     {
                         idReporteTutoria = idReporteRecibido,
-                        idEstudiante = alumnosAsistenciaRecibidos[i].idAlumno,
+                        idEstudiante = alumno1,
                         asistencia = true
+                    };
+                    conexionBD.listaAsistencia.InsertOnSubmit(listaAsistencia);
+                    conexionBD.SubmitChanges();
+                }
+                foreach (var alumno2 in idNoAsistentes)
+                {
+                    var listaAsistencia = new listaAsistencia()
+                    {
+                        idReporteTutoria = idReporteRecibido,
+                        idEstudiante = alumno2,
+                        asistencia = false
                     };
                     conexionBD.listaAsistencia.InsertOnSubmit(listaAsistencia);
                     conexionBD.SubmitChanges();

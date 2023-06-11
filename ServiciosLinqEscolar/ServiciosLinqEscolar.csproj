@@ -70,6 +70,7 @@
     <Compile Include="Modelo\AlumnoDAO.cs" />
     <Compile Include="Modelo\ListaAsistenciaDAO.cs" />
     <Compile Include="Modelo\PeriodoEscolarDAO.cs" />
+    <Compile Include="Modelo\ProblematicaAcademicaDAO.cs" />
     <Compile Include="Modelo\ReporteDeTutoriaDAO.cs" />
     <Compile Include="Modelo\TutoriaDAO.cs" />
     <Compile Include="Modelo\UsuarioDAO.cs" />

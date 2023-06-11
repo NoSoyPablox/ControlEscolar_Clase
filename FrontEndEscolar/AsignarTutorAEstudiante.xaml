@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="btnAsignarTutor" Content="Asignar tutor" HorizontalAlignment="Left" Margin="662,178,0,0" VerticalAlignment="Top" Height="39" Width="112" Click="btnAsignarTutor_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="679,237,0,0" VerticalAlignment="Top" Height="29" Width="78" Click="btnVolver_Click"/>
-        <DataGrid x:Name="dgAlumnos" AutoGenerateColumns="False"  Margin="38,72,160,111">
+        <DataGrid x:Name="dgAlumnos" AutoGenerateColumns="False" CanUserAddRows="False" Margin="38,72,160,111">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Apellido paterno" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>

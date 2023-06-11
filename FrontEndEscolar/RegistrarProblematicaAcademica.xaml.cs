@@ -41,7 +41,7 @@ namespace FrontEndEscolar
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            if (tbTitulo.Text == "" || tbDescripcion.Text == "" || tbNumeroIncidencias.Text == "")
+            if (tbTitulo.Text == "" || tbDescripcion.Text == "" || tbNumeroIncidencias.Text == "" || cbCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Favor de llenar todos los campos");
             }
@@ -72,7 +72,8 @@ namespace FrontEndEscolar
                 {
                     titulo = tbTitulo.Text,
                     descripcion = tbDescripcion.Text,
-                    numAlumnos = Convert.ToInt32(tbNumeroIncidencias.Text)
+                    numAlumnos = Convert.ToInt32(tbNumeroIncidencias.Text),
+                    categoria = cbCategoria.Text
                 };
                 ventanaAnterior.añadirProblematica(problematicaAcademica);
                 MessageBox.Show("Problematica academica registrada");

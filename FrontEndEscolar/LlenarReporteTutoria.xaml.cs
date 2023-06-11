@@ -57,8 +57,7 @@ namespace FrontEndEscolar
             }
             else
             {
-                guardarAsistencia();
-                
+                registradaAntes();
             }
         }
 
@@ -99,30 +98,54 @@ namespace FrontEndEscolar
         }
 
 
-        private void guardarAsistencia()
+        private async void registrarAsistencia()
         {
             tutoria tutoriaSeleccionada = cbTutorias.SelectedItem as tutoria;
-            int contadorAsistentes = 0;
-            //contar cuantos alumnos tienen la casilla asistio seleccionada
-            foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
-            {
-                if (alumno.isSelected == true)
-                {
-                    contadorAsistentes++;
-                }
-            }
+
             //Arreglo de enteros que guarde los id de los alumnos que asistieron
-            int[] idAlumnosAsistentes = new int[contadorAsistentes];
-            int contador = 0;
+            List<int> idAsistentes = new List<int>();
+            List<int> idNoAsistentes = new List<int>();
+
             foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
             {
                 if (alumno.isSelected == true)
                 {
-                    idAlumnosAsistentes[contador] = alumno.idAlumno;
-                    contador++;
+                    idAsistentes.Add(alumno.idAlumno);
+                }else
+                {
+                    idNoAsistentes.Add(alumno.idAlumno);
                 }
             }
-            MessageBox.Show("Se guardo la asistencia de " + contadorAsistentes + " alumnos");
+            MessageBox.Show("Se guardo la asistencia de " + idAsistentes.Count + " alumnos");
+            Service1Client servicio = new Service1Client();
+            //int que obtenga el id de la tutoria seleccionada
+            int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
+            reporteDeTutoria reporteCreado = await servicio.ObtenerReporteCreadoAsync(idTutoria, usuarioSesion.idUsuario);
+            bool registrarTutorias = await servicio.RegistarListaAsistenciaAReporteAsync(reporteCreado.idReporte, idAsistentes.ToArray(), idNoAsistentes.ToArray());
+            if (registrarTutorias == true)
+            {
+                MessageBox.Show("Se registro la asistencia de los alumnos");
+                registrarProblematicas(reporteCreado.idReporte);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo registrar la asistencia de los alumnos");
+            }
+
+        }
+
+        private async void registrarProblematicas(int idReporte)
+        {
+            Service1Client servicio = new Service1Client();
+            bool registrarTutorias = await servicio.RegistrarProblematicasAcademicasAsync(problematicaAcademicas.ToArray(), idReporte);
+            if (registrarTutorias == true)
+            {
+                MessageBox.Show("Se registraron las problematicas academicas");
+            }
+            else
+            {
+                MessageBox.Show("No se pudieron registrar las problematicas academicas");
+            }
         }
 
         private async void registradaAntes()
@@ -130,17 +153,26 @@ namespace FrontEndEscolar
 
             Service1Client servicio = new Service1Client();
             int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
-            registradoAntes = await servicio.VerificarRegistroReportePorTutoriaAsync(usuarioSesion.idUsuario, idTutoria);
+            registradoAntes = await servicio.VerificarRegistroReportePorTutoriaAsync(idTutoria, usuarioSesion.idUsuario);
 
             if (registradoAntes == true)
             {
                 MessageBox.Show("Ya se ha registrado un reporte de tutoria para esta tutoria");
                 registradoAntes = true;
-
             }
             else
             {
+                bool estaVigente = await servicio.VerificarFechaCierreVigenteAsync(idTutoria);
+                if (estaVigente == true)
+                {
+                    MessageBox.Show("La fecha de cierre de este reporte de tutoria esta vigente");
+                    registrarReporteTutoria();
 
+                }
+                else
+                {
+                    MessageBox.Show("La fecha actual esta fuera del periodo de entrega de esta sesion de tutoria");
+                }
             }
         }
 
@@ -154,19 +186,22 @@ namespace FrontEndEscolar
             problematicaAcademicas.Add(problematica);
         }
 
-        /*private async void registrarReporteTutoria()
+        private async void registrarReporteTutoria()
         {
             Service1Client servicio = new Service1Client();
-            int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
-            bool registrado = await servicio.RegistrarReporteTutoriaAsync(usuarioSesion.idUsuario, idTutoria);
+            tutoria tutoriaSeleccionada = cbTutorias.SelectedItem as tutoria;
+            int numeroSesion = (int)tutoriaSeleccionada.numeroSesion;
+            int idTutoria = (int)tutoriaSeleccionada.idTutoria;
+            bool registrado = await servicio.RegistrarReporteTutoriaAsync(tbComentariosGenerales.Text,numeroSesion, usuarioSesion.idUsuario, idTutoria);
             if (registrado == true)
             {
                 MessageBox.Show("Se ha registrado el reporte de tutoria");
+                registrarAsistencia();
             }
             else
             {
                 MessageBox.Show("No se ha podido registrar el reporte de tutoria");
             }
-        }*/
+        }
     }
 }
