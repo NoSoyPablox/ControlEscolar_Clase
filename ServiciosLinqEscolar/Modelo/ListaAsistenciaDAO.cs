@@ -48,5 +48,69 @@ namespace ServiciosLinqEscolar.Modelo
                 return false;
             }
         }
+
+        public static List<alumno> obtenerAsistentesPorReporte(int idReporte)
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                var asistentes = (from listaAsistencia in conexionBD.listaAsistencia
+                                  join alumno in conexionBD.alumno on listaAsistencia.idEstudiante equals alumno.idAlumno
+                                  where listaAsistencia.idReporteTutoria == idReporte && listaAsistencia.asistencia == true
+                                  select alumno).ToList();
+                List<alumno> alumnosAsistentes = new List<alumno>();
+                foreach (var alumno in asistentes)
+                {
+                    var alumno2 = new alumno()
+                    {
+                        idAlumno = alumno.idAlumno,
+                        nombre = alumno.nombre,
+                        apellidoPaterno = alumno.apellidoPaterno,
+                        apellidoMaterno = alumno.apellidoMaterno,
+                        matricula = alumno.matricula,
+                        idTutor = alumno.idTutor
+                    };
+                    alumnosAsistentes.Add(alumno2);
+                }
+                return alumnosAsistentes;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public static List<alumno> obtenerNoAsistentesPorReporte(int idReporte)
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                var asistentes = (from listaAsistencia in conexionBD.listaAsistencia
+                                  join alumno in conexionBD.alumno on listaAsistencia.idEstudiante equals alumno.idAlumno
+                                  where listaAsistencia.idReporteTutoria == idReporte && listaAsistencia.asistencia == false
+                                  select alumno).ToList();
+                List<alumno> alumnosNoAsistentes= new List<alumno>();
+                foreach (var alumno in asistentes)
+                {
+                    var alumno2 = new alumno()
+                    {
+                        idAlumno = alumno.idAlumno,
+                        nombre = alumno.nombre,
+                        apellidoPaterno = alumno.apellidoPaterno,
+                        apellidoMaterno = alumno.apellidoMaterno,
+                        matricula = alumno.matricula,
+                        idTutor = alumno.idTutor
+                    };
+                    alumnosNoAsistentes.Add(alumno2);
+                }
+                return alumnosNoAsistentes;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
     }
 }

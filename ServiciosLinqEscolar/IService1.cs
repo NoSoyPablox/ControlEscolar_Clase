@@ -81,6 +81,12 @@ namespace ServiciosLinqEscolar
         [OperationContract]
         List<reporteDeTutoria> ObtenerReportesPorTutor(int idTutor);
         // TODO: agregue aquí sus operaciones de servicio
+
+        [OperationContract]
+        List<alumno> ObtenerAsistentesPorReporte(int idReporte);
+
+        [OperationContract]
+        List<alumno> ObtenerNoAsistentesPorReporte(int idReporte);
     }
 
 

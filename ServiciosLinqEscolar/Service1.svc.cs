@@ -130,5 +130,15 @@ namespace ServiciosLinqEscolar
         {
             return ReporteDeTutoriaDAO.obtenerReportesPorTutor(idTutor);
         }
+
+        public List<alumno> ObtenerAsistentesPorReporte(int idReporte)
+        {
+            return ListaAsistenciaDAO.obtenerAsistentesPorReporte(idReporte);
+        }
+
+        public List<alumno> ObtenerNoAsistentesPorReporte(int idReporte)
+        {
+            return ListaAsistenciaDAO.obtenerNoAsistentesPorReporte(idReporte);
+        }
     }
 }
