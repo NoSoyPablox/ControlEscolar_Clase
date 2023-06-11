@@ -116,6 +116,7 @@
       <Column Name="fechaRegistro" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="categoria" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="idReporteTutoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="problematicaAcademica_solucionProblematica" Member="solucionProblematica" ThisKey="idProblematica" OtherKey="idProblematica" Type="solucionProblematica" />
       <Association Name="reporteDeTutoria_problematicaAcademica" Member="reporteDeTutoria" ThisKey="idReporteTutoria" OtherKey="idReporte" Type="reporteDeTutoria" IsForeignKey="true" />
     </Type>
   </Table>
@@ -142,6 +143,15 @@
       <Association Name="tutoria_fechaCierreReporte" Member="fechaCierreReporte" ThisKey="idTutoria" OtherKey="idTutoria" Type="fechaCierreReporte" />
       <Association Name="tutoria_reporteDeTutoria" Member="reporteDeTutoria" ThisKey="idTutoria" OtherKey="idTutoria" Type="reporteDeTutoria" />
       <Association Name="periodoEscolar_tutoria" Member="periodoEscolar" ThisKey="idPeriodoEscolar" OtherKey="idPeriodo" Type="periodoEscolar" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.solucionProblematica" Member="solucionProblematica">
+    <Type Name="solucionProblematica">
+      <Column Name="idSolucion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idProblematica" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="problematicaAcademica_solucionProblematica" Member="problematicaAcademica" ThisKey="idProblematica" OtherKey="idProblematica" Type="problematicaAcademica" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

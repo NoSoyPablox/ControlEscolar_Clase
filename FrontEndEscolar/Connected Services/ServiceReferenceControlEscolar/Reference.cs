@@ -1302,6 +1302,8 @@ namespace ServiceReferenceControlEscolar
         
         private ServiceReferenceControlEscolar.reporteDeTutoria reporteDeTutoriaField;
         
+        private ServiceReferenceControlEscolar.solucionProblematica[] solucionProblematicaField;
+        
         private string tituloField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -1396,6 +1398,19 @@ namespace ServiceReferenceControlEscolar
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.solucionProblematica[] solucionProblematica
+        {
+            get
+            {
+                return this.solucionProblematicaField;
+            }
+            set
+            {
+                this.solucionProblematicaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string titulo
         {
             get
@@ -1405,6 +1420,88 @@ namespace ServiceReferenceControlEscolar
             set
             {
                 this.tituloField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="solucionProblematica", Namespace="http://schemas.datacontract.org/2004/07/ServiciosLinqEscolar.Modelo")]
+    public partial class solucionProblematica : object
+    {
+        
+        private string descripcionField;
+        
+        private System.Nullable<System.DateTime> fechaRegistroField;
+        
+        private System.Nullable<int> idProblematicaField;
+        
+        private int idSolucionField;
+        
+        private ServiceReferenceControlEscolar.problematicaAcademica problematicaAcademicaField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string descripcion
+        {
+            get
+            {
+                return this.descripcionField;
+            }
+            set
+            {
+                this.descripcionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> fechaRegistro
+        {
+            get
+            {
+                return this.fechaRegistroField;
+            }
+            set
+            {
+                this.fechaRegistroField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> idProblematica
+        {
+            get
+            {
+                return this.idProblematicaField;
+            }
+            set
+            {
+                this.idProblematicaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idSolucion
+        {
+            get
+            {
+                return this.idSolucionField;
+            }
+            set
+            {
+                this.idSolucionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.problematicaAcademica problematicaAcademica
+        {
+            get
+            {
+                return this.problematicaAcademicaField;
+            }
+            set
+            {
+                this.problematicaAcademicaField = value;
             }
         }
     }
@@ -1738,6 +1835,9 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerNoAsistentesPorReporte", ReplyAction="http://tempuri.org/IService1/ObtenerNoAsistentesPorReporteResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerNoAsistentesPorReporteAsync(int idReporte);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicasSinSolucion", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasSinSolucionResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasSinSolucionAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1908,6 +2008,11 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerNoAsistentesPorReporteAsync(int idReporte)
         {
             return base.Channel.ObtenerNoAsistentesPorReporteAsync(idReporte);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasSinSolucionAsync()
+        {
+            return base.Channel.ObtenerProblematicasSinSolucionAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

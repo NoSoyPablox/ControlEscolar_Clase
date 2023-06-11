@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="Apellido materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="dgNoAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,204,307,106">
+        <DataGrid x:Name="dgNoAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,198,307,112">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Matricula" Binding="{Binding matricula}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
@@ -25,11 +25,11 @@
         </DataGrid>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="627,177,0,0" VerticalAlignment="Top" Height="35" Width="88" Click="btnVolver_Click"/>
         <Label Content="Alumnos que asistieron" HorizontalAlignment="Left" Margin="36,14,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Alumnos que no asistieron" HorizontalAlignment="Left" Margin="36,177,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="tbComentariosGenerales" HorizontalAlignment="Left" Margin="36,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="522" Height="56" IsReadOnly="True"/>
-        <Label Content="Fecha: " HorizontalAlignment="Left" Margin="612,19,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbFecha" Content="ej: 27/05/2023" HorizontalAlignment="Left" Margin="672,19,0,0" VerticalAlignment="Top"/>
-        <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="36,325,0,0" VerticalAlignment="Top"/>
+        <Label Content="Alumnos que no asistieron" HorizontalAlignment="Left" Margin="36,171,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="tbComentariosGenerales" HorizontalAlignment="Left" Margin="36,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="522" Height="56" IsReadOnly="True"/>
+        <Label Content="Fecha: de registro del reporte " HorizontalAlignment="Left" Margin="501,19,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbFecha" Content="ej: 27/05/2023" HorizontalAlignment="Left" Margin="678,19,0,0" VerticalAlignment="Top"/>
+        <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="36,319,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -87,6 +87,12 @@ namespace ServiciosLinqEscolar
 
         [OperationContract]
         List<alumno> ObtenerNoAsistentesPorReporte(int idReporte);
+
+        [OperationContract]
+        List<problematicaAcademica> ObtenerProblematicasSinSolucion();
+
+        [OperationContract]
+        bool registrarSolucionAProblematica(solucionProblematica solucionProblematica1 ,int idProblematica);
     }
 
 

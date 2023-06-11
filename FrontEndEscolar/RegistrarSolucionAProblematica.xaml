@@ -7,10 +7,17 @@
         mc:Ignorable="d"
         Title="RegistrarSolucionAProblematica" Height="450" Width="800">
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="34,80,237,134"/>
-        <Label Content="Problematicas sin soluciones" HorizontalAlignment="Left" Margin="34,32,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <Button Content="Registrar solución" HorizontalAlignment="Left" Margin="622,108,0,0" VerticalAlignment="Top" Height="34" Width="107"/>
-        <Button Content="Volver" HorizontalAlignment="Left" Margin="642,163,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+        <DataGrid x:Name="dgProblematicasSinSolucion" AutoGenerateColumns="False" CanUserAddRows="False" Margin="34,80,237,134">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Numero de incidencias" Binding="{Binding numAlumnos}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Titulo" Binding="{Binding titulo}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Categoria" Binding="{Binding categoria}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Fecha registro" Binding="{Binding fechaRegistro}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Problematicas sin solución" HorizontalAlignment="Left" Margin="34,32,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="btnRegistrarSolucion" Content="Registrar solución" HorizontalAlignment="Left" Margin="622,108,0,0" VerticalAlignment="Top" Height="34" Width="107" Click="btnRegistrarSolucion_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="642,163,0,0" VerticalAlignment="Top" Height="27" Width="66" Click="btnVolver_Click"/>
 
     </Grid>
 </Window>

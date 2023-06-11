@@ -140,5 +140,15 @@ namespace ServiciosLinqEscolar
         {
             return ListaAsistenciaDAO.obtenerNoAsistentesPorReporte(idReporte);
         }
+
+        public List<problematicaAcademica> ObtenerProblematicasSinSolucion()
+        {
+            return ProblematicaAcademicaDAO.obtenerProblematicasSinSolucion();
+        }
+
+        public bool registrarSolucionAProblematica(solucionProblematica solucionProblematica1 ,int idProblematica)
+        {
+            return SolucionAProblematicaDAO.registrarSolucionAProblematica(solucionProblematica1, idProblematica);
+        }
     }
 }
