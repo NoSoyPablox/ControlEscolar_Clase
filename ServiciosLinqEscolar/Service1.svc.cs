@@ -102,9 +102,24 @@ namespace ServiciosLinqEscolar
             return TutoriaDAO.verificarFechaCierreVigente(idTutoria);
         }
 
-        public bool VerificarRegistroReportePorTutoria(int idTutoria)
+        public bool VerificarRegistroReportePorTutoria(int idTutoria, int idTutor)
         {
-            return ReporteDeTutoriaDAO.verificarRegistroPorReporteDeTutoria(idTutoria);
+            return ReporteDeTutoriaDAO.verificarRegistroPorReporteDeTutoria(idTutoria, idTutor);
+        }
+
+        public bool RegistarListaAsistenciaAReporte(int idReporte, alumno[] alumnosAsistencia)
+        {
+            return ListaAsistenciaDAO.registrarListaAsistenciaAReporte(idReporte, alumnosAsistencia);
+        }
+
+        public bool RegistrarReporteTutoria(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria)
+        {
+            return ReporteDeTutoriaDAO.registrarReporteTutoria(comentariosGenerales, numeroSesion, idTutor, idTutoria);
+        }
+
+        public reporteDeTutoria ObtenerReporteCreado(int idTutoria, int idTutor)
+        {
+            return ReporteDeTutoriaDAO.obtenerReporteCreado(idTutoria, idTutor);
         }
     }
 }

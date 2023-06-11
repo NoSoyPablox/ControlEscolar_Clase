@@ -22,6 +22,7 @@ namespace FrontEndEscolar
     public partial class LlenarReporteTutoria : Window
     {
         PantallaPrincipal pantallaAnterior = new PantallaPrincipal();
+        bool registradoAntes = false;
 
         public LlenarReporteTutoria()
         {
@@ -49,41 +50,13 @@ namespace FrontEndEscolar
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            //comprobar que los combobox no esten sin seleccion
             if (cbPeriodoEscolar.SelectedIndex == -1 || cbTutorias.SelectedIndex == -1)
             {
                 MessageBox.Show("Favor de llenar todos los campos");
             }
             else
             {
-                //obtener el id de la tutoria seleccionada
-                tutoria tutoriaSeleccionada = cbTutorias.SelectedItem as tutoria;
-                //Quiero obtener los objetos alumnoLocal de la tabla que tengan el checkbox asistio seleccionado
-                int contadorAsistentes = 0;
-                //Lista de enteros que guardara los id de los alumnos que asistieron
-                //contar cuantos alumnos tienen la casilla asistio seleccionada
-                foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
-                {
-                    if (alumno.isSelected == true)
-                    {
-                        contadorAsistentes++;
-                    }
-                }
-                //Crear un arreglo de enteros que guarde los id de los alumnos que asistieron
-                int[] idAlumnosAsistentes = new int[contadorAsistentes];
-                //metodo que obtiene los id de los alumnos que asistieron y los mete en el arreglo
-                int contador = 0;
-                foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
-                {
-                    if (alumno.isSelected == true)
-                    {
-                        idAlumnosAsistentes[contador] = alumno.idAlumno;
-                        contador++;
-                    }
-                }
-                //MessageBox que escriba en pantalla solo el nombre de los alumnos que asistieron
-                MessageBox.Show("El numero de alumnos que asistieron es: " + contadorAsistentes);
-
+                guardarAsistencia();
                 
             }
         }
@@ -117,5 +90,71 @@ namespace FrontEndEscolar
             TutoriasViewModel modelo = new TutoriasViewModel(idUsuario);
             cbTutorias.ItemsSource = modelo.tutoriasBD;
         }
+
+
+        private void guardarAsistencia()
+        {
+            tutoria tutoriaSeleccionada = cbTutorias.SelectedItem as tutoria;
+            int contadorAsistentes = 0;
+            //contar cuantos alumnos tienen la casilla asistio seleccionada
+            foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
+            {
+                if (alumno.isSelected == true)
+                {
+                    contadorAsistentes++;
+                }
+            }
+            //Arreglo de enteros que guarde los id de los alumnos que asistieron
+            int[] idAlumnosAsistentes = new int[contadorAsistentes];
+            int contador = 0;
+            foreach (AlumnoLocal alumno in dgEstudiantes.ItemsSource)
+            {
+                if (alumno.isSelected == true)
+                {
+                    idAlumnosAsistentes[contador] = alumno.idAlumno;
+                    contador++;
+                }
+            }
+            MessageBox.Show("Se guardo la asistencia de " + contadorAsistentes + " alumnos");
+        }
+
+        private async void registradaAntes()
+        {
+
+            Service1Client servicio = new Service1Client();
+            int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
+            registradoAntes = await servicio.VerificarRegistroReportePorTutoriaAsync(usuarioSesion.idUsuario, idTutoria);
+
+            if (registradoAntes == true)
+            {
+                MessageBox.Show("Ya se ha registrado un reporte de tutoria para esta tutoria");
+                registradoAntes = true;
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void cbTutorias_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        /*private async void registrarReporteTutoria()
+        {
+            Service1Client servicio = new Service1Client();
+            int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
+            bool registrado = await servicio.RegistrarReporteTutoriaAsync(usuarioSesion.idUsuario, idTutoria);
+            if (registrado == true)
+            {
+                MessageBox.Show("Se ha registrado el reporte de tutoria");
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido registrar el reporte de tutoria");
+            }
+        }*/
     }
 }

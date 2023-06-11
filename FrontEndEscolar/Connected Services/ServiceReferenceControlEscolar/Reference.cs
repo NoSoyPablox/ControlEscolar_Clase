@@ -1716,7 +1716,10 @@ namespace ServiceReferenceControlEscolar
         System.Threading.Tasks.Task<bool> VerificarFechaCierreVigenteAsync(int idTutoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerificarRegistroReportePorTutoria", ReplyAction="http://tempuri.org/IService1/VerificarRegistroReportePorTutoriaResponse")]
-        System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria);
+        System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria, int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarListaAsistenciaAReporte", ReplyAction="http://tempuri.org/IService1/RegistarListaAsistenciaAReporteResponse")]
+        System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, ServiceReferenceControlEscolar.alumno[] alumnosAsistencia);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1849,9 +1852,14 @@ namespace ServiceReferenceControlEscolar
             return base.Channel.VerificarFechaCierreVigenteAsync(idTutoria);
         }
         
-        public System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria)
+        public System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria, int idTutor)
         {
-            return base.Channel.VerificarRegistroReportePorTutoriaAsync(idTutoria);
+            return base.Channel.VerificarRegistroReportePorTutoriaAsync(idTutoria, idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, ServiceReferenceControlEscolar.alumno[] alumnosAsistencia)
+        {
+            return base.Channel.RegistarListaAsistenciaAReporteAsync(idReporte, alumnosAsistencia);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

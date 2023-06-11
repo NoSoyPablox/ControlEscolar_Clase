@@ -31,7 +31,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="cbTutorias" HorizontalAlignment="Left" Margin="629,20,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="cbTutorias" HorizontalAlignment="Left" Margin="629,20,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbTutorias_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
