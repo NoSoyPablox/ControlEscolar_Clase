@@ -137,7 +137,9 @@ namespace FrontEndEscolar
         private async void registrarProblematicas(int idReporte)
         {
             Service1Client servicio = new Service1Client();
-            bool registrarTutorias = await servicio.RegistrarProblematicasAcademicasAsync(problematicaAcademicas.ToArray(), idReporte);
+            int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
+            reporteDeTutoria reporteCreado = await servicio.ObtenerReporteCreadoAsync(idTutoria, usuarioSesion.idUsuario);
+            bool registrarTutorias = await servicio.RegistrarProblematicasAcademicasAsync(problematicaAcademicas.ToArray(), reporteCreado.idReporte);
             if (registrarTutorias == true)
             {
                 MessageBox.Show("Se registraron las problematicas academicas");

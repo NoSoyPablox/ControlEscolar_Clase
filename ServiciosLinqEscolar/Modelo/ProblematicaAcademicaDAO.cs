@@ -27,6 +27,7 @@ namespace ServiciosLinqEscolar.Modelo
                         numAlumnos = problematica.numAlumnos,
                         titulo = problematica.titulo,
                         descripcion = problematica.descripcion,
+                        fechaRegistro = DateTime.Now,
                         categoria = problematica.categoria,
                         idReporteTutoria = idReporteRecibido
                     };
