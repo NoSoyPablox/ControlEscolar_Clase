@@ -23,6 +23,7 @@ namespace FrontEndEscolar
     {
         PantallaPrincipal pantallaAnterior = new PantallaPrincipal();
         bool registradoAntes = false;
+        List <problematicaAcademica> problematicaAcademicas = new List<problematicaAcademica>();
 
         public LlenarReporteTutoria()
         {
@@ -63,7 +64,13 @@ namespace FrontEndEscolar
 
         private void btnAgregarProblematica_Click(object sender, RoutedEventArgs e)
         {
-
+            RegistrarProblematicaAcademica registrarProblematica = new RegistrarProblematicaAcademica();
+            registrarProblematica.recibirVentanaAnterior(this);
+            //obtener el numero de alumnos que tiene datagrid
+            int numeroAlumnos = dgEstudiantes.Items.Count;
+            registrarProblematica.recibirNumeroAlumnos(numeroAlumnos);
+            registrarProblematica.Show();
+            this.IsEnabled = false;
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -140,6 +147,11 @@ namespace FrontEndEscolar
         private void cbTutorias_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
+        }
+
+        public void añadirProblematica(problematicaAcademica problematica)
+        {
+            problematicaAcademicas.Add(problematica);
         }
 
         /*private async void registrarReporteTutoria()
