@@ -20,7 +20,7 @@
         <Label x:Name="lbFechaRegistro" Content="Label" HorizontalAlignment="Left" Margin="495,43,0,0" VerticalAlignment="Top" Width="76"/>
         <Label x:Name="lbCategoria" Content="Label" HorizontalAlignment="Left" Margin="662,43,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbNumeroIncidencias" Content="Label" HorizontalAlignment="Left" Margin="663,90,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="662,371,0,0" VerticalAlignment="Top" Height="41" Width="92"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="662,371,0,0" VerticalAlignment="Top" Height="41" Width="92" Click="btnModificar_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="544,371,0,0" VerticalAlignment="Top" Height="41" Width="90" Click="btnVolver_Click"/>
     </Grid>
 </Window>

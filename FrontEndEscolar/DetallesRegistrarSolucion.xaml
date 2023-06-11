@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="DetallesRegistrarSolucion" Height="450" Width="800">
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="195" Margin="0,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="706" Fill="#FFF3ECEC"/>
-        <Label Content="Titulo:" HorizontalAlignment="Left" Margin="57,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Numero de &#xD;&#xA;incidencias: " HorizontalAlignment="Left" Margin="576,74,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="57,88,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Categoria" HorizontalAlignment="Left" Margin="576,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Fecha de registro" HorizontalAlignment="Left" Margin="383,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="tbSolucion" HorizontalAlignment="Center" Margin="0,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="708" Height="91"/>
-        <Label Content="Solucion" HorizontalAlignment="Left" Margin="45,220,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="659,361,0,0" VerticalAlignment="Top" Height="38" Width="93" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="542,361,0,0" VerticalAlignment="Top" Height="39" Width="93" Click="btnVolver_Click"/>
-        <Label x:Name="lbDescripcion" Content="Label" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top" Height="81" Width="668"/>
-        <Label x:Name="lbTitulo" Content="Label" HorizontalAlignment="Left" Margin="108,43,0,0" VerticalAlignment="Top" Width="270"/>
-        <Label x:Name="lbFechaRegistro" Content="Label" HorizontalAlignment="Left" Margin="495,43,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label x:Name="lbCategoria" Content="Label" HorizontalAlignment="Left" Margin="662,43,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbNumeroIncidencias" Content="Label" HorizontalAlignment="Left" Margin="663,90,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Center" Height="195" Margin="0,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="706" Fill="#FFF3ECEC"/>
+        <Label Content="Titulo:" HorizontalAlignment="Left" Margin="57,36,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Numero de &#xD;&#xA;incidencias: " HorizontalAlignment="Left" Margin="576,67,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="57,81,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Categoria" HorizontalAlignment="Left" Margin="576,36,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Fecha de registro" HorizontalAlignment="Left" Margin="383,36,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="tbSolucion" HorizontalAlignment="Center" Margin="0,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="708" Height="91"/>
+        <Label Content="Solucion" HorizontalAlignment="Left" Margin="45,213,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="660,348,0,0" VerticalAlignment="Top" Height="35" Width="93" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="543,348,0,0" VerticalAlignment="Top" Height="36" Width="93" Click="btnVolver_Click"/>
+        <Label x:Name="lbDescripcion" Content="Label" HorizontalAlignment="Center" Margin="0,113,0,0" VerticalAlignment="Top" Height="81" Width="668"/>
+        <Label x:Name="lbTitulo" Content="Label" HorizontalAlignment="Left" Margin="108,36,0,0" VerticalAlignment="Top" Width="270"/>
+        <Label x:Name="lbFechaRegistro" Content="Label" HorizontalAlignment="Left" Margin="495,36,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label x:Name="lbCategoria" Content="Label" HorizontalAlignment="Left" Margin="662,36,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbNumeroIncidencias" Content="Label" HorizontalAlignment="Left" Margin="663,83,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

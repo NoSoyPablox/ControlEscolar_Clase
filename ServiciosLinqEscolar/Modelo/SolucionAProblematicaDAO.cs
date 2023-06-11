@@ -52,5 +52,30 @@ namespace ServiciosLinqEscolar.Modelo
                 return false;
             }
         }
+
+        public static solucionProblematica obtenerSolucionAProblematica(int idProblematicaRecibida)
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                var solucionProblematica = (from solucionProblematica1 in conexionBD.solucionProblematica
+                                            where solucionProblematica1.idProblematica == idProblematicaRecibida
+                                            select solucionProblematica1).FirstOrDefault();
+
+                var solucionRecuperada = new solucionProblematica()
+                {
+                    idSolucion = solucionProblematica.idSolucion,
+                    descripcion = solucionProblematica.descripcion,
+                    fechaRegistro = solucionProblematica.fechaRegistro,
+                    idProblematica = solucionProblematica.idProblematica
+                };
+
+                return solucionRecuperada;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

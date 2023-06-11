@@ -1847,6 +1847,9 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicasConSolucion", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasConSolucionResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasConSolucionAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerSolucionAProblematica", ReplyAction="http://tempuri.org/IService1/ObtenerSolucionAProblematicaResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.solucionProblematica> ObtenerSolucionAProblematicaAsync(int idProblematica);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -2037,6 +2040,11 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasConSolucionAsync()
         {
             return base.Channel.ObtenerProblematicasConSolucionAsync();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.solucionProblematica> ObtenerSolucionAProblematicaAsync(int idProblematica)
+        {
+            return base.Channel.ObtenerSolucionAProblematicaAsync(idProblematica);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

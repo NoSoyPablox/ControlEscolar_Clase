@@ -99,6 +99,9 @@ namespace ServiciosLinqEscolar
 
         [OperationContract]
         List<problematicaAcademica> ObtenerProblematicasConSolucion();
+
+        [OperationContract]
+        solucionProblematica ObtenerSolucionAProblematica(int idProblematica);
     }
 
 

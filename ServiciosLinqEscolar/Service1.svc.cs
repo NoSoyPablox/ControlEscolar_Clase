@@ -160,5 +160,10 @@ namespace ServiciosLinqEscolar
         {
             return ProblematicaAcademicaDAO.obtenerProblematicasConSolucion();
         }
+
+        public solucionProblematica ObtenerSolucionAProblematica(int idProblematica)
+        {
+            return SolucionAProblematicaDAO.obtenerSolucionAProblematica(idProblematica);
+        }
     }
 }
