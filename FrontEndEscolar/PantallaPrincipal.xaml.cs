@@ -138,5 +138,14 @@ namespace FrontEndEscolar
             this.IsEnabled = false;
             registrarSolucionAProblematica.Show();
         }
+
+        private void btnModificarSolucion_Click(object sender, RoutedEventArgs e)
+        {
+            ModificarSolucionAProblematica modificarSolucionAProblematica = new ModificarSolucionAProblematica();
+            modificarSolucionAProblematica.recibirVentanaAnterior(this);
+            modificarSolucionAProblematica.mostrarProblematicasConSolucion();
+            this.IsEnabled = false;
+            modificarSolucionAProblematica.Show();
+        }
     }
 }

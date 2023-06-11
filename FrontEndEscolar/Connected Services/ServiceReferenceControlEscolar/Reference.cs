@@ -1841,6 +1841,12 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registrarSolucionAProblematica", ReplyAction="http://tempuri.org/IService1/registrarSolucionAProblematicaResponse")]
         System.Threading.Tasks.Task<bool> registrarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1, int idProblematica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ModificarSolucionAProblematica", ReplyAction="http://tempuri.org/IService1/ModificarSolucionAProblematicaResponse")]
+        System.Threading.Tasks.Task<bool> ModificarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicasConSolucion", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasConSolucionResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasConSolucionAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -2021,6 +2027,16 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<bool> registrarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1, int idProblematica)
         {
             return base.Channel.registrarSolucionAProblematicaAsync(solucionProblematica1, idProblematica);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ModificarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1)
+        {
+            return base.Channel.ModificarSolucionAProblematicaAsync(solucionProblematica1);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasConSolucionAsync()
+        {
+            return base.Channel.ObtenerProblematicasConSolucionAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

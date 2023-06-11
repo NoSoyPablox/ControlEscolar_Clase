@@ -73,5 +73,38 @@ namespace ServiciosLinqEscolar.Modelo
                 return null;
             }
         }
+
+        public static List<problematicaAcademica> obtenerProblematicasConSolucion()
+        {
+            try
+            {
+                DataClassesEscolarUVDataContext conexionBD = getConnection();
+                //quiero recuperar las problematicas academicas cuyos idProblematica no aparezca como llave foranea en la tabla solucionProblematica
+                var problematicas = (from p in conexionBD.problematicaAcademica
+                                     where (from s in conexionBD.solucionProblematica
+                                             select s.idProblematica).Contains(p.idProblematica)
+                                     select p);
+                List<problematicaAcademica> problematicasConSolucion = new List<problematicaAcademica>();
+                foreach (problematicaAcademica problematica in problematicas)
+                {
+                    var problematicaConSolucion2 = new problematicaAcademica()
+                    {
+                        idProblematica = problematica.idProblematica,
+                        numAlumnos = problematica.numAlumnos,
+                        titulo = problematica.titulo,
+                        descripcion = problematica.descripcion,
+                        fechaRegistro = problematica.fechaRegistro,
+                        categoria = problematica.categoria,
+                        idReporteTutoria = problematica.idReporteTutoria
+                    };
+                    problematicasConSolucion.Add(problematicaConSolucion2);
+                }
+                return problematicasConSolucion;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

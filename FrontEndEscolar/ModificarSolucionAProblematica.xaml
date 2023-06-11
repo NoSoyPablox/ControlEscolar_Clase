@@ -1,0 +1,23 @@
+﻿<Window x:Class="FrontEndEscolar.ModificarSolucionAProblematica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        Title="ModificarSolucionAProblematica" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgProblematicasConSolucion" AutoGenerateColumns="False" CanUserAddRows="False" Margin="24,70,277,70">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Numero de incidencias" Binding="{Binding numAlumnos}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Titulo" Binding="{Binding titulo}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Categoria" Binding="{Binding categoria}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Fecha registro" Binding="{Binding fechaRegistro}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Problematicas con solucion registrada" HorizontalAlignment="Left" Margin="71,37,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="605,127,0,0" VerticalAlignment="Top" Height="36" Width="96" Click="btnModificar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="612,196,0,0" VerticalAlignment="Top" Height="32" Width="82" Click="btnVolver_Click"/>
+
+    </Grid>
+</Window>

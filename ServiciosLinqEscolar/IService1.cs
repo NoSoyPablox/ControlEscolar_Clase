@@ -96,6 +96,9 @@ namespace ServiciosLinqEscolar
 
         [OperationContract]
         bool ModificarSolucionAProblematica(solucionProblematica solucionProblematica1);
+
+        [OperationContract]
+        List<problematicaAcademica> ObtenerProblematicasConSolucion();
     }
 
 
