@@ -1,4 +1,5 @@
-﻿using ServiceReferenceControlEscolar;
+﻿using FrontEndEscolar.Modelo;
+using ServiceReferenceControlEscolar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,18 @@ namespace FrontEndEscolar
             this.reporteRecibido = reporteRecibido;
             lbFecha.Content = reporteRecibido.fecha.ToString().Substring(0,10);
             tbComentariosGenerales.Text = reporteRecibido.comentariosGenerales;
+        }
+
+        public void mostrarAlumnosAsistentes()
+        {
+            AlumnosAsistentesViewModel alumnosAsistentesViewModel = new AlumnosAsistentesViewModel(reporteRecibido.idReporte);
+            dgAsistentes.ItemsSource = alumnosAsistentesViewModel.alumnosAsistentesBD;
+        }
+
+        public void mostrarAlumnosNoAsistentes()
+        {
+            AlumnosNoAsistentesViewModel alumnosNoAsistentesViewModel = new AlumnosNoAsistentesViewModel(reporteRecibido.idReporte);
+            dgNoAsistentes.ItemsSource = alumnosNoAsistentesViewModel.alumnosNoAsistentesBD;
         }
     }
 }

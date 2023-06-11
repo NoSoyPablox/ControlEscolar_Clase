@@ -66,6 +66,8 @@ namespace FrontEndEscolar
                 DetallesReporte detallesReporte = new DetallesReporte();
                 detallesReporte.recibirVentanaAnterior(this);
                 detallesReporte.recibirReporte((reporteDeTutoria)dgReportes.SelectedItem);
+                detallesReporte.mostrarAlumnosAsistentes();
+                detallesReporte.mostrarAlumnosNoAsistentes();
                 detallesReporte.Show();
                 this.IsEnabled = false;
             }

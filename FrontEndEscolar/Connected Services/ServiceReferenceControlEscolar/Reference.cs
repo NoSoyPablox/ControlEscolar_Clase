@@ -1732,6 +1732,12 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerReportesPorTutor", ReplyAction="http://tempuri.org/IService1/ObtenerReportesPorTutorResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria[]> ObtenerReportesPorTutorAsync(int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerAsistentesPorReporte", ReplyAction="http://tempuri.org/IService1/ObtenerAsistentesPorReporteResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerAsistentesPorReporteAsync(int idReporte);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerNoAsistentesPorReporte", ReplyAction="http://tempuri.org/IService1/ObtenerNoAsistentesPorReporteResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerNoAsistentesPorReporteAsync(int idReporte);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1892,6 +1898,16 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria[]> ObtenerReportesPorTutorAsync(int idTutor)
         {
             return base.Channel.ObtenerReportesPorTutorAsync(idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerAsistentesPorReporteAsync(int idReporte)
+        {
+            return base.Channel.ObtenerAsistentesPorReporteAsync(idReporte);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerNoAsistentesPorReporteAsync(int idReporte)
+        {
+            return base.Channel.ObtenerNoAsistentesPorReporteAsync(idReporte);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
