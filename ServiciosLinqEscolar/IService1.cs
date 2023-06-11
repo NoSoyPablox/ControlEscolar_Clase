@@ -93,6 +93,9 @@ namespace ServiciosLinqEscolar
 
         [OperationContract]
         bool registrarSolucionAProblematica(solucionProblematica solucionProblematica1 ,int idProblematica);
+
+        [OperationContract]
+        bool ModificarSolucionAProblematica(solucionProblematica solucionProblematica1);
     }
 
 

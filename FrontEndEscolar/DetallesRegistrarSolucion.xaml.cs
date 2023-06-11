@@ -52,5 +52,38 @@ namespace FrontEndEscolar
             pantallaAnterior.IsEnabled = true;
             this.Close();
         }
+
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+            if(tbSolucion.Text == "")
+            {
+                MessageBox.Show("Ingrese la descripcion de la solucion");
+            }
+            else
+            {
+                registrarSolucion();
+            }
+        }
+
+        public async void registrarSolucion()
+        {
+            Service1Client servicio = new Service1Client();
+            //hacer un objeto tipo solucion usando var y metiendole el valor de tbSolucion.Text
+            solucionProblematica solucionARegistrar = new solucionProblematica();
+            solucionARegistrar.descripcion = tbSolucion.Text;
+            bool resultado = await servicio.registrarSolucionAProblematicaAsync(solucionARegistrar, problematicaARegistrar.idProblematica);
+            if (resultado == true)
+            {
+                MessageBox.Show("Se ha registrado la solucion");
+                pantallaAnterior.mostrarProblematicasSinSolucion();
+                pantallaAnterior.IsEnabled = true;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido registrar la solucion");
+            }
+
+        }
     }
 }

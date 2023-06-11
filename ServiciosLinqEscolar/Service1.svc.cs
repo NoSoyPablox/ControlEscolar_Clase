@@ -150,5 +150,10 @@ namespace ServiciosLinqEscolar
         {
             return SolucionAProblematicaDAO.registrarSolucionAProblematica(solucionProblematica1, idProblematica);
         }
+
+        public bool ModificarSolucionAProblematica(solucionProblematica solucionProblematica1)
+        {
+            return SolucionAProblematicaDAO.modificarSolucionAProblematica(solucionProblematica1);
+        }
     }
 }

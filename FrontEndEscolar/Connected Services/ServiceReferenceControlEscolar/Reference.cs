@@ -1838,6 +1838,9 @@ namespace ServiceReferenceControlEscolar
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicasSinSolucion", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasSinSolucionResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasSinSolucionAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registrarSolucionAProblematica", ReplyAction="http://tempuri.org/IService1/registrarSolucionAProblematicaResponse")]
+        System.Threading.Tasks.Task<bool> registrarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1, int idProblematica);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -2013,6 +2016,11 @@ namespace ServiceReferenceControlEscolar
         public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasSinSolucionAsync()
         {
             return base.Channel.ObtenerProblematicasSinSolucionAsync();
+        }
+        
+        public System.Threading.Tasks.Task<bool> registrarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1, int idProblematica)
+        {
+            return base.Channel.registrarSolucionAProblematicaAsync(solucionProblematica1, idProblematica);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
