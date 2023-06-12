@@ -13,7 +13,7 @@ namespace ServiciosLinqEscolar
     [ServiceContract]
     public interface IService1
     {
-
+        //Esto es un ejemplo para ver si se guarda en github
         [OperationContract]
         List<usuario> ObtenerUsuarios();
 
