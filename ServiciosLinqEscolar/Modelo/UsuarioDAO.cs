@@ -161,6 +161,7 @@ namespace ServiciosLinqEscolar.Modelo
                     username = usuarioNuevo.username,
                     password = usuarioNuevo.password,
                     correoInstitucional = usuarioNuevo.correoInstitucional,
+                    numeroTelefonico = usuarioNuevo.numeroTelefonico,
                     matricula = usuarioNuevo.matricula,
                     rol = usuarioNuevo.rol
                 };//Permite construir con las propiedades que mandes, independiente al numero de argumentos que tenga el constructor

@@ -52,7 +52,6 @@ namespace FrontEndEscolar
             }
             else
             {
-                MessageBox.Show("Aqui se abre la ventana de modificacion de solucion");
                 DetallesModificarSolucion detallesModificarSolucion = new DetallesModificarSolucion();
                 detallesModificarSolucion.recibirVentanaAnterior(this);
                 detallesModificarSolucion.recibirProblematicaSeleccionada((problematicaAcademica)dgProblematicasConSolucion.SelectedItem);

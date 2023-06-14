@@ -62,7 +62,7 @@ namespace FrontEndEscolar
         {
             Service1Client servicio = new Service1Client();
             solucionCorrespondiente = await servicio.ObtenerSolucionAProblematicaAsync(problematicaSeleccionada.idProblematica);
-            MessageBox.Show("La descripcion de la solucion es " + solucionCorrespondiente.descripcion);
+            //MessageBox.Show("La descripcion de la solucion es " + solucionCorrespondiente.descripcion);
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
