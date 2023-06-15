@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="DetallesRegistrarSolucion" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Registrar solución" Height="450" Width="800">
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="195" Margin="0,15,0,0" VerticalAlignment="Top" Width="706" Fill="#FFEAF2D7"/>
         <Label Content="Titulo:" HorizontalAlignment="Left" Margin="57,36,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>

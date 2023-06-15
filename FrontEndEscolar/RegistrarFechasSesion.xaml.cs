@@ -97,19 +97,23 @@ namespace FrontEndEscolar
 
             if (dpPrimeraSesion.SelectedDate < inicioPeriodo || dpPrimeraSesion.SelectedDate > finPeriodo)
             {
-                MessageBox.Show("La fecha de la primera sesion no esta dentro del periodo escolar seleccionado");
+                MessageBox.Show("La fecha de la primera sesión no esta dentro del periodo escolar seleccionado");
                 dpPrimeraSesion.Text = "";
             }else if (dpSegundaSesion.SelectedDate < dpPrimeraSesion.SelectedDate)
             {
-                MessageBox.Show("La fecha de la segunda sesion no puede ser menor a la fecha de la primera sesion");
+                MessageBox.Show("La fecha de la segunda sesión no puede ser menor a la fecha de la primera sesion");
                 dpSegundaSesion.Text = "";
             }else if (dpTerceraSesion.SelectedDate < dpSegundaSesion.SelectedDate)
             {
-                MessageBox.Show("La fecha de la tercera sesion no puede ser menor a la fecha de la segunda sesion");
+                MessageBox.Show("La fecha de la tercera sesión no puede ser menor a la fecha de la segunda sesion");
                 dpTerceraSesion.Text = "";
             }else if (dpTerceraSesion.SelectedDate > finPeriodo)
             {
-                MessageBox.Show("La fecha de la tercera sesion no puede ser mayor a la fecha de fin del periodo escolar");
+                MessageBox.Show("La fecha de la tercera sesión no puede ser mayor a la fecha de fin del periodo escolar");
+                dpTerceraSesion.Text = "";
+            }else if (dpTerceraSesion.SelectedDate > finPeriodo.AddDays(-7))
+            {
+                MessageBox.Show("La fecha de la ultima sesión debe ser al menos 7 dias antes del fin del periodo");
                 dpTerceraSesion.Text = "";
             }
             else
@@ -118,6 +122,18 @@ namespace FrontEndEscolar
                 string fechaSesion2 = dpSegundaSesion.Text;
                 string fechaSesion3 = dpTerceraSesion.Text;
                 registrarFechasSesion(fechaSesion1, fechaSesion2, fechaSesion3, periodoSeleccionado.idPeriodo);
+            }
+        }
+
+        private void cbPeriodoEscolar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cbPeriodoEscolar.SelectedIndex != -1)
+            {
+                periodoEscolar periodoSeleccionado = cbPeriodoEscolar.SelectedItem as periodoEscolar;
+                DateTime fechaInicioPeriodo = (DateTime)periodoSeleccionado.fechaInicio;
+                DateTime fechaFinPeriodo = (DateTime)periodoSeleccionado.fechaFin;
+                lbFechaInicioPeriodo.Content = fechaInicioPeriodo.ToString("dd-MM-yyyy");
+                lbFechaFinPeriodo.Content = fechaFinPeriodo.ToString("dd-MM-yyyy");
             }
         }
     }

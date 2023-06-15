@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="RegistrarProblematicaAcademica" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Registrar problematica academica" Height="450" Width="800">
     <Grid>
         <Label Content="Numero de incidencias" HorizontalAlignment="Left" Margin="57,128,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Label Content="Título" HorizontalAlignment="Left" Margin="88,184,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>

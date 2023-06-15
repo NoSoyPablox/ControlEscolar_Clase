@@ -54,12 +54,11 @@ namespace FrontEndEscolar
 
         private void validarNumeroEstudiantes()
         {
-            //validar si el contenido del textbox tbNumeroIncidencias es un numero o no
             int numeroIncidencias;
             bool esNumero = int.TryParse(tbNumeroIncidencias.Text, out numeroIncidencias);
             if (!esNumero)
             {
-                MessageBox.Show("Favor de ingresar un número");
+                MessageBox.Show("Favor de ingresar un número en incidencias");
             } else if (numeroIncidencias > numeroAlumnos)
             {
                 MessageBox.Show("El número de alumnos no puede ser mayor al número de alumnos que tiene asignados como tutorado");
@@ -77,8 +76,12 @@ namespace FrontEndEscolar
                 };
                 ventanaAnterior.añadirProblematica(problematicaAcademica);
                 MessageBox.Show("Problematica academica registrada");
-            }
 
+                tbNumeroIncidencias.Text = "";
+                tbTitulo.Text = "";
+                tbDescripcion.Text = "";
+                cbCategoria.SelectedIndex = -1;
+            }
         }
 
         public void recibirNumeroAlumnos(int numeroAlumnosRecibidos)

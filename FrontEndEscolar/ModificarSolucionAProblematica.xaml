@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
         Title="Modificar solución a problematica academica" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="dgProblematicasConSolucion" AutoGenerateColumns="False" CanUserAddRows="False" Margin="24,70,246,70">

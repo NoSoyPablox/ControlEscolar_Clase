@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="DetallesReporte" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Consulta de reporte de tutoria" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="dgAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,40,307,270">
             <DataGrid.Columns>

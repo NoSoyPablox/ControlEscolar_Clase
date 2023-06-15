@@ -69,6 +69,7 @@ namespace FrontEndEscolar
                     {
                         MessageBox.Show("Tutor asignado correctamente");
                         pantallaAnterior.IsEnabled = true;
+                        pantallaAnterior.actualizarAlumnosSinTutor();
                         this.Close();
                     }
                     else

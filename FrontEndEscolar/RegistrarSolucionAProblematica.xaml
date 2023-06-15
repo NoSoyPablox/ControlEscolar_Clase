@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="RegistrarSolucionAProblematica" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Listado de problematicas sin solución" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="dgProblematicasSinSolucion" AutoGenerateColumns="False" CanUserAddRows="False" Margin="34,80,237,134">
             <DataGrid.Columns>

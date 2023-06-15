@@ -57,5 +57,11 @@ namespace FrontEndEscolar
                 MessageBox.Show("Seleccione un alumno");
             }
         }
+
+        public void actualizarAlumnosSinTutor()
+        {
+            AlumnosViewModel modelo = new AlumnosViewModel();
+            dgAlumnos.ItemsSource = modelo.alumnosBD;
+        }
     }
 }

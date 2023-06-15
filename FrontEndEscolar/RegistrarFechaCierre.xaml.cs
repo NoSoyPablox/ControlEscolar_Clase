@@ -56,6 +56,11 @@ namespace FrontEndEscolar
             if(cbPeriodoEscolar.SelectedIndex != -1)
             {
                 periodoEscolar periodoSeleccionado = cbPeriodoEscolar.SelectedItem as periodoEscolar;
+                DateTime fechaInicio = (DateTime)periodoSeleccionado.fechaInicio;
+                DateTime fechaFin = (DateTime)periodoSeleccionado.fechaFin;
+                lbFechaInicioPeriodo.Content = fechaInicio.ToString("dd-MM-yyyy");
+                lbFechaFinPeriodo.Content = fechaFin.ToString("dd-MM-yyyy");
+
                 int idPeriodo = periodoSeleccionado.idPeriodo;
                 mostrarFechasDelPeriodo(idPeriodo);
             }
@@ -80,8 +85,6 @@ namespace FrontEndEscolar
             lbTutoria1.Content = tutoriasRecuperadas[0].fechaTutoria.ToString().Substring(0, 10);
             lbTutoria2.Content = tutoriasRecuperadas[1].fechaTutoria.ToString().Substring(0, 10);
             lbTutoria3.Content = tutoriasRecuperadas[2].fechaTutoria.ToString().Substring(0, 10);
-
-
             tutoria1Periodo = tutoriasRecuperadas[0];
             tutoria2Periodo = tutoriasRecuperadas[1];
             tutoria3Periodo = tutoriasRecuperadas[2];
@@ -90,13 +93,11 @@ namespace FrontEndEscolar
 
         private void comprobarFechas()
         {
-            //obtener fechas de los datepicker
             DateTime fechaLimite1 = dpFechaLimite1.SelectedDate.Value;
             DateTime fechaLimite2 = dpFechaLimite2.SelectedDate.Value;
             DateTime fechaLimite3 = dpFechaLimite3.SelectedDate.Value;
             periodoEscolar periodoSeleccionado = cbPeriodoEscolar.SelectedItem as periodoEscolar;
 
-            //comprobar que la fecha limite 1 sea menor que la fecha de tutoria2Periodo
             if (fechaLimite1 > tutoria2Periodo.fechaTutoria)
             {
                 MessageBox.Show("El limite de entrega del primer reporte de tutoria no puede ser posterior a la fecha de sesion de la segunda tutoria");
@@ -119,7 +120,6 @@ namespace FrontEndEscolar
             }
             else
             {
-                //obtener las fechas de las tutorias
                 string fechaInicio1 = tutoria1Periodo.fechaTutoria.ToString();
                 string fechaInicio2 = tutoria2Periodo.fechaTutoria.ToString();
                 string fechaInicio3 = tutoria3Periodo.fechaTutoria.ToString();
@@ -162,6 +162,8 @@ namespace FrontEndEscolar
                     dpFechaLimite1.SelectedDate = null;
                     dpFechaLimite2.SelectedDate = null;
                     dpFechaLimite3.SelectedDate = null;
+                    lbFechaInicioPeriodo.Content = "";
+                    lbFechaFinPeriodo.Content = "";
                 }
                 else
                 {

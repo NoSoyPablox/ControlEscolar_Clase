@@ -7,19 +7,20 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="SingleBorderWindow"
-        Title="RegistrarFechaCierre" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="Registrar fechas de cierre" Height="450" Width="800">
     <Grid>
-        <Label Content="Tutoria 1" HorizontalAlignment="Left" Margin="152,180,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="Tutoria 2" HorizontalAlignment="Left" Margin="362,180,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="Tutoria 3" HorizontalAlignment="Left" Margin="573,180,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="Nota: La fecha de inicio será la propia fecha de la sesion de tutorias" HorizontalAlignment="Left" Margin="209,58,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tutoria 1" HorizontalAlignment="Left" Margin="146,180,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Tutoria 2" HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Tutoria 3" HorizontalAlignment="Left" Margin="567,180,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Nota: La fecha de inicio será la propia fecha de la sesión de tutorías" HorizontalAlignment="Left" Margin="209,58,0,0" VerticalAlignment="Top"/>
         <Label Content="Registrar fechas de cierre para la entrega de cada tutoria" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <DatePicker x:Name="dpFechaLimite1" HorizontalAlignment="Left" Margin="108,230,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dpFechaLimite2" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dpFechaLimite3" HorizontalAlignment="Left" Margin="529,230,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="343,297,0,0" VerticalAlignment="Top" Height="37" Width="96" Click="btnGuardar_Click"/>
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="353,353,0,0" VerticalAlignment="Top" Height="34" Width="76" Click="btnVolver_Click"/>
-        <ComboBox x:Name="cbPeriodoEscolar" HorizontalAlignment="Left" Margin="188,114,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbPeriodoEscolar_SelectionChanged">
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="643,350,0,0" VerticalAlignment="Top" Height="37" Width="96" Click="btnGuardar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="511,350,0,0" VerticalAlignment="Top" Height="37" Width="96" Click="btnVolver_Click"/>
+        <ComboBox x:Name="cbPeriodoEscolar" HorizontalAlignment="Left" Margin="188,114,0,0" VerticalAlignment="Top" Width="182" SelectionChanged="cbPeriodoEscolar_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -29,9 +30,13 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Label Content="Periodo escolar" HorizontalAlignment="Left" Margin="73,110,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label x:Name="lbTutoria1" Content="Aqui va la fecha1 recuperada" HorizontalAlignment="Left" Margin="99,206,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbTutoria2" Content="Aqui va la fecha2 recuperada" HorizontalAlignment="Left" Margin="317,206,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbTutoria3" Content="Aqui va la fecha3 recuperada" HorizontalAlignment="Left" Margin="520,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="lbTutoria1" Content="" HorizontalAlignment="Left" Margin="108,206,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="145"/>
+        <Label x:Name="lbTutoria2" Content="" HorizontalAlignment="Center" Margin="0,206,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="144"/>
+        <Label x:Name="lbTutoria3" Content="" HorizontalAlignment="Left" Margin="529,206,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Width="145"/>
+        <Label Content="Fecha inicio" HorizontalAlignment="Left" Margin="400,111,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Fecha fin" HorizontalAlignment="Left" Margin="588,112,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="lbFechaInicioPeriodo" Content="" HorizontalAlignment="Left" Margin="492,114,0,0" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="lbFechaFinPeriodo" Content="" HorizontalAlignment="Left" Margin="665,115,0,0" VerticalAlignment="Top" Width="87"/>
 
     </Grid>
 </Window>

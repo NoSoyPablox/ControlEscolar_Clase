@@ -127,7 +127,7 @@ namespace FrontEndEscolar
             bool registrarTutorias = await servicio.RegistarListaAsistenciaAReporteAsync(reporteCreado.idReporte, idAsistentes.ToArray(), idNoAsistentes.ToArray());
             if (registrarTutorias == true)
             {
-                MessageBox.Show("Se registro la asistencia de los alumnos");
+                //MessageBox.Show("Se registro la asistencia de los alumnos");
                 registrarProblematicas(reporteCreado.idReporte);
             }
             else
@@ -139,7 +139,7 @@ namespace FrontEndEscolar
 
         private async void registrarProblematicas(int idReporte)
         {
-            MessageBox.Show("El id del reporte en el que se asignaran es " + idReporte);
+            //MessageBox.Show("El id del reporte en el que se asignaran es " + idReporte);
             Service1Client servicio = new Service1Client();
             int idTutoria = (cbTutorias.SelectedItem as tutoria).idTutoria;
             reporteDeTutoria reporteCreado = await servicio.ObtenerReporteCreadoAsync(idTutoria, usuarioSesion.idUsuario);
@@ -171,7 +171,7 @@ namespace FrontEndEscolar
                 bool estaVigente = await servicio.VerificarFechaCierreVigenteAsync(idTutoria);
                 if (estaVigente == true)
                 {
-                    MessageBox.Show("La fecha de cierre de este reporte de tutoria esta vigente");
+                    //MessageBox.Show("La fecha de cierre de este reporte de tutoria esta vigente");
                     registrarReporteTutoria();
 
                 }
