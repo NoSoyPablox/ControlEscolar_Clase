@@ -54,6 +54,9 @@ namespace FrontEndEscolar
             if (cbPeriodoEscolar.SelectedIndex == -1 || cbTutorias.SelectedIndex == -1)
             {
                 MessageBox.Show("Favor de llenar todos los campos");
+            }else if (dgEstudiantes.Items.Count < 1)
+            {
+                MessageBox.Show("No tiene alumnos asignados para poder crear este reporte");
             }
             else
             {

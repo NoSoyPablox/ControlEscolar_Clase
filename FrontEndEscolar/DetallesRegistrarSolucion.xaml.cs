@@ -68,7 +68,6 @@ namespace FrontEndEscolar
         public async void registrarSolucion()
         {
             Service1Client servicio = new Service1Client();
-            //hacer un objeto tipo solucion usando var y metiendole el valor de tbSolucion.Text
             solucionProblematica solucionARegistrar = new solucionProblematica();
             solucionARegistrar.descripcion = tbSolucion.Text;
             bool resultado = await servicio.registrarSolucionAProblematicaAsync(solucionARegistrar, problematicaARegistrar.idProblematica);

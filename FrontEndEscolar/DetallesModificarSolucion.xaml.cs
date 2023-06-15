@@ -44,7 +44,7 @@ namespace FrontEndEscolar
         {
             lbTitulo.Content = problematicaSeleccionada.descripcion;
             lbDescripcion.Content = problematicaSeleccionada.descripcion;
-            MessageBox.Show("La descripcion de la solucion es " +problematicaSeleccionada.descripcion);
+            MessageBox.Show("La descripcion de la problematica elegida es: " +problematicaSeleccionada.descripcion);
             lbFechaRegistro.Content = problematicaSeleccionada.fechaRegistro.ToString().Substring(0, 10);
             lbNumeroIncidencias.Content = problematicaSeleccionada.numAlumnos;
             lbCategoria.Content = problematicaSeleccionada.categoria;

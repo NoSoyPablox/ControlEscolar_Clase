@@ -24,7 +24,6 @@ namespace FrontEndEscolar
         public PantallaPrincipal()
         {
             InitializeComponent();
-            //aqui desactivar todos los botones de la vista xaml
             btnLlenarReporte.Visibility = Visibility.Collapsed;
             btnConsultarReportePorTutor.Visibility = Visibility.Collapsed;
             btnRegistrarFechaSesion.Visibility = Visibility.Collapsed;

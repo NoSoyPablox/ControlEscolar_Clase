@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="DetallesAsignarTutorAEstudiante" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        Title="Asignar tutor academico a estudiante" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="cbTutores" HorizontalAlignment="Left" Margin="304,277,0,0" VerticalAlignment="Top" Width="165">
+        <Rectangle HorizontalAlignment="Left" Height="142" Margin="52,78,0,0" VerticalAlignment="Top" Width="710" Fill="#FFEAF2D7"/>
+        <ComboBox x:Name="cbTutores" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Width="164">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -20,18 +23,18 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label Content="Informacion del alumno" HorizontalAlignment="Left" Margin="98,51,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="98,106,0,0" VerticalAlignment="Top"/>
-        <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="240,106,0,0" VerticalAlignment="Top"/>
-        <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="418,106,0,0" VerticalAlignment="Top"/>
-        <Label Content="Matricula" HorizontalAlignment="Left" Margin="606,106,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbNombre" Content="Label" HorizontalAlignment="Left" Margin="106,158,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbApellidoPaterno" Content="Label" HorizontalAlignment="Left" Margin="270,158,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbApellidoMaterno" Content="Label" HorizontalAlignment="Left" Margin="450,158,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbMatricula" Content="Label" HorizontalAlignment="Left" Margin="617,158,0,0" VerticalAlignment="Top"/>
-        <Label Content="Selecciona el tutor academico que deseas asignarle a aeste alumno" HorizontalAlignment="Center" Margin="0,232,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAsignar" Content="Asignar" HorizontalAlignment="Left" Margin="340,335,0,0" VerticalAlignment="Top" Height="30" Width="92" Click="btnAsignar_Click"/>
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="354,380,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="btnVolver_Click"/>
+        <Label Content="Información del alumno" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="98,99,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="240,99,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="418,99,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Matricula" HorizontalAlignment="Left" Margin="606,99,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbNombre" Content="Label" HorizontalAlignment="Left" Margin="106,145,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label x:Name="lbApellidoPaterno" Content="Label" HorizontalAlignment="Left" Margin="270,145,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbApellidoMaterno" Content="Label" HorizontalAlignment="Left" Margin="450,145,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbMatricula" Content="Label" HorizontalAlignment="Left" Margin="617,145,0,0" VerticalAlignment="Top"/>
+        <Label Content="Selecciona el tutor académico que deseas asignarle a este alumno" HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="btnAsignar" Content="Asignar" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Height="30" Width="92" Click="btnAsignar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="0,371,0,0" VerticalAlignment="Top" Height="28" Width="64" Click="btnVolver_Click"/>
 
     </Grid>
 </Window>

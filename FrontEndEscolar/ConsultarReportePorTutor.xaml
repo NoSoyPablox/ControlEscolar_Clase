@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="ConsultarReportePorTutor" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        Title="Consulta de reporte de tutoria por tutor académico" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="cbTutoresAcademicos" HorizontalAlignment="Left" Margin="157,49,0,0" VerticalAlignment="Top" Width="157" SelectionChanged="cbTutoresAcademicos_SelectionChanged">
+        <ComboBox x:Name="cbTutoresAcademicos" HorizontalAlignment="Left" Margin="159,54,0,0" VerticalAlignment="Top" Width="157" SelectionChanged="cbTutoresAcademicos_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -20,7 +22,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label Content="Tutor academico: " HorizontalAlignment="Left" Margin="29,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tutor academico: " HorizontalAlignment="Left" Margin="29,49,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <DataGrid x:Name="dgReportes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="29,112,250,65">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Numero de sesion" Binding="{Binding numeroSesion}" Width="*" IsReadOnly="True"/>

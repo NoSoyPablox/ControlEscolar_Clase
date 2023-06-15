@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="DetallesReporte" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dgAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,41,307,269">
+        <DataGrid x:Name="dgAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,40,307,270">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Matricula" Binding="{Binding matricula}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="Apellido materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="dgNoAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,198,307,112">
+        <DataGrid x:Name="dgNoAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,195,307,115">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Matricula" Binding="{Binding matricula}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
@@ -23,13 +23,13 @@
                 <DataGridTextColumn Header="Apellido materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="627,177,0,0" VerticalAlignment="Top" Height="35" Width="88" Click="btnVolver_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="637,160,0,0" VerticalAlignment="Top" Height="43" Width="98" Click="btnVolver_Click"/>
         <Label Content="Alumnos que asistieron" HorizontalAlignment="Left" Margin="36,14,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Alumnos que no asistieron" HorizontalAlignment="Left" Margin="36,171,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="tbComentariosGenerales" HorizontalAlignment="Left" Margin="36,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="522" Height="56" IsReadOnly="True"/>
-        <Label Content="Fecha: de registro del reporte " HorizontalAlignment="Left" Margin="501,19,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="lbFecha" Content="ej: 27/05/2023" HorizontalAlignment="Left" Margin="678,19,0,0" VerticalAlignment="Top"/>
-        <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="36,319,0,0" VerticalAlignment="Top"/>
+        <Label Content="Alumnos que no asistieron" HorizontalAlignment="Left" Margin="36,169,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="tbComentariosGenerales" HorizontalAlignment="Center" Margin="0,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="728" Height="56" IsReadOnly="True"/>
+        <Label Content="Fecha de registro&#xD;&#xA;del reporte:" HorizontalAlignment="Left" Margin="564,19,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbFecha" Content="ej: 27/05/2023" HorizontalAlignment="Left" Margin="679,29,0,0" VerticalAlignment="Top"/>
+        <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="36,319,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -54,7 +54,6 @@ namespace FrontEndEscolar
             }
             else
             {
-                MessageBox.Show("Aqui se abre la ventana de registro de solucion");
                 DetallesRegistrarSolucion detallesRegistrarSolucion = new DetallesRegistrarSolucion();
                 detallesRegistrarSolucion.recibirVentanaAnterior(this);
                 detallesRegistrarSolucion.recibirProblematicaSeleccionada((problematicaAcademica)dgProblematicasSinSolucion.SelectedItem);
