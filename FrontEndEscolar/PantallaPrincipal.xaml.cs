@@ -39,8 +39,7 @@ namespace FrontEndEscolar
         public void recibirUsuarioSesion(usuario usuarioRecibido)
         {
             usuarioSesion = usuarioRecibido;
-            lbBienvenido.Content = "Bienvenido "+usuarioSesion.nombre + " Rol: "+usuarioSesion.rol;
- 
+            lbBienvenido.Content = "Bienvenido "+usuarioSesion.nombre;
         }
 
         public void mostrarOperaciones()

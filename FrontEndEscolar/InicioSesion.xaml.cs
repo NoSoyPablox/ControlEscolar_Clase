@@ -29,7 +29,7 @@ namespace FrontEndEscolar
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
             string usuario = tbUsuario.Text;
-            string contrasena = pbContrasena.Password; //password.password
+            string contrasena = pbContrasena.Password;
             if (usuario.Length > 0 && contrasena.Length>0){
                 verificarInicioSesion(usuario, contrasena);
             }
@@ -49,7 +49,7 @@ namespace FrontEndEscolar
                 }
                 else
                 {
-                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " " + resultado.usuario.rol + " al sistema", "Usuario Verificado");
+                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " al sistema", "Usuario Verificado");
                     PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
                     pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
                     pantallaPrincipal.mostrarOperaciones();

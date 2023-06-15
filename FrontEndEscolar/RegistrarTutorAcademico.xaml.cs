@@ -64,7 +64,6 @@ namespace FrontEndEscolar
                 if (resultado == true)
                 {
                     MessageBox.Show("Se ha registrado el usuario");
-                    //Vaciar el texto de los campos de texto
                     tbMatricula.Text = "";
                     tbNombre.Text = "";
                     tbApellidoPaterno.Text = "";
@@ -78,28 +77,6 @@ namespace FrontEndEscolar
                 else
                 {
                     MessageBox.Show("No se ha podido registrar el usuario");
-                }
-            }
-        }
-
-        //Esto no va aqui creo*
-        private async void verificarInicioSesion(string usuario, string password)
-        {
-            using (var conexionServicios = new Service1Client())
-            {
-                Mensaje resultado = await conexionServicios.IniciarSesionAsync(usuario, password);
-                if (resultado.error == true)
-                {
-                    MessageBox.Show(resultado.message, "Credenciales incorrectas");
-                }
-                else
-                {
-                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " " + resultado.usuario.rol + " al sistema", "Usuario Verificado");
-                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
-                    pantallaPrincipal.mostrarOperaciones();
-                    pantallaPrincipal.Show();
-                    this.Close();
                 }
             }
         }
