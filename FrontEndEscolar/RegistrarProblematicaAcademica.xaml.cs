@@ -43,7 +43,7 @@ namespace FrontEndEscolar
         {
             if (tbTitulo.Text == "" || tbDescripcion.Text == "" || tbNumeroIncidencias.Text == "" || cbCategoria.SelectedIndex == -1)
             {
-                MessageBox.Show("Favor de llenar todos los campos");
+                MessageBox.Show("Complete los campos solicitados", "Campos incompletos");
             }
             else
             {
@@ -58,13 +58,13 @@ namespace FrontEndEscolar
             bool esNumero = int.TryParse(tbNumeroIncidencias.Text, out numeroIncidencias);
             if (!esNumero)
             {
-                MessageBox.Show("Favor de ingresar un número en incidencias");
+                MessageBox.Show("Favor de ingresar un número en incidencias", "Campos incompletos");
             } else if (numeroIncidencias > numeroAlumnos)
             {
-                MessageBox.Show("El número de alumnos no puede ser mayor al número de alumnos que tiene asignados como tutorado");
+                MessageBox.Show("El número de alumnos no puede ser mayor al número de alumnos que tiene asignados como tutorado", "Numero de incidencias no válido");
             }else if (numeroIncidencias<1)
             {
-                MessageBox.Show("El número de alumnos no puede ser menor a 1");
+                MessageBox.Show("El número de alumnos no puede ser menor a 1", "Numero de incidencias no válido");
             }else
             {
                 var problematicaAcademica = new problematicaAcademica()
@@ -75,7 +75,7 @@ namespace FrontEndEscolar
                     categoria = cbCategoria.Text
                 };
                 ventanaAnterior.añadirProblematica(problematicaAcademica);
-                MessageBox.Show("Problematica academica registrada");
+                MessageBox.Show("Problematica academica registrada", "Registro exitoso");
 
                 tbNumeroIncidencias.Text = "";
                 tbTitulo.Text = "";

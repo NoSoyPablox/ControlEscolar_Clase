@@ -48,7 +48,7 @@ namespace FrontEndEscolar
         {
             if (dgProblematicasConSolucion.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione una problematica");
+                MessageBox.Show("Seleccione una problematica", "Campos incompletos");
             }
             else
             {

@@ -54,7 +54,7 @@ namespace FrontEndEscolar
             }
             else
             {
-                MessageBox.Show("Seleccione un alumno");
+                MessageBox.Show("Seleccione un alumno", "Campos incompletos");
             }
         }
 

@@ -21,6 +21,8 @@ namespace FrontEndEscolar
     /// </summary>
     public partial class PantallaPrincipal : Window
     {
+ 
+        usuario usuarioSesion = new usuario();
         public PantallaPrincipal()
         {
             InitializeComponent();
@@ -33,8 +35,6 @@ namespace FrontEndEscolar
             btnRegistrarTutor.Visibility = Visibility.Collapsed;
             btnRegistrarFechasCierre.Visibility = Visibility.Collapsed;
         }
-
-        usuario usuarioSesion = new usuario();
 
         public void recibirUsuarioSesion(usuario usuarioRecibido)
         {

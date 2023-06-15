@@ -47,17 +47,13 @@ namespace FrontEndEscolar
 
             if (fechaSesion1 == "" || fechaSesion2 == "" || fechaSesion3 == "" || cbPeriodoEscolar.SelectedIndex == -1)
             {
-                MessageBox.Show("Favor de llenar todos los campos");
+                MessageBox.Show("Complete los campos solicitados", "Campos incompletos");
 
             }
             else
             {
                 validarFechas();
-                //obtener el id del periodo escolar seleccionado
                 periodoEscolar periodoSeleccionado = cbPeriodoEscolar.SelectedItem as periodoEscolar;
-
-                //registrar las fechas de sesion
-                //registrarFechasSesion(fechaSesion1, fechaSesion2, fechaSesion3, periodoSeleccionado.idPeriodo);
             }   
         }
 
@@ -69,7 +65,7 @@ namespace FrontEndEscolar
                 bool resultado = await conexionServicios.RegistrarFechasSesionTutoriaAsync(fecha1, fecha2, fecha3, idPeriodo);
                 if (resultado == true)
                 {
-                    MessageBox.Show("Se han registrado las fechas");
+                    MessageBox.Show("Se han registrado las fechas" , "Registro exitoso");
                     dpPrimeraSesion.Text = "";
                     dpSegundaSesion.Text = "";
                     dpTerceraSesion.Text = "";
@@ -77,7 +73,7 @@ namespace FrontEndEscolar
                 }
                 else
                 {
-                    MessageBox.Show("Ya se han registrado fechas para este periodo, si desea modificarlas seleccione la opcion modificar fechas del menu inicial");
+                    MessageBox.Show("Ya se han registrado fechas para este periodo, si desea modificarlas seleccione la opción modificar fechas del menu inicial", "Registro fallido");
                 }
             }
         }
@@ -97,23 +93,23 @@ namespace FrontEndEscolar
 
             if (dpPrimeraSesion.SelectedDate < inicioPeriodo || dpPrimeraSesion.SelectedDate > finPeriodo)
             {
-                MessageBox.Show("La fecha de la primera sesión no esta dentro del periodo escolar seleccionado");
+                MessageBox.Show("La fecha de la primera sesión no esta dentro del periodo escolar seleccionado", "Fechas inválidas");
                 dpPrimeraSesion.Text = "";
             }else if (dpSegundaSesion.SelectedDate < dpPrimeraSesion.SelectedDate)
             {
-                MessageBox.Show("La fecha de la segunda sesión no puede ser menor a la fecha de la primera sesion");
+                MessageBox.Show("La fecha de la segunda sesión no puede ser menor a la fecha de la primera sesion", "Fechas inválidas");
                 dpSegundaSesion.Text = "";
             }else if (dpTerceraSesion.SelectedDate < dpSegundaSesion.SelectedDate)
             {
-                MessageBox.Show("La fecha de la tercera sesión no puede ser menor a la fecha de la segunda sesion");
+                MessageBox.Show("La fecha de la tercera sesión no puede ser menor a la fecha de la segunda sesion", "Fechas inválidas");
                 dpTerceraSesion.Text = "";
             }else if (dpTerceraSesion.SelectedDate > finPeriodo)
             {
-                MessageBox.Show("La fecha de la tercera sesión no puede ser mayor a la fecha de fin del periodo escolar");
+                MessageBox.Show("La fecha de la tercera sesión no puede ser mayor a la fecha de fin del periodo escolar", "Fechas inválidas");
                 dpTerceraSesion.Text = "";
             }else if (dpTerceraSesion.SelectedDate > finPeriodo.AddDays(-7))
             {
-                MessageBox.Show("La fecha de la ultima sesión debe ser al menos 7 dias antes del fin del periodo");
+                MessageBox.Show("La fecha de la ultima sesión debe ser al menos 7 dias antes del fin del periodo", "Fechas inválidas");
                 dpTerceraSesion.Text = "";
             }
             else

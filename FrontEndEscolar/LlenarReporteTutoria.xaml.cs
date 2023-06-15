@@ -53,10 +53,10 @@ namespace FrontEndEscolar
         {
             if (cbPeriodoEscolar.SelectedIndex == -1 || cbTutorias.SelectedIndex == -1)
             {
-                MessageBox.Show("Favor de llenar todos los campos");
+                MessageBox.Show("Complete todos los campos solicitados", "Campos incompletos");
             }else if (dgEstudiantes.Items.Count < 1)
             {
-                MessageBox.Show("No tiene alumnos asignados para poder crear este reporte");
+                MessageBox.Show("No tiene alumnos asignados para poder crear este reporte", "Sin alumnos asignados");
             }
             else
             {
@@ -68,7 +68,6 @@ namespace FrontEndEscolar
         {
             RegistrarProblematicaAcademica registrarProblematica = new RegistrarProblematicaAcademica();
             registrarProblematica.recibirVentanaAnterior(this);
-            //obtener el numero de alumnos que tiene datagrid
             int numeroAlumnos = dgEstudiantes.Items.Count;
             registrarProblematica.recibirNumeroAlumnos(numeroAlumnos);
             registrarProblematica.Show();
@@ -85,7 +84,7 @@ namespace FrontEndEscolar
         {
             if (cbPeriodoEscolar.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione un periodo escolar");
+                MessageBox.Show("Seleccione un periodo escolar", "Campos incompletos");
             }
             else
             {

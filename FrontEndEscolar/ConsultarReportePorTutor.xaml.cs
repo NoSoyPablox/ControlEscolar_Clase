@@ -43,7 +43,6 @@ namespace FrontEndEscolar
         {
             if (cbTutoresAcademicos.SelectedIndex != -1)
             {
-                //obtener el objeto seleccionado en el cbTutoresAcademicos
                 usuario tutorSeleccionado = (usuario)cbTutoresAcademicos.SelectedItem;
                 obtenerReportes(tutorSeleccionado.idUsuario);
             }
@@ -59,7 +58,7 @@ namespace FrontEndEscolar
         {
             if (dgReportes.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione un reporte");
+                MessageBox.Show("Seleccione un reporte", "Campos incompletos");
             }
             else
             {

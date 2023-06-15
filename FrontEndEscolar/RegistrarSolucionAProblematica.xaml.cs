@@ -28,7 +28,6 @@ namespace FrontEndEscolar
             InitializeComponent();
         }
 
-        //recibir ventana ventana anterior
         public void recibirVentanaAnterior(PantallaPrincipal pantallaRecibida)
         {
             pantallaAnterior = pantallaRecibida;
@@ -50,7 +49,7 @@ namespace FrontEndEscolar
         {
             if (dgProblematicasSinSolucion.SelectedIndex == -1)
             {
-                  MessageBox.Show("Seleccione una problematica");
+                  MessageBox.Show("Seleccione una problematica", "Campos incompletos");
             }
             else
             {

@@ -44,7 +44,7 @@ namespace FrontEndEscolar
         {
             lbTitulo.Content = problematicaSeleccionada.descripcion;
             lbDescripcion.Content = problematicaSeleccionada.descripcion;
-            MessageBox.Show("La descripcion de la problematica elegida es: " +problematicaSeleccionada.descripcion);
+            MessageBox.Show("La descripción de la problematica elegida es: " +problematicaSeleccionada.descripcion);
             lbFechaRegistro.Content = problematicaSeleccionada.fechaRegistro.ToString().Substring(0, 10);
             lbNumeroIncidencias.Content = problematicaSeleccionada.numAlumnos;
             lbCategoria.Content = problematicaSeleccionada.categoria;
@@ -62,21 +62,19 @@ namespace FrontEndEscolar
         {
             Service1Client servicio = new Service1Client();
             solucionCorrespondiente = await servicio.ObtenerSolucionAProblematicaAsync(problematicaSeleccionada.idProblematica);
-            //MessageBox.Show("La descripcion de la solucion es " + solucionCorrespondiente.descripcion);
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
             if(tbSolucion.Text == "")
             {
-                MessageBox.Show("Ingrese una solucion");
+                MessageBox.Show("Ingrese una solucion", "Campos incompletos");
             } else if (tbSolucion.Text == solucionCorrespondiente.descripcion)
             {
-                MessageBox.Show("No se ha modificado la solucion");
+                MessageBox.Show("No se ha modificado la solucion", "Campos sin cambios");
             }
             else
             {
-                MessageBox.Show("Aqui se modifica la solucion");
                 modificarSolucion();
             }
         }
@@ -88,14 +86,14 @@ namespace FrontEndEscolar
             bool respuesta = await servicio.ModificarSolucionAProblematicaAsync(solucionCorrespondiente);
             if (respuesta)
             {
-                MessageBox.Show("Se ha modificado la solucion");
+                MessageBox.Show("Se ha modificado la solución", "Modificación exitosa");
                 pantallaAnterior.IsEnabled = true;
                 pantallaAnterior.mostrarProblematicasConSolucion();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("No se ha modificado la solucion");
+                MessageBox.Show("No se ha podido modificar la solución", "Modificación fallida");
             }
         }
     }

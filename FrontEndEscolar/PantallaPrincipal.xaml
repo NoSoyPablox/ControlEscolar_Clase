@@ -20,7 +20,7 @@
         <Button x:Name="btnRegistrarSolucion" Content="Registrar solución&#xD;&#xA; a problemática" HorizontalAlignment="Left" Margin="67,144,0,0" VerticalAlignment="Top" Height="49" Width="151"  HorizontalContentAlignment="Center"  Click="btnRegistrarSolucion_Click"/>
         <Button x:Name="btnModificarSolucion" Content="Modificar solución a &#xD;&#xA;problemática académica" HorizontalAlignment="Left" Margin="247,144,0,0" VerticalAlignment="Top" Height="49" Width="151" HorizontalContentAlignment="Center" Click="btnModificarSolucion_Click"/>
         <Button x:Name="btnRegistrarTutor" Content="Registrar tutor academico" HorizontalAlignment="Left" Margin="67,144,0,0" VerticalAlignment="Top" Height="49" Width="151" HorizontalContentAlignment="Center" Click="btnRegistrarTutor_Click"/>
-        <Button x:Name="btnAsignarTutorEstudiante" Content="Asignar tutor académico&#xD;&#xA; a estudiante" HorizontalAlignment="Left" Margin="67,145,0,0" VerticalAlignment="Top" Height="48" Width="151" HorizontalContentAlignment="Center" Click="btnAsignarTutorEstudiante_Click"/>
+        <Button x:Name="btnAsignarTutorEstudiante" Content="Asignar tutor académico&#xD;&#xA; a estudiante" HorizontalAlignment="Left" Margin="67,144,0,0" VerticalAlignment="Top" Height="49" Width="151" HorizontalContentAlignment="Center" Click="btnAsignarTutorEstudiante_Click"/>
         <Button x:Name="btnCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="636,343,0,0" VerticalAlignment="Top" Height="36" Width="93" Click="btnCerrarSesion_Click"/>
 
     </Grid>

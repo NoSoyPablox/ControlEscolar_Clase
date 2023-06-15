@@ -57,7 +57,7 @@ namespace FrontEndEscolar
         {
             if(tbSolucion.Text == "")
             {
-                MessageBox.Show("Ingrese la descripcion de la solucion");
+                MessageBox.Show("Ingrese la descripción de la solución", "Campos incompletos");
             }
             else
             {
@@ -73,14 +73,14 @@ namespace FrontEndEscolar
             bool resultado = await servicio.registrarSolucionAProblematicaAsync(solucionARegistrar, problematicaARegistrar.idProblematica);
             if (resultado == true)
             {
-                MessageBox.Show("Se ha registrado la solucion");
+                MessageBox.Show("Se ha registrado la solución", "Registro exitoso");
                 pantallaAnterior.mostrarProblematicasSinSolucion();
                 pantallaAnterior.IsEnabled = true;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("No se ha podido registrar la solucion");
+                MessageBox.Show("No se ha podido registrar la solución", "Registro exitoso");
             }
 
         }

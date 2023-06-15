@@ -75,7 +75,7 @@ namespace FrontEndEscolar
             tutoriasRecuperadas = await servicio.ObtenerTutoriasPorPeriodoEscolarAsync(idPeriodo);
             if (tutoriasRecuperadas.Length == 0)
             {
-                MessageBox.Show("No se encontraron tutorias para el periodo seleccionado");
+                MessageBox.Show("No se encontraron tutorias para el periodo seleccionado", "Fechas no registradas");
                 lbTutoria1.Content = "No registrado";
                 lbTutoria2.Content = "No registrado";
                 lbTutoria3.Content = "No registrado";
@@ -100,23 +100,23 @@ namespace FrontEndEscolar
 
             if (fechaLimite1 > tutoria2Periodo.fechaTutoria)
             {
-                MessageBox.Show("El limite de entrega del primer reporte de tutoria no puede ser posterior a la fecha de sesion de la segunda tutoria");
+                MessageBox.Show("El limite de entrega del primer reporte de tutoria no puede ser posterior a la fecha de sesion de la segunda tutoria", "Fechas invalidas");
 
             }else if (fechaLimite1 < tutoria1Periodo.fechaTutoria)
             {
-                MessageBox.Show("El limite de entrega del primer reporte de tutoria no puede ser anterior a la fecha de sesion de la primera tutoria");
+                MessageBox.Show("El limite de entrega del primer reporte de tutoria no puede ser anterior a la fecha de sesion de la primera tutoria", "Fechas invalidas");
             }else if (fechaLimite2 > tutoria3Periodo.fechaTutoria)
             {
-                MessageBox.Show("El limite de entrega del primer reporte de tutoria no puede ser posterior a la fecha de sesion de la tercera tutoria");
+                MessageBox.Show("El limite de entrega del segundo reporte de tutoria no puede ser posterior a la fecha de sesion de la tercera tutoria", "Fechas invalidas");
             }else if (fechaLimite2 < tutoria2Periodo.fechaTutoria)
             {
-                MessageBox.Show("El limite de entrega del segundo reporte de tutoria no puede ser anterior a la fecha de sesion de la segunda tutoria");
+                MessageBox.Show("El limite de entrega del segundo reporte de tutoria no puede ser anterior a la fecha de sesion de la segunda tutoria", "Fechas invalidas");
             }else if (fechaLimite3 > periodoSeleccionado.fechaFin)
             {
-                MessageBox.Show("El limite de entrega del tercer reporte de tutoria no puede ser posterior a la fecha de fin del periodo escolar");
+                MessageBox.Show("El limite de entrega del tercer reporte de tutoria no puede ser posterior a la fecha de fin del periodo escolar", "Fechas invalidas");
             }else if (fechaLimite3 < tutoria3Periodo.fechaTutoria)
             {
-                MessageBox.Show("El limite de entrega del tercer reporte de tutoria no puede ser anterior a la fecha de sesion de la tercera tutoria");
+                MessageBox.Show("El limite de entrega del tercer reporte de tutoria no puede ser anterior a la fecha de sesion de la tercera tutoria", "Fechas invalidas");
             }
             else
             {
@@ -132,15 +132,15 @@ namespace FrontEndEscolar
         {
             if (cbPeriodoEscolar.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione un periodo escolar");
+                MessageBox.Show("Seleccione un periodo escolar", "Campos incompletos");
             }
             else if (existenRegistros == false)
             {
-                MessageBox.Show("No puede registrar estas fechas ya que el periodo escolar no tiene registros de tutoria");
+                MessageBox.Show("No puede registrar estas fechas ya que el periodo escolar no tiene registros de tutoria", "Sesiones no registradas");
             }
             else if (dpFechaLimite1.SelectedDate == null || dpFechaLimite2.SelectedDate == null || dpFechaLimite3.SelectedDate == null)
             {
-                MessageBox.Show("Seleccione las fechas limite de entrega de los reportes de tutoria");
+                MessageBox.Show("Seleccione las fechas limite de entrega de los reportes de tutoria", "Campos incompletos");
             }
             else
             {
@@ -157,7 +157,7 @@ namespace FrontEndEscolar
                 bool resultado = await conexionServicios.RegistrarFechaCierreATutoriasPeriodoEscolarAsync(idTutoria1, fechaInicio1, fechaCierre1, idTutoria2, fechaInicio2, fechaCierre2, idTutoria3, fechaInicio3, fechaCierre3);
                 if (resultado == true)
                 {
-                    MessageBox.Show("Fechas de cierre registradas correctamente");
+                    MessageBox.Show("Fechas de cierre registradas correctamente", "Registro exitoso");
                     cbPeriodoEscolar.SelectedIndex = -1;
                     dpFechaLimite1.SelectedDate = null;
                     dpFechaLimite2.SelectedDate = null;
@@ -167,7 +167,7 @@ namespace FrontEndEscolar
                 }
                 else
                 {
-                    MessageBox.Show("Ya existen fechas de cierre registradas para estas tutorias");
+                    MessageBox.Show("Ya existen fechas de cierre registradas para estas tutorias", "Registro fallido");
                 }
             }
         }

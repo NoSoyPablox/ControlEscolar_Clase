@@ -46,13 +46,12 @@ namespace FrontEndEscolar
         {
             if (string.IsNullOrEmpty(tbMatricula.Text) == true || string.IsNullOrEmpty(tbNombre.Text) || string.IsNullOrEmpty(tbApellidoPaterno.Text) == true || string.IsNullOrEmpty(tbApellidoMaterno.Text) == true || string.IsNullOrEmpty(tbCorreo.Text) == true || string.IsNullOrEmpty(tbUsuario.Text) == true || string.IsNullOrEmpty(tbContrasena.Text) == true || string.IsNullOrEmpty(tbTelefono.Text) == true || cbCorreo.SelectedIndex == -1)
             {
-                MessageBox.Show("Llene los campos solicitados");
+                MessageBox.Show("Complete los campos solicitados", "Campos incompletos");
             }
             else
             {
                 validarCampos();
             }
-
         }
 
 
@@ -63,7 +62,7 @@ namespace FrontEndEscolar
                 bool resultado = await conexionServicios.GuardarTutorAcademicoAsync(tutorRegistro);
                 if (resultado == true)
                 {
-                    MessageBox.Show("Se ha registrado el usuario");
+                    MessageBox.Show("Se ha registrado el usuario", "Registro exitoso");
                     tbMatricula.Text = "";
                     tbNombre.Text = "";
                     tbApellidoPaterno.Text = "";
@@ -76,7 +75,7 @@ namespace FrontEndEscolar
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido registrar el usuario");
+                    MessageBox.Show("No se ha podido registrar el usuario", "Registro fallido");
                 }
             }
         }
@@ -85,19 +84,19 @@ namespace FrontEndEscolar
         {
             if (!regexLetras.IsMatch(tbNombre.Text))
             {
-                MessageBox.Show("Ingrese un nombre valido, solo letras");
+                MessageBox.Show("Ingrese un nombre válido, solo letras", "Formato no válido");
             }else if (!regexLetrasConEspacios.IsMatch(tbApellidoPaterno.Text))
             {
-                MessageBox.Show("Ingrese un apellido paterno valido, solo letras");
+                MessageBox.Show("Ingrese un apellido paterno válido, solo letras", "Formato no válido");
             }else if (!regexLetrasConEspacios.IsMatch(tbApellidoMaterno.Text))
             {
-                MessageBox.Show("Ingrese un apellido materno valido, solo letras");
+                MessageBox.Show("Ingrese un apellido materno válido, solo letras", "Formato no válido");
             }else if (!regexNumeros.IsMatch(tbTelefono.Text))
             {
-                MessageBox.Show("Ingrese un numero de telefono valido, solo numeros");
+                MessageBox.Show("Ingrese un numero de telefono válido, solo numeros", "Formato no válido");
             }else if(tbTelefono.Text.Length > 9)
             {
-                MessageBox.Show("El numero no puede ser mayor a 9 digitos");
+                MessageBox.Show("El numero no puede ser mayor a 9 digitos", "Formato no válido");
             }
             else
             {

@@ -35,7 +35,7 @@ namespace FrontEndEscolar
             }
             else
             {
-                MessageBox.Show("Usuario y/o contraseña requeridos");
+                MessageBox.Show("Usuario y/o contraseña requeridos", "Campos incompletos");
             }
         }
         private async void verificarInicioSesion(string usuario, string password)
