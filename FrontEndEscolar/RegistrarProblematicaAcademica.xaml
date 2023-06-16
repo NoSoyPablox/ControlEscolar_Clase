@@ -1,0 +1,30 @@
+﻿<Window x:Class="FrontEndEscolar.RegistrarProblematicaAcademica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Registrar problematica academica" Height="450" Width="800">
+    <Grid>
+        <Label Content="Numero de incidencias" HorizontalAlignment="Left" Margin="57,128,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Título" HorizontalAlignment="Left" Margin="88,184,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Descripción" HorizontalAlignment="Left" Margin="57,234,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Categoria" HorizontalAlignment="Left" Margin="488,130,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Introduzca los datos para crear el registro" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="tbNumeroIncidencias" HorizontalAlignment="Left" Margin="225,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Height="22"/>
+        <TextBox x:Name="tbTitulo" HorizontalAlignment="Left" Margin="149,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="tbDescripcion" HorizontalAlignment="Left" Margin="149,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="382" Height="129"/>
+        <ComboBox x:Name="cbCategoria" HorizontalAlignment="Left" Margin="578,134,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem x:Name="cbiInstalaciones" Content="Instalaciones"/>
+            <ComboBoxItem x:Name="cbiHorario" Content="Horario"/>
+            <ComboBoxItem x:Name="cbiProfesores" Content="Profesores"/>
+        </ComboBox>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="617,246,0,0" VerticalAlignment="Top" Height="40" Width="102" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="634,302,0,0" VerticalAlignment="Top" Height="32" Width="68" Click="btnVolver_Click"/>
+
+    </Grid>
+</Window>

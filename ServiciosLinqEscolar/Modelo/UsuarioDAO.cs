@@ -75,7 +75,8 @@ namespace ServiciosLinqEscolar.Modelo
                     apellidoPaterno = usuarioNuevo.apellidoPaterno,
                     apellidoMaterno = usuarioNuevo.apellidoMaterno,
                     username = usuarioNuevo.username,
-                    password = usuarioNuevo.password
+                    password = usuarioNuevo.password,
+                    rol = "Tutor academico" //agruegue esto, si explota se quita
                 };//Permite construir con las propiedades que mandes, independiente al numero de argumentos que tenga el constructor
                 conexionBD.usuario.InsertOnSubmit(usuario);
                 conexionBD.SubmitChanges();
@@ -160,6 +161,7 @@ namespace ServiciosLinqEscolar.Modelo
                     username = usuarioNuevo.username,
                     password = usuarioNuevo.password,
                     correoInstitucional = usuarioNuevo.correoInstitucional,
+                    numeroTelefonico = usuarioNuevo.numeroTelefonico,
                     matricula = usuarioNuevo.matricula,
                     rol = usuarioNuevo.rol
                 };//Permite construir con las propiedades que mandes, independiente al numero de argumentos que tenga el constructor
@@ -173,24 +175,26 @@ namespace ServiciosLinqEscolar.Modelo
             }
         }
 
-        public static bool registrarFechasSesionTutoria()
+        public static List<usuario> obtenerTutores() 
         {
-            try
+            DataClassesEscolarUVDataContext conexionBD = getConnection();
+            //var usuarios = asdasdasd <--- no tiene tipo hasta que se le asigna algo 
+            IQueryable<usuario> usuariosBD = from usuarioQuery in conexionBD.usuario
+                                             where usuarioQuery.rol == "Tutor academico" select usuarioQuery;
+
+            List<usuario> tutoresObtenidos = new List<usuario>();
+            foreach (usuario usuario2 in usuariosBD)
             {
-                DataClassesEscolarUVDataContext conexionBD = getConnection();
-                tutoria tutoria = new tutoria
+                var user3 = new usuario()
                 {
-                    fechaTutoria = DateTime.Today,
-                    numeroSesion = 1
-                };           
-                conexionBD.tutoria.InsertOnSubmit(tutoria);
-                conexionBD.SubmitChanges();
-                return true;
+                    idUsuario = usuario2.idUsuario,
+                    nombre = usuario2.nombre,
+                    apellidoPaterno = usuario2.apellidoPaterno,
+                    apellidoMaterno = usuario2.apellidoMaterno
+                };
+                tutoresObtenidos.Add(user3);
             }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            return tutoresObtenidos;
         }
     }
 }

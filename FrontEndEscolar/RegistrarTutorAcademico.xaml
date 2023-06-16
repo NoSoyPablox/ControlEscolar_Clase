@@ -6,28 +6,36 @@
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="RegistrarTutorAcademico" Height="450" Width="800"
+        Title="Registrar tutor académico" Height="450" Width="800"
         ResizeMode="NoResize"
-        WindowStyle="None"
+        WindowStyle="SingleBorderWindow"
         >
     <Grid>
-        <Label Content="Registrar tutor academico" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Matricula" HorizontalAlignment="Left" Margin="73,108,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="73,163,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="73,217,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Correo" HorizontalAlignment="Left" Margin="463,108,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Usuario" HorizontalAlignment="Left" Margin="463,163,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="463,217,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="73,266,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbMatricula" HorizontalAlignment="Left" Margin="168,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="168,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Margin="202,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Margin="202,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <TextBox x:Name="tbCorreo" HorizontalAlignment="Left" Margin="520,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <TextBox x:Name="tbUsuario" HorizontalAlignment="Left" Margin="525,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <TextBox x:Name="tbContrasena" HorizontalAlignment="Left" Margin="548,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
-        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" Height="26" Width="76" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="0,391,0,0" VerticalAlignment="Top" Height="22" Width="56" Click="btnVolver_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="253" Margin="26,79,0,0" VerticalAlignment="Top" Width="736" Fill="#FFEAF2D7"/>
+        <Label Content="Registrar tutor académico" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Matricula" HorizontalAlignment="Left" Margin="89,107,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="92,159,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="43,213,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Margin="433,104,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="433,159,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="433,216,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="85"/>
+        <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="43,262,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="tbMatricula" HorizontalAlignment="Left" Margin="172,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="172,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Margin="172,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Margin="172,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbCorreo" HorizontalAlignment="Left" Margin="518,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Height="24"/>
+        <TextBox x:Name="tbUsuario" HorizontalAlignment="Left" Margin="518,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbContrasena" HorizontalAlignment="Left" Margin="518,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="518,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="24"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="665,366,0,0" VerticalAlignment="Top" Height="37" Width="96" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="541,366,0,0" VerticalAlignment="Top" Height="37" Width="95" Click="btnVolver_Click"/>
+        <Label Content="Telefono" HorizontalAlignment="Left" Margin="433,266,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <ComboBox x:Name="cbCorreo" Margin="638,111,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="109">
+            <ComboBoxItem Content="@gmail.com"/>
+            <ComboBoxItem Content="@hotmail.com"/>
+            <ComboBoxItem Content="@uv.mx"/>
+        </ComboBox>
 
     </Grid>
 </Window>

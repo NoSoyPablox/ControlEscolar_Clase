@@ -1,0 +1,38 @@
+﻿<Window x:Class="FrontEndEscolar.DetallesReporte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEndEscolar"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Consulta de reporte de tutoria" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,40,307,270">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Matricula" Binding="{Binding matricula}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido paterno" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dgNoAsistentes" AutoGenerateColumns="False" CanUserAddRows="False" Margin="36,195,307,115">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Matricula" Binding="{Binding matricula}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido paterno" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="637,160,0,0" VerticalAlignment="Top" Height="43" Width="98" Click="btnVolver_Click"/>
+        <Label Content="Alumnos que asistieron" HorizontalAlignment="Left" Margin="36,14,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Alumnos que no asistieron" HorizontalAlignment="Left" Margin="36,169,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="tbComentariosGenerales" HorizontalAlignment="Center" Margin="0,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="728" Height="56" IsReadOnly="True"/>
+        <Label Content="Fecha de registro&#xD;&#xA;del reporte:" HorizontalAlignment="Left" Margin="564,19,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbFecha" Content="ej: 27/05/2023" HorizontalAlignment="Left" Margin="679,29,0,0" VerticalAlignment="Top"/>
+        <Label Content="Comentarios generales" HorizontalAlignment="Left" Margin="36,319,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

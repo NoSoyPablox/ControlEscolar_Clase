@@ -10,15 +10,21 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         >
-    <Grid Background="#FFE0DFDF">
-        <Rectangle HorizontalAlignment="Left" Height="434" Margin="232,0,0,0" VerticalAlignment="Center" Width="350" Fill="White"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFEAF2D7"/>
+                <GradientStop Color="#FF96C08A" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Center" Height="434" VerticalAlignment="Center" Width="350" Fill="White" Stroke="#FFACC375"/>
 
         <Label Content="Usuario" HorizontalAlignment="Left" Margin="290,145,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="290,228,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <TextBox x:Name ="tbUsuario" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Height="23"/>
         <PasswordBox x:Name="pbContrasena" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" Width="220" KeyDown="pbContrasena_KeyDown" Height="23"/>
-        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesión" HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top" Click="btnIniciarSesion_Click" Height="31" Width="114" FontSize="15"/>
-        <Label Content="Sistema de Gestión de Tutoría" HorizontalAlignment="Left" Margin="310,94,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesión" HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top" Click="btnIniciarSesion_Click" Height="31" Width="114" FontSize="15" Background="#FF96C08A" FontWeight="Bold"/>
+        <Label Content="Sistema de Gestión de Tutoría" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
 
     </Grid>
 </Window>

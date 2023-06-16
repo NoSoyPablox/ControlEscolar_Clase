@@ -63,9 +63,107 @@ namespace ServiciosLinqEscolar
             return AlumnoDAO.obtenerAlumnosPorTutor(idTutor);
         }
 
-        public bool RegistrarFechasSesionTutoria()
+        public List<periodoEscolar> ObtenerPeriodosEscolares()
         {
-            return UsuarioDAO.registrarFechasSesionTutoria();
+            return PeriodoEscolarDAO.obtenerPeriodosEscolares();
+        }
+
+        public List<alumno> obtenerAlumnos()
+        {
+            return AlumnoDAO.obtenerAlumnos();
+        }
+
+        public bool RegistrarFechasSesionTutoria(string fechaSesion1, string fechaSesion2, string fechaSesion3, int idPeriodoEscolar)
+        {
+            return TutoriaDAO.registrarFechasSesionTutoria( fechaSesion1,  fechaSesion2, fechaSesion3,  idPeriodoEscolar);
+        }
+        public List<usuario> ObtenerTutores()
+        {
+            return UsuarioDAO.obtenerTutores();
+        }
+
+        public bool AsignarTutorAlumno(int idAlumno, int idTutor)
+        {
+            return AlumnoDAO.asignarTutorAlumno(idAlumno, idTutor);
+        }
+
+        public List<tutoria> ObtenerTutoriasPorPeriodoEscolar(int idPeriodoEscolar)
+        {
+            return TutoriaDAO.obtenerTutoriasPorPeriodoEscolar(idPeriodoEscolar);
+        }
+
+        public bool RegistrarFechaCierreATutoriasPeriodoEscolar(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3, string fechaCierre3)
+        {
+            return TutoriaDAO.registrarFechaCierreATutoriasPeriodoEscolar(idTutoria1, fechaInicio1 ,fechaCierre1, idTutoria2, fechaInicio2 ,fechaCierre2, idTutoria3, fechaInicio3 ,fechaCierre3);
+        }
+
+        public bool VerificarFechaCierreVigente(int idTutoria)
+        {
+            return TutoriaDAO.verificarFechaCierreVigente(idTutoria);
+        }
+
+        public bool VerificarRegistroReportePorTutoria(int idTutoria, int idTutor)
+        {
+            return ReporteDeTutoriaDAO.verificarRegistroPorReporteDeTutoria(idTutoria, idTutor);
+        }
+
+        public bool RegistarListaAsistenciaAReporte(int idReporte, List<int> idAsistentes, List<int> idNoAsistentes)
+        {
+            return ListaAsistenciaDAO.registrarListaAsistenciaAReporte(idReporte, idAsistentes, idNoAsistentes);
+        }
+
+        public bool RegistrarReporteTutoria(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria)
+        {
+            return ReporteDeTutoriaDAO.registrarReporteTutoria(comentariosGenerales, numeroSesion, idTutor, idTutoria);
+        }
+
+        public reporteDeTutoria ObtenerReporteCreado(int idTutoria, int idTutor)
+        {
+            return ReporteDeTutoriaDAO.obtenerReporteCreado(idTutoria, idTutor);
+        }
+        public bool RegistrarProblematicasAcademicas(List<problematicaAcademica> listaProblematicas, int idReporte)
+        {
+            return ProblematicaAcademicaDAO.registrarProblematicasAcademicas(listaProblematicas, idReporte);
+        }
+
+        public List<reporteDeTutoria> ObtenerReportesPorTutor(int idTutor)
+        {
+            return ReporteDeTutoriaDAO.obtenerReportesPorTutor(idTutor);
+        }
+
+        public List<alumno> ObtenerAsistentesPorReporte(int idReporte)
+        {
+            return ListaAsistenciaDAO.obtenerAsistentesPorReporte(idReporte);
+        }
+
+        public List<alumno> ObtenerNoAsistentesPorReporte(int idReporte)
+        {
+            return ListaAsistenciaDAO.obtenerNoAsistentesPorReporte(idReporte);
+        }
+
+        public List<problematicaAcademica> ObtenerProblematicasSinSolucion()
+        {
+            return ProblematicaAcademicaDAO.obtenerProblematicasSinSolucion();
+        }
+
+        public bool registrarSolucionAProblematica(solucionProblematica solucionProblematica1 ,int idProblematica)
+        {
+            return SolucionAProblematicaDAO.registrarSolucionAProblematica(solucionProblematica1, idProblematica);
+        }
+
+        public bool ModificarSolucionAProblematica(solucionProblematica solucionProblematica1)
+        {
+            return SolucionAProblematicaDAO.modificarSolucionAProblematica(solucionProblematica1);
+        }
+
+        public List<problematicaAcademica> ObtenerProblematicasConSolucion()
+        {
+            return ProblematicaAcademicaDAO.obtenerProblematicasConSolucion();
+        }
+
+        public solucionProblematica ObtenerSolucionAProblematica(int idProblematica)
+        {
+            return SolucionAProblematicaDAO.obtenerSolucionAProblematica(idProblematica);
         }
     }
 }

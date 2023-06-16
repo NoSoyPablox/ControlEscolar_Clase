@@ -29,33 +29,40 @@ namespace FrontEndEscolar
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
             string usuario = tbUsuario.Text;
-            string contrasena = pbContrasena.Password; //password.password
+            string contrasena = pbContrasena.Password;
             if (usuario.Length > 0 && contrasena.Length>0){
                 verificarInicioSesion(usuario, contrasena);
             }
             else
             {
-                MessageBox.Show("Usuario y/o contraseña requeridos");
+                MessageBox.Show("Usuario y/o contraseña requeridos", "Campos incompletos");
             }
         }
         private async void verificarInicioSesion(string usuario, string password)
         {
             using(var conexionServicios = new Service1Client())
             {
-                Mensaje resultado = await conexionServicios.IniciarSesionAsync(usuario, password);
-                if (resultado.error == true)
+                try
                 {
-                    MessageBox.Show(resultado.message, "Credenciales incorrectas");
-                }
-                else
+                    Mensaje resultado = await conexionServicios.IniciarSesionAsync(usuario, password);
+                    if (resultado.error == true)
+                    {
+                        MessageBox.Show(resultado.message, "Credenciales incorrectas");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " al sistema", "Usuario Verificado");
+                        PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                        pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
+                        pantallaPrincipal.mostrarOperaciones();
+                        pantallaPrincipal.Show();
+                        this.Close();
+                    }
+                }catch(Exception e)
                 {
-                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " " + resultado.usuario.rol + " al sistema", "Usuario Verificado");
-                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
-                    pantallaPrincipal.mostrarOperaciones();
-                    pantallaPrincipal.Show();
-                    this.Close();
+                    MessageBox.Show(e.Message, "Error de conexión");
                 }
+
             }
         }
 

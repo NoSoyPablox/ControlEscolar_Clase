@@ -5,16 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontEndEscolar"
         mc:Ignorable="d"
-        Title="RegistrarFechasSesion" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Registrar fechas de sesion de tutoria" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="0,353,0,0" VerticalAlignment="Top" Height="27" Width="84"/>
-        <Label Content="Primera sesion" HorizontalAlignment="Left" Margin="116,106,0,0" VerticalAlignment="Top"/>
-        <Label Content="Segunda sesion" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tercera sesion" HorizontalAlignment="Left" Margin="614,106,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dpPrimeraSesion" HorizontalAlignment="Left" Margin="87,156,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dpSegundaSesion" HorizontalAlignment="Center" Margin="0,156,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dpTerceraSesion" HorizontalAlignment="Left" Margin="584,156,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Center" Margin="0,295,0,0" VerticalAlignment="Top" Height="40" Width="84"/>
-
+        <Rectangle HorizontalAlignment="Left" Height="154" Margin="45,161,0,0" VerticalAlignment="Top" Width="714" Fill="#FFEAF2D7"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="539,353,0,0" VerticalAlignment="Top" Height="40" Width="89" Click="btnVolver_Click"/>
+        <Label Content="Primera sesión" HorizontalAlignment="Left" Margin="112,223,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Segunda sesión" HorizontalAlignment="Center" Margin="0,223,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Tercera sesión" HorizontalAlignment="Left" Margin="601,223,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <DatePicker x:Name="dpPrimeraSesion" HorizontalAlignment="Left" Margin="83,273,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpSegundaSesion" HorizontalAlignment="Center" Margin="0,273,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpTerceraSesion" HorizontalAlignment="Left" Margin="580,273,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="653,353,0,0" VerticalAlignment="Top" Height="40" Width="84" Click="btnGuardar_Click"/>
+        <Label Content="Periodo Escolar" HorizontalAlignment="Left" Margin="46,111,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <ComboBox x:Name="cbPeriodoEscolar" HorizontalAlignment="Left" Margin="172,116,0,0" VerticalAlignment="Top" Width="142" SelectionChanged="cbPeriodoEscolar_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding nombre}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Inicio de periodo:" HorizontalAlignment="Left" Margin="360,113,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Fin de periodo:" HorizontalAlignment="Left" Margin="569,112,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lbFechaInicioPeriodo" Content="" HorizontalAlignment="Left" Margin="491,115,0,0" VerticalAlignment="Top" Width="73"/>
+        <Label x:Name="lbFechaFinPeriodo" Content="" HorizontalAlignment="Left" Margin="683,114,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="Seleccione las fechas para las sesiones de tutoria del periodo escolar seleccionado" HorizontalAlignment="Center" Margin="0,177,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Registrar fechas de sesión de tutoria por periodo" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
     </Grid>
 </Window>

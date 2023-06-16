@@ -1180,9 +1180,7 @@ namespace ServiceReferenceControlEscolar
         
         private System.Nullable<System.DateTime> fechaTutoriaField;
         
-        private System.Nullable<System.TimeSpan> horarioSesionField;
-        
-        private System.Nullable<int> idPeriodoField;
+        private System.Nullable<int> idPeriodoEscolarField;
         
         private int idTutoriaField;
         
@@ -1219,28 +1217,15 @@ namespace ServiceReferenceControlEscolar
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.TimeSpan> horarioSesion
+        public System.Nullable<int> idPeriodoEscolar
         {
             get
             {
-                return this.horarioSesionField;
+                return this.idPeriodoEscolarField;
             }
             set
             {
-                this.horarioSesionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> idPeriodo
-        {
-            get
-            {
-                return this.idPeriodoField;
-            }
-            set
-            {
-                this.idPeriodoField = value;
+                this.idPeriodoEscolarField = value;
             }
         }
         
@@ -1316,6 +1301,8 @@ namespace ServiceReferenceControlEscolar
         private System.Nullable<int> numAlumnosField;
         
         private ServiceReferenceControlEscolar.reporteDeTutoria reporteDeTutoriaField;
+        
+        private ServiceReferenceControlEscolar.solucionProblematica[] solucionProblematicaField;
         
         private string tituloField;
         
@@ -1411,6 +1398,19 @@ namespace ServiceReferenceControlEscolar
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.solucionProblematica[] solucionProblematica
+        {
+            get
+            {
+                return this.solucionProblematicaField;
+            }
+            set
+            {
+                this.solucionProblematicaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string titulo
         {
             get
@@ -1420,6 +1420,88 @@ namespace ServiceReferenceControlEscolar
             set
             {
                 this.tituloField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="solucionProblematica", Namespace="http://schemas.datacontract.org/2004/07/ServiciosLinqEscolar.Modelo")]
+    public partial class solucionProblematica : object
+    {
+        
+        private string descripcionField;
+        
+        private System.Nullable<System.DateTime> fechaRegistroField;
+        
+        private System.Nullable<int> idProblematicaField;
+        
+        private int idSolucionField;
+        
+        private ServiceReferenceControlEscolar.problematicaAcademica problematicaAcademicaField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string descripcion
+        {
+            get
+            {
+                return this.descripcionField;
+            }
+            set
+            {
+                this.descripcionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> fechaRegistro
+        {
+            get
+            {
+                return this.fechaRegistroField;
+            }
+            set
+            {
+                this.fechaRegistroField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> idProblematica
+        {
+            get
+            {
+                return this.idProblematicaField;
+            }
+            set
+            {
+                this.idProblematicaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idSolucion
+        {
+            get
+            {
+                return this.idSolucionField;
+            }
+            set
+            {
+                this.idSolucionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceControlEscolar.problematicaAcademica problematicaAcademica
+        {
+            get
+            {
+                return this.problematicaAcademicaField;
+            }
+            set
+            {
+                this.problematicaAcademicaField = value;
             }
         }
     }
@@ -1706,8 +1788,68 @@ namespace ServiceReferenceControlEscolar
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantesPorTutor", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesPorTutorResponse")]
         System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerEstudiantesPorTutorAsync(int idTutor);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerPeriodosEscolares", ReplyAction="http://tempuri.org/IService1/ObtenerPeriodosEscolaresResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.periodoEscolar[]> ObtenerPeriodosEscolaresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/obtenerAlumnos", ReplyAction="http://tempuri.org/IService1/obtenerAlumnosResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> obtenerAlumnosAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarFechasSesionTutoria", ReplyAction="http://tempuri.org/IService1/RegistrarFechasSesionTutoriaResponse")]
-        System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync();
+        System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync(string fechaSesion1, string fechaSesion2, string fechaSesion3, int idPeriodoEscolar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerTutores", ReplyAction="http://tempuri.org/IService1/ObtenerTutoresResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.usuario[]> ObtenerTutoresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AsignarTutorAlumno", ReplyAction="http://tempuri.org/IService1/AsignarTutorAlumnoResponse")]
+        System.Threading.Tasks.Task<bool> AsignarTutorAlumnoAsync(int idAlumno, int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerTutoriasPorPeriodoEscolar", ReplyAction="http://tempuri.org/IService1/ObtenerTutoriasPorPeriodoEscolarResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.tutoria[]> ObtenerTutoriasPorPeriodoEscolarAsync(int idPeriodoEscolar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarFechaCierreATutoriasPeriodoEscolar", ReplyAction="http://tempuri.org/IService1/RegistrarFechaCierreATutoriasPeriodoEscolarResponse")]
+        System.Threading.Tasks.Task<bool> RegistrarFechaCierreATutoriasPeriodoEscolarAsync(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3, string fechaCierre3);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerificarFechaCierreVigente", ReplyAction="http://tempuri.org/IService1/VerificarFechaCierreVigenteResponse")]
+        System.Threading.Tasks.Task<bool> VerificarFechaCierreVigenteAsync(int idTutoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerificarRegistroReportePorTutoria", ReplyAction="http://tempuri.org/IService1/VerificarRegistroReportePorTutoriaResponse")]
+        System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria, int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarListaAsistenciaAReporte", ReplyAction="http://tempuri.org/IService1/RegistarListaAsistenciaAReporteResponse")]
+        System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, int[] idAsistentes, int[] idNoAsistentes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarReporteTutoria", ReplyAction="http://tempuri.org/IService1/RegistrarReporteTutoriaResponse")]
+        System.Threading.Tasks.Task<bool> RegistrarReporteTutoriaAsync(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerReporteCreado", ReplyAction="http://tempuri.org/IService1/ObtenerReporteCreadoResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria> ObtenerReporteCreadoAsync(int idTutoria, int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarProblematicasAcademicas", ReplyAction="http://tempuri.org/IService1/RegistrarProblematicasAcademicasResponse")]
+        System.Threading.Tasks.Task<bool> RegistrarProblematicasAcademicasAsync(ServiceReferenceControlEscolar.problematicaAcademica[] listaProblematicas, int idReporte);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerReportesPorTutor", ReplyAction="http://tempuri.org/IService1/ObtenerReportesPorTutorResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria[]> ObtenerReportesPorTutorAsync(int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerAsistentesPorReporte", ReplyAction="http://tempuri.org/IService1/ObtenerAsistentesPorReporteResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerAsistentesPorReporteAsync(int idReporte);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerNoAsistentesPorReporte", ReplyAction="http://tempuri.org/IService1/ObtenerNoAsistentesPorReporteResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerNoAsistentesPorReporteAsync(int idReporte);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicasSinSolucion", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasSinSolucionResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasSinSolucionAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registrarSolucionAProblematica", ReplyAction="http://tempuri.org/IService1/registrarSolucionAProblematicaResponse")]
+        System.Threading.Tasks.Task<bool> registrarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1, int idProblematica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ModificarSolucionAProblematica", ReplyAction="http://tempuri.org/IService1/ModificarSolucionAProblematicaResponse")]
+        System.Threading.Tasks.Task<bool> ModificarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicasConSolucion", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasConSolucionResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasConSolucionAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerSolucionAProblematica", ReplyAction="http://tempuri.org/IService1/ObtenerSolucionAProblematicaResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceControlEscolar.solucionProblematica> ObtenerSolucionAProblematicaAsync(int idProblematica);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1800,9 +1942,109 @@ namespace ServiceReferenceControlEscolar
             return base.Channel.ObtenerEstudiantesPorTutorAsync(idTutor);
         }
         
-        public System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync()
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.periodoEscolar[]> ObtenerPeriodosEscolaresAsync()
         {
-            return base.Channel.RegistrarFechasSesionTutoriaAsync();
+            return base.Channel.ObtenerPeriodosEscolaresAsync();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> obtenerAlumnosAsync()
+        {
+            return base.Channel.obtenerAlumnosAsync();
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarFechasSesionTutoriaAsync(string fechaSesion1, string fechaSesion2, string fechaSesion3, int idPeriodoEscolar)
+        {
+            return base.Channel.RegistrarFechasSesionTutoriaAsync(fechaSesion1, fechaSesion2, fechaSesion3, idPeriodoEscolar);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.usuario[]> ObtenerTutoresAsync()
+        {
+            return base.Channel.ObtenerTutoresAsync();
+        }
+        
+        public System.Threading.Tasks.Task<bool> AsignarTutorAlumnoAsync(int idAlumno, int idTutor)
+        {
+            return base.Channel.AsignarTutorAlumnoAsync(idAlumno, idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.tutoria[]> ObtenerTutoriasPorPeriodoEscolarAsync(int idPeriodoEscolar)
+        {
+            return base.Channel.ObtenerTutoriasPorPeriodoEscolarAsync(idPeriodoEscolar);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarFechaCierreATutoriasPeriodoEscolarAsync(int idTutoria1, string fechaInicio1, string fechaCierre1, int idTutoria2, string fechaInicio2, string fechaCierre2, int idTutoria3, string fechaInicio3, string fechaCierre3)
+        {
+            return base.Channel.RegistrarFechaCierreATutoriasPeriodoEscolarAsync(idTutoria1, fechaInicio1, fechaCierre1, idTutoria2, fechaInicio2, fechaCierre2, idTutoria3, fechaInicio3, fechaCierre3);
+        }
+        
+        public System.Threading.Tasks.Task<bool> VerificarFechaCierreVigenteAsync(int idTutoria)
+        {
+            return base.Channel.VerificarFechaCierreVigenteAsync(idTutoria);
+        }
+        
+        public System.Threading.Tasks.Task<bool> VerificarRegistroReportePorTutoriaAsync(int idTutoria, int idTutor)
+        {
+            return base.Channel.VerificarRegistroReportePorTutoriaAsync(idTutoria, idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistarListaAsistenciaAReporteAsync(int idReporte, int[] idAsistentes, int[] idNoAsistentes)
+        {
+            return base.Channel.RegistarListaAsistenciaAReporteAsync(idReporte, idAsistentes, idNoAsistentes);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarReporteTutoriaAsync(string comentariosGenerales, int numeroSesion, int idTutor, int idTutoria)
+        {
+            return base.Channel.RegistrarReporteTutoriaAsync(comentariosGenerales, numeroSesion, idTutor, idTutoria);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria> ObtenerReporteCreadoAsync(int idTutoria, int idTutor)
+        {
+            return base.Channel.ObtenerReporteCreadoAsync(idTutoria, idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrarProblematicasAcademicasAsync(ServiceReferenceControlEscolar.problematicaAcademica[] listaProblematicas, int idReporte)
+        {
+            return base.Channel.RegistrarProblematicasAcademicasAsync(listaProblematicas, idReporte);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.reporteDeTutoria[]> ObtenerReportesPorTutorAsync(int idTutor)
+        {
+            return base.Channel.ObtenerReportesPorTutorAsync(idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerAsistentesPorReporteAsync(int idReporte)
+        {
+            return base.Channel.ObtenerAsistentesPorReporteAsync(idReporte);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.alumno[]> ObtenerNoAsistentesPorReporteAsync(int idReporte)
+        {
+            return base.Channel.ObtenerNoAsistentesPorReporteAsync(idReporte);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasSinSolucionAsync()
+        {
+            return base.Channel.ObtenerProblematicasSinSolucionAsync();
+        }
+        
+        public System.Threading.Tasks.Task<bool> registrarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1, int idProblematica)
+        {
+            return base.Channel.registrarSolucionAProblematicaAsync(solucionProblematica1, idProblematica);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ModificarSolucionAProblematicaAsync(ServiceReferenceControlEscolar.solucionProblematica solucionProblematica1)
+        {
+            return base.Channel.ModificarSolucionAProblematicaAsync(solucionProblematica1);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.problematicaAcademica[]> ObtenerProblematicasConSolucionAsync()
+        {
+            return base.Channel.ObtenerProblematicasConSolucionAsync();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceControlEscolar.solucionProblematica> ObtenerSolucionAProblematicaAsync(int idProblematica)
+        {
+            return base.Channel.ObtenerSolucionAProblematicaAsync(idProblematica);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

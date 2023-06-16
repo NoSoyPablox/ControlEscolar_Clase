@@ -10,11 +10,11 @@ namespace FrontEndEscolar.Modelo
 {
     internal class AlumnoViewModel
     {
-        public ObservableCollection<alumno> alumnosBD { get; set; } = new ObservableCollection<alumno>();
+        public ObservableCollection<AlumnoLocal> alumnosBD { get; set; } = new ObservableCollection<AlumnoLocal>();
 
         public AlumnoViewModel(int idTutor)
         {
-            alumnosBD = new ObservableCollection<alumno>();
+            alumnosBD = new ObservableCollection<AlumnoLocal>();
             solicitarInformacionServicio(idTutor);
         }
 
@@ -26,7 +26,15 @@ namespace FrontEndEscolar.Modelo
                 alumno[] usuarioService = await conexionServicios.ObtenerEstudiantesPorTutorAsync(idTutor);
                 foreach (alumno usuarioObtenido in usuarioService)
                 {
-                    alumnosBD.Add(usuarioObtenido);
+                    var alumnoALocal = new AlumnoLocal()
+                    {
+                        idAlumno = usuarioObtenido.idAlumno,
+                        nombre = usuarioObtenido.nombre,
+                        apellidoPaterno = usuarioObtenido.apellidoPaterno,
+                        apellidoMaterno = usuarioObtenido.apellidoMaterno,
+                        matricula = usuarioObtenido.matricula,
+                    };
+                    alumnosBD.Add(alumnoALocal);
                 }
             }
         }
