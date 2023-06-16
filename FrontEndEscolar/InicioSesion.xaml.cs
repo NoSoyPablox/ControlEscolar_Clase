@@ -42,20 +42,27 @@ namespace FrontEndEscolar
         {
             using(var conexionServicios = new Service1Client())
             {
-                Mensaje resultado = await conexionServicios.IniciarSesionAsync(usuario, password);
-                if (resultado.error == true)
+                try
                 {
-                    MessageBox.Show(resultado.message, "Credenciales incorrectas");
-                }
-                else
+                    Mensaje resultado = await conexionServicios.IniciarSesionAsync(usuario, password);
+                    if (resultado.error == true)
+                    {
+                        MessageBox.Show(resultado.message, "Credenciales incorrectas");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " al sistema", "Usuario Verificado");
+                        PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                        pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
+                        pantallaPrincipal.mostrarOperaciones();
+                        pantallaPrincipal.Show();
+                        this.Close();
+                    }
+                }catch(Exception e)
                 {
-                    MessageBox.Show("Bienvenido " + resultado.usuario.nombre + " al sistema", "Usuario Verificado");
-                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    pantallaPrincipal.recibirUsuarioSesion(resultado.usuario);
-                    pantallaPrincipal.mostrarOperaciones();
-                    pantallaPrincipal.Show();
-                    this.Close();
+                    MessageBox.Show(e.Message, "Error de conexión");
                 }
+
             }
         }
 
