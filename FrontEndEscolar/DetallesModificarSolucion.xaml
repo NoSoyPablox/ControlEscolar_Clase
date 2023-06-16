@@ -15,14 +15,14 @@
         <Label Content="Numero de &#xA;incidencias: " HorizontalAlignment="Left" Margin="572,74,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="Descripción" HorizontalAlignment="Left" Margin="57,89,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="Categoría" HorizontalAlignment="Left" Margin="572,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="Fecha de registro" HorizontalAlignment="Left" Margin="370,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="Solucion" HorizontalAlignment="Left" Margin="45,220,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Fecha de registro" HorizontalAlignment="Left" Margin="365,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Solución" HorizontalAlignment="Left" Margin="45,220,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <TextBox x:Name="tbSolucion" HorizontalAlignment="Center" Margin="0,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="708" Height="91"/>
-        <Label x:Name="lbDescripcion" Content="Label" HorizontalAlignment="Center" Margin="0,121,0,0" VerticalAlignment="Top" Height="81" Width="668" Background="White"/>
-        <Label x:Name="lbTitulo" Content="Label" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Width="242" Background="White"/>
-        <Label x:Name="lbFechaRegistro" Content="Label" HorizontalAlignment="Left" Margin="495,45,0,0" VerticalAlignment="Top" Width="69" Background="White"/>
-        <Label x:Name="lbCategoria" Content="Label" HorizontalAlignment="Left" Margin="651,43,0,0" VerticalAlignment="Top" Background="White" Width="83"/>
-        <Label x:Name="lbNumeroIncidencias" Content="Label" HorizontalAlignment="Left" Margin="661,85,0,0" VerticalAlignment="Top" Background="White"/>
+        <Label x:Name="lbDescripcion" Content="" HorizontalAlignment="Center" Margin="0,121,0,0" VerticalAlignment="Top" Height="81" Width="668" Background="White"/>
+        <Label x:Name="lbTitulo" Content="" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" Width="242" Background="White"/>
+        <Label x:Name="lbFechaRegistro" Content="" HorizontalAlignment="Left" Margin="490,45,0,0" VerticalAlignment="Top" Width="77" Background="White"/>
+        <Label x:Name="lbCategoria" Content="" HorizontalAlignment="Left" Margin="651,43,0,0" VerticalAlignment="Top" Background="White" Width="83"/>
+        <Label x:Name="lbNumeroIncidencias" Content="" HorizontalAlignment="Left" Margin="661,85,0,0" VerticalAlignment="Top" Background="White" Width="47"/>
         <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="662,352,0,0" VerticalAlignment="Top" Height="31" Width="92" Click="btnModificar_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="544,352,0,0" VerticalAlignment="Top" Height="31" Width="90" Click="btnVolver_Click"/>
     </Grid>

@@ -42,13 +42,11 @@ namespace FrontEndEscolar
 
         public void mostrarProblematica()
         {
-            lbTitulo.Content = problematicaSeleccionada.descripcion;
+            lbTitulo.Content = problematicaSeleccionada.titulo;
             lbDescripcion.Content = problematicaSeleccionada.descripcion;
-            MessageBox.Show("La descripción de la problematica elegida es: " +problematicaSeleccionada.descripcion);
             lbFechaRegistro.Content = problematicaSeleccionada.fechaRegistro.ToString().Substring(0, 10);
             lbNumeroIncidencias.Content = problematicaSeleccionada.numAlumnos;
             lbCategoria.Content = problematicaSeleccionada.categoria;
-            tbSolucion.Text = solucionCorrespondiente.descripcion;
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
@@ -62,6 +60,7 @@ namespace FrontEndEscolar
         {
             Service1Client servicio = new Service1Client();
             solucionCorrespondiente = await servicio.ObtenerSolucionAProblematicaAsync(problematicaSeleccionada.idProblematica);
+            tbSolucion.Text = solucionCorrespondiente.descripcion;
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)

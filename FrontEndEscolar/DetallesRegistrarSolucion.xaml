@@ -20,11 +20,11 @@
         <Label Content="Solucion" HorizontalAlignment="Left" Margin="45,213,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="660,348,0,0" VerticalAlignment="Top" Height="35" Width="93" Click="btnRegistrar_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="543,348,0,0" VerticalAlignment="Top" Height="36" Width="93" Click="btnVolver_Click"/>
-        <Label x:Name="lbDescripcion" Content="Label" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Height="81" Width="668" Background="White"/>
-        <Label x:Name="lbTitulo" Content="Label" HorizontalAlignment="Left" Margin="108,36,0,0" VerticalAlignment="Top" Width="254" Background="White"/>
-        <Label x:Name="lbFechaRegistro" Content="Label" HorizontalAlignment="Left" Margin="491,37,0,0" VerticalAlignment="Top" Width="76" Background="White"/>
-        <Label x:Name="lbCategoria" Content="Label" HorizontalAlignment="Left" Margin="659,36,0,0" VerticalAlignment="Top" Background="White" Width="75"/>
-        <Label x:Name="lbNumeroIncidencias" Content="Label" HorizontalAlignment="Left" Margin="665,78,0,0" VerticalAlignment="Top" Background="White" Width="31"/>
+        <Label x:Name="lbDescripcion" Content="" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Height="81" Width="668" Background="White"/>
+        <Label x:Name="lbTitulo" Content="" HorizontalAlignment="Left" Margin="108,36,0,0" VerticalAlignment="Top" Width="254" Background="White"/>
+        <Label x:Name="lbFechaRegistro" Content="" HorizontalAlignment="Left" Margin="491,37,0,0" VerticalAlignment="Top" Width="76" Background="White"/>
+        <Label x:Name="lbCategoria" Content="" HorizontalAlignment="Left" Margin="651,36,0,0" VerticalAlignment="Top" Background="White" Width="83"/>
+        <Label x:Name="lbNumeroIncidencias" Content="" HorizontalAlignment="Left" Margin="665,78,0,0" VerticalAlignment="Top" Background="White" Width="31"/>
 
     </Grid>
 </Window>
